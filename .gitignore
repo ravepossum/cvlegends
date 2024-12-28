@@ -1,3 +1,13 @@
-*.gb
+# compiled objects
 *.o
+
+# compiled graphics
+*.2bpp
+*.1bpp
+
+# compiled roms
+*.gb
+
+# rgbds extras
 *.map
+*.sym

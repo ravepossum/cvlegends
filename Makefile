@@ -4,6 +4,7 @@ FIX         := rgbfix
 
 FILE_NAME   := cvlegends
 ROM         := $(FILE_NAME).gb
+ASM_DIR     := asm
 GFX_DIR     := gfx
 BUILD_DIR   := build
 OBJECT_FILE := $(BUILD_DIR)/$(FILE_NAME).o
@@ -39,7 +40,7 @@ compare: all
 $(BUILD_DIR):
 	@mkdir $@
 
-$(OBJECT_FILE): $(BUILD_DIR) $(FILE_NAME).asm bank_*.asm $(IMAGE_DEPS)
+$(OBJECT_FILE): $(BUILD_DIR) $(FILE_NAME).asm $(ASM_DIR)/*.asm $(IMAGE_DEPS)
 	$(ASM) -o $@ $(FILE_NAME).asm
 
 $(ROM): $(OBJECT_FILE)

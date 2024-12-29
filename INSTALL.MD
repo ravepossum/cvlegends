@@ -115,3 +115,5 @@ To ensure the compiled ROM matches the original release:
 ```bash
 make compare
 ```
+
+This is the default when building for now.

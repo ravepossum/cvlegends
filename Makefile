@@ -1,3 +1,7 @@
+ASM         := rgbasm
+LINK        := rgblink
+FIX         := rgbfix
+
 FILE_NAME   := cvlegends
 ROM         := $(FILE_NAME).gb
 GFX_DIR     := gfx
@@ -36,11 +40,11 @@ $(BUILD_DIR):
 	@mkdir $@
 
 $(OBJECT_FILE): $(BUILD_DIR) $(FILE_NAME).asm bank_*.asm $(IMAGE_DEPS)
-	rgbasm -o $@ $(FILE_NAME).asm
+	$(ASM) -o $@ $(FILE_NAME).asm
 
 $(ROM): $(OBJECT_FILE)
-	rgblink -n $(FILE_NAME).sym -m $(FILE_NAME).map -o $@ $<
-	rgbfix -v -p 255 $@
+	$(LINK) -n $(FILE_NAME).sym -m $(FILE_NAME).map -o $@ $<
+	$(FIX) -v -p 255 $@
 ifeq ($(COMPARE),1)
 	@$(SHA1) -c rom.sha1
 endif

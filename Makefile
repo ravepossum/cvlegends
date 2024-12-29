@@ -1,4 +1,15 @@
-IMAGE_DEPS = gfx/image_004_4190.2bpp gfx/image_004_4290.2bpp gfx/image_004_4570.2bpp gfx/image_004_47b0.2bpp gfx/image_004_4bb0.2bpp gfx/image_005_51dc.2bpp gfx/image_005_58dc.2bpp gfx/image_005_59dc.2bpp gfx/image_005_62dc.2bpp gfx/image_005_699c.2bpp gfx/image_005_6a9c.2bpp gfx/image_007_4080.2bpp gfx/image_007_4140.2bpp gfx/image_007_5140.2bpp gfx/image_00a_4eac.2bpp gfx/image_00a_5094.2bpp gfx/image_00a_5394.2bpp gfx/image_00b_4ed9.2bpp gfx/image_00b_53d9.2bpp
+FILE_NAME   := cvlegends
+ROM         := $(FILE_NAME).gb
+GFX_DIR     := gfx
+BUILD_DIR   := build
+OBJECT_FILE := $(BUILD_DIR)/$(FILE_NAME).o
+
+# compare by default for now
+COMPARE     ?= 1
+
+ifeq (compare,$(MAKECMDGOALS))
+  COMPARE := 1
+endif
 
 ifeq (,$(shell which sha1sum))
 SHA1 := shasum
@@ -6,9 +17,14 @@ else
 SHA1 := sha1sum
 endif
 
+IMAGE_DEPS  := 
+include graphics_rules.mk
+
 .PHONY: all clean compare
 
-all: cvlegends.gb
+all: $(ROM)
+
+compare: all
 
 %.2bpp: %.png
 	rgbgfx -o $@ $<
@@ -16,18 +32,21 @@ all: cvlegends.gb
 %.1bpp: %.png
 	rgbgfx -d 1 -o $@ $<
 
-cvlegends.o: cvlegends.asm bank_*.asm $(IMAGE_DEPS)
-	rgbasm -o cvlegends.o cvlegends.asm
+$(BUILD_DIR):
+	@mkdir $@
 
-cvlegends.gb: cvlegends.o
-	rgblink -n cvlegends.sym -m cvlegends.map -o $@ $<
+$(OBJECT_FILE): $(BUILD_DIR) $(FILE_NAME).asm bank_*.asm $(IMAGE_DEPS)
+	rgbasm -o $@ $(FILE_NAME).asm
+
+$(ROM): $(OBJECT_FILE)
+	rgblink -n $(FILE_NAME).sym -m $(FILE_NAME).map -o $@ $<
 	rgbfix -v -p 255 $@
+ifeq ($(COMPARE),1)
+	@$(SHA1) -c rom.sha1
+endif
 
 clean: tidy
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' \) -exec rm {} +
 
 tidy:	
-	rm -f cvlegends.o cvlegends.gb cvlegends.sym cvlegends.map
-
-compare: all
-	@$(SHA1) -c rom.sha1
+	rm -rf $(BUILD_DIR)/ $(ROM) $(FILE_NAME).sym $(FILE_NAME).map

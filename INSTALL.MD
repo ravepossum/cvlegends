@@ -116,4 +116,16 @@ To ensure the compiled ROM matches the original release:
 make compare
 ```
 
-This is the default when building for now.
+This is the default when building for now. To make modifications you can run:
+
+```bash
+make COMPARE=0
+```
+
+Or you can make the following change to the Makefile:
+
+```diff
+- COMPARE     ?= 1
++ COMPARE     ?= 0
+```
+

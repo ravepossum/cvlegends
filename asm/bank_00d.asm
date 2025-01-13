@@ -736,7 +736,7 @@ SECTION "ROM Bank $00d", ROMX
     add hl, bc
     rst $38
     ccf
-    ldh [$E0], a
+    ldh [$FFE0], a
     ld [de], a
     dec d
     db $10
@@ -965,15 +965,15 @@ jr_00D_6A3F:
 
 jr_00D_6A40:
     ld b, d
-    ldh [$08], a
+    ldh [$FF08], a
     ld b, d
-    ld [c], a
+    ldh [c], a
     dec sp
     nop
     jr nz, jr_00D_69F7
 
     inc bc
-    ld a, [c]
+    ldh a, [c]
     jr nz, jr_00D_6A3F
 
     jr nz, jr_00D_6A4F
@@ -1003,7 +1003,7 @@ jr_00D_6A4F:
     ccf
     nop
     cp $00
-    ldh [$08], a
+    ldh [$FF08], a
     ld [$18FF], sp
     jr c, @+$1A
 
@@ -1179,10 +1179,10 @@ jr_00D_6B1F:
     ld b, l
     add $C5
     cp $7D
-    ldh a, [$F0]
+    ldh a, [$FFF0]
     ld hl, sp-$21
     ld hl, sp-$10
-    ldh a, [$E0]
+    ldh a, [$FFE0]
     ldh [rSC], a
     ld b, e
     ret nz
@@ -1256,7 +1256,7 @@ jr_00D_6B6C:
     xor d
     ld d, a
     nop
-    ldh [$9D], a
+    ldh [$FF9D], a
     jr nz, jr_00D_6B56
 
     add hl, sp
@@ -1315,7 +1315,7 @@ jr_00D_6B6C:
     ld c, $00
     ld hl, sp+$0C
     ld a, a
-    ldh a, [$03]
+    ldh a, [$FF03]
     inc c
     ld c, $31
     ld c, a
@@ -1408,7 +1408,7 @@ jr_00D_6B6C:
     rrca
     rst $38
     rst $38
-    ldh a, [$F9]
+    ldh a, [$FFF9]
     ldh a, [rP1]
     ld b, [hl]
     add c
@@ -1453,13 +1453,13 @@ jr_00D_6C4F:
     ret nc
 
     or b
-    ldh a, [$60]
+    ldh a, [$FF60]
     and b
     ld h, b
 
 jr_00D_6C6A:
     and b
-    ldh [$F9], a
+    ldh [$FFF9], a
 
 jr_00D_6C6D:
     and b
@@ -1490,10 +1490,10 @@ jr_00D_6C78:
     db $DB
     ld h, b
     ld c, $21
-    ldh a, [$1F]
+    ldh a, [$FF1F]
     nop
     nop
-    ldh a, [$08]
+    ldh a, [$FF08]
     ldh a, [rNR34]
     ld b, b
     and l
@@ -1504,7 +1504,7 @@ jr_00D_6C78:
     inc h
     ld hl, $2072
     rst $38
-    ldh [$59], a
+    ldh [$FF59], a
     jr nz, jr_00D_6C4F
 
     ld hl, $6540
@@ -1622,14 +1622,14 @@ jr_00D_6C78:
     inc hl
     db $FC
     and e
-    ldh [$BF], a
+    ldh [$FFBF], a
     ld a, a
     pop af
     cp a
     rst $38
     rst $18
     ld a, a
-    ldh [$3F], a
+    ldh [$FF3F], a
     cp [hl]
     ld [hl+], a
     ld sp, hl
@@ -1670,14 +1670,14 @@ jr_00D_6C78:
 
 
     rst $38
-    ldh [$67], a
+    ldh [$FF67], a
     rst $28
-    ldh [$61], a
-    ldh [$60], a
+    ldh [$FF61], a
+    ldh [$FF60], a
     inc d
     ld b, b
     ld h, e
-    ldh [$60], a
+    ldh [$FF60], a
 
 jr_00D_6D68:
     rst $28
@@ -1696,7 +1696,7 @@ jr_00D_6D6D:
     db $10
     rst $28
     dec c
-    ld a, [c]
+    ldh a, [c]
 
 jr_00D_6D75:
     db $10
@@ -1729,14 +1729,14 @@ jr_00D_6D79:
     ret nz
 
     ld hl, $1F00
-    ldh [$7F], a
+    ldh [$FF7F], a
     nop
     ld a, [hl]
     ld a, a
     nop
     rlca
     ld hl, sp+$0F
-    ldh a, [$80]
+    ldh a, [$FF80]
     ld a, [hl]
     dec d
     jr nz, @+$01
@@ -1792,7 +1792,7 @@ jr_00D_6DD8:
     sbc [hl]
     ld h, b
     ld [$FD00], a
-    ld a, [c]
+    ldh a, [c]
     xor a
     ld b, b
     or h
@@ -1839,7 +1839,7 @@ jr_00D_6DFC:
     cp [hl]
     rst $38
     sbc a
-    ldh [$A8], a
+    ldh [$FFA8], a
     inc hl
     sbc $47
     db $EC
@@ -1985,7 +1985,7 @@ jr_00D_6EA3:
     rst $38
     pop af
     nop
-    ld [c], a
+    ldh [c], a
 
 jr_00D_6EAC:
     nop
@@ -2075,7 +2075,7 @@ jr_00D_6EB4:
     rst $38
     rst $18
     rst $18
-    ldh [$0E], a
+    ldh [$FF0E], a
     dec bc
     ld c, $0B
     ld e, $FF
@@ -2142,7 +2142,7 @@ jr_00D_6EB4:
 
     ld a, a
     inc bc
-    ldh [$30], a
+    ldh [$FF30], a
     rst $18
     add b
     inc b
@@ -2151,7 +2151,7 @@ jr_00D_6EB4:
     or b
     inc bc
     rrca
-    ldh a, [$3E]
+    ldh a, [$FF3E]
     db $D3
     ld bc, $000F
     add e
@@ -2174,7 +2174,7 @@ jr_00D_6F89:
     nop
     inc e
     nop
-    ldh [$9E], a
+    ldh [$FF9E], a
     ld [bc], a
     db $FD
     jr jr_00D_6F89
@@ -2374,7 +2374,7 @@ jr_00D_7021:
     ld hl, $20E3
     add b
     add b
-    ldh [$E0], a
+    ldh [$FFE0], a
     db $FC
     db $FC
     rst $28
@@ -2395,7 +2395,7 @@ jr_00D_7021:
     ld [$7020], sp
     ld d, b
     rst $38
-    ldh a, [$D0]
+    ldh a, [$FFD0]
     ret nc
 
     or b
@@ -2515,7 +2515,7 @@ jr_00D_70FC:
     ld b, b
     rst $18
     ld b, b
-    ldh [$60], a
+    ldh [$FF60], a
     db $FC
     ld a, h
     ld l, $00
@@ -2525,7 +2525,7 @@ jr_00D_70FC:
     cp $D9
     ld a, [$FED1]
     pop de
-    ldh a, [$F7]
+    ldh a, [$FFF7]
     rst $18
     ld hl, sp-$21
     call z, $8042
@@ -2546,7 +2546,7 @@ jr_00D_70FC:
     ld c, e
     scf
     ld [bc], a
-    ldh a, [$DE]
+    ldh a, [$FFDE]
     ld b, b
     jr nc, jr_00D_7157
 
@@ -2554,7 +2554,7 @@ jr_00D_70FC:
     ccf
     sbc c
     ld [hl+], a
-    ldh a, [$33]
+    ldh a, [$FF33]
     ld b, $D5
     ld b, a
 
@@ -2657,7 +2657,7 @@ jr_00D_71BA:
     ld a, a
     adc a
     rrca
-    ldh a, [$E1]
+    ldh a, [$FFE1]
     cp $BC
     add e
     jr nz, @-$7A
@@ -2692,13 +2692,13 @@ jr_00D_71BA:
 
     rrca
     inc bc
-    ldh a, [$60]
+    ldh a, [$FF60]
 
 jr_00D_71E7:
     dec h
     ld d, d
     ld h, d
-    ldh [$BF], a
+    ldh [$FFBF], a
     ld a, a
     ld a, h
     ld d, [hl]

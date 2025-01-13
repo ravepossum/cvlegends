@@ -135,7 +135,7 @@ jr_009_40B5:
     ld e, $0E
     ld [de], a
     xor a
-    ldh [$8A], a
+    ldh [$FF8A], a
     ld a, $08
     call Call_000_0629
     jp Jump_000_0E29
@@ -379,7 +379,7 @@ jr_009_42AF:
     ld e, $0E
     ld [de], a
     xor a
-    ldh [$8A], a
+    ldh [$FF8A], a
     ld a, $08
     call Call_000_0629
     jp Jump_000_0E29
@@ -2686,7 +2686,7 @@ jr_009_75EA:
     ld d, b
     ld [hl], b
     and b
-    ldh [$60], a
+    ldh [$FF60], a
     ld h, b
     jr nc, jr_009_7641
 
@@ -2699,7 +2699,7 @@ jr_009_75EA:
     db $E4
     sbc e
     sbc a
-    ldh [$91], a
+    ldh [$FF91], a
     xor $F1
     adc [hl]
     ld a, a
@@ -2719,11 +2719,11 @@ jr_009_75EA:
     db $DB
     xor $FA
     ld a, $FE
-    ldh a, [$F0]
+    ldh a, [$FFF0]
     ret nc
 
     or b
-    ldh a, [$90]
+    ldh a, [$FF90]
     add sp, $58
     add sp, -$28
     cp b
@@ -2863,7 +2863,7 @@ jr_009_76B6:
     rst $10
     ld hl, sp-$11
     ld hl, sp+$0F
-    ldh a, [$F7]
+    ldh a, [$FFF7]
     ld b, $F9
     ld [bc], a
     db $FD
@@ -2931,13 +2931,13 @@ jr_009_76EB:
     or b
     ret nc
 
-    ldh [$E0], a
-    ldh a, [$B0]
+    ldh [$FFE0], a
+    ldh a, [$FFB0]
     jr nc, jr_009_76EB
 
     or b
-    ldh a, [$60]
-    ldh [$5C], a
+    ldh a, [$FF60]
+    ldh [$FF5C], a
     db $FC
     rlca
     adc a
@@ -3039,7 +3039,7 @@ jr_009_7780:
     jr c, jr_009_7780
 
     rra
-    ld [c], a
+    ldh [c], a
     dec de
     rst $20
     ld bc, $00FF
@@ -3063,8 +3063,8 @@ jr_009_7780:
     nop
     rst $38
     ldh a, [rIF]
-    ldh a, [$E7]
-    ldh a, [$D1]
+    ldh a, [$FFE7]
+    ldh a, [$FFD1]
     nop
     rst $38
     add e
@@ -3268,7 +3268,7 @@ Call_009_7878:
     nop
     rst $38
     nop
-    ldh [$80], a
+    ldh [$FF80], a
     jr nz, jr_009_78D6
 
     or b
@@ -3337,8 +3337,8 @@ jr_009_78D6:
     db $10
     rst $30
     cpl
-    ldh [$3D], a
-    ld [c], a
+    ldh [$FF3D], a
+    ldh [c], a
     ld a, l
     jp RST_00
 

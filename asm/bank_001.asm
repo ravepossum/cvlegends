@@ -25,7 +25,7 @@ SECTION "ROM Bank $001", ROMX
     ld bc, $0060
     call $DED7
     ld a, $E1
-    ldh [$84], a
+    ldh [$FF84], a
     ld a, $E4
     call Call_000_061C
     ret
@@ -37,9 +37,9 @@ SECTION "ROM Bank $001", ROMX
     rra
     ret nc
 
-    ldh a, [$86]
+    ldh a, [$FF86]
     inc a
-    ldh [$86], a
+    ldh [$FF86], a
     cp $16
     scf
     ret z
@@ -142,9 +142,9 @@ jr_001_4067:
     rra
     ret nc
 
-    ldh a, [$8B]
+    ldh a, [$FF8B]
     inc a
-    ldh [$8B], a
+    ldh [$FF8B], a
     cp $90
     scf
     ret z
@@ -2656,7 +2656,7 @@ jr_001_55A2:
     ret c
 
     ld a, $27
-    ldh [$88], a
+    ldh [$FF88], a
     ld de, $C900
     ld b, $13
 
@@ -2805,13 +2805,13 @@ Jump_001_56C6:
     ret z
 
     ld a, $E4
-    ldh [$88], a
+    ldh [$FF88], a
     ld a, [$C550]
     bit 0, a
     jr z, jr_001_56DB
 
     ld a, $FF
-    ldh [$88], a
+    ldh [$FF88], a
 
 jr_001_56DB:
     ld hl, $C51D
@@ -2845,7 +2845,7 @@ jr_001_56F9:
     ld hl, $C757
     res 2, [hl]
     ld a, $E4
-    ldh [$88], a
+    ldh [$FF88], a
     ret
 
 
@@ -3680,7 +3680,7 @@ jr_001_5D4A:
 
     db $65, $5D, $10, $5E, $87, $5E, $F0, $5E, $5C, $5F
 
-    ldh [$5F], a
+    ldh [$FF5F], a
 
     db $75, $5D, $83, $5D, $A3, $5D, $B0, $5D, $D2, $5D, $EA, $5D, $F6, $5D, $09, $5E
     db $01, $01, $31, $CE, $01, $20, $01, $02, $03, $04, $15, $06, $0C, $FF, $03, $01

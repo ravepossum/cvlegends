@@ -848,7 +848,7 @@ jr_008_43D7:
     ld bc, $7EC0
     add sp, -$18
     add sp, -$18
-    ldh [$79], a
+    ldh [$FF79], a
     ld b, a
     ld [$0B00], sp
     call nz, Call_000_16D0
@@ -4103,7 +4103,7 @@ jr_008_4EAF:
     cp a
     nop
     rst $38
-    ldh [$E3], a
+    ldh [$FFE3], a
     rra
     or $0E
     call c, $BB43
@@ -4369,8 +4369,8 @@ jr_008_4F9E:
     db $FC
     ld a, h
     ld hl, sp-$08
-    ldh a, [$F0]
-    ldh [$E0], a
+    ldh a, [$FFF0]
+    ldh [$FFE0], a
     ret nz
 
     ret nz
@@ -4400,8 +4400,8 @@ jr_008_501C:
     jr jr_008_4F9E
 
     ld [$00C0], sp
-    ldh [$80], a
-    ldh a, [$C0]
+    ldh [$FF80], a
+    ldh a, [$FFC0]
     ld hl, sp-$20
     rst $38
     nop
@@ -4420,7 +4420,7 @@ jr_008_501C:
     rlca
     nop
     inc c
-    ldh a, [$EE]
+    ldh a, [$FFEE]
     ld hl, sp-$11
     db $FC
     ld l, a
@@ -4574,7 +4574,7 @@ jr_008_50BF:
 
     jr nc, jr_008_5103
 
-    ldh a, [$E8]
+    ldh a, [$FFE8]
     jr nc, jr_008_5107
 
     jr nz, jr_008_5109
@@ -4610,7 +4610,7 @@ jr_008_50BF:
     add e
 
 jr_008_5103:
-    ldh a, [$C1]
+    ldh a, [$FFC1]
     ld hl, sp-$20
 
 jr_008_5107:
@@ -4941,7 +4941,7 @@ jr_008_5231:
 
     ld bc, $80F0
     db $FC
-    ldh [$C7], a
+    ldh [$FFC7], a
     ld hl, sp+$01
     cp $FF
     nop
@@ -5073,7 +5073,7 @@ jr_008_5283:
     jr c, jr_008_52FA
 
 jr_008_52FA:
-    ldh [$03], a
+    ldh [$FF03], a
     add b
     rrca
     ld bc, $073F
@@ -5104,7 +5104,7 @@ jr_008_52FA:
     inc c
     ld a, b
     add hl, sp
-    ldh a, [$F7]
+    ldh a, [$FFF7]
     ret nz
 
     call c, Call_000_3000
@@ -5126,7 +5126,7 @@ jr_008_52FA:
     ld hl, sp+$00
     and e
     and e
-    ldh [$E0], a
+    ldh [$FFE0], a
     ld a, b
     ld a, b
     adc a
@@ -5134,7 +5134,7 @@ jr_008_52FA:
     db $E3
     db $E3
     ld a, $3E
-    ldh [$E0], a
+    ldh [$FFE0], a
     ld b, b
     ld b, c
     ld e, h
@@ -5571,7 +5571,7 @@ jr_008_54C2:
     nop
     ldh a, [rP1]
     rst $38
-    ldh [$EF], a
+    ldh [$FFEF], a
     cp $EF
     rst $38
     rrca
@@ -5696,7 +5696,7 @@ jr_008_54C2:
     nop
     rst $30
     nop
-    ldh [$1F], a
+    ldh [$FF1F], a
     rst $38
     rst $38
     rst $38
@@ -5735,7 +5735,7 @@ jr_008_54C2:
     ld a, a
     rst $30
     rst $38
-    ldh [$E8], a
+    ldh [$FFE8], a
     ld [$0808], sp
     ld [$0808], sp
     ldh a, [rP1]
@@ -5761,7 +5761,7 @@ jr_008_54C2:
     rst $38
     ld a, a
     cp $FE
-    ldh a, [$F0]
+    ldh a, [$FFF0]
     nop
     nop
     rst $38
@@ -5873,7 +5873,7 @@ jr_008_5627:
     ld a, b
     ld a, b
     ld hl, sp-$08
-    ldh a, [$F0]
+    ldh a, [$FFF0]
     di
     pop af
     rst $20
@@ -6177,7 +6177,7 @@ jr_008_5773:
     nop
     ld a, e
     nop
-    ldh [$C0], a
+    ldh [$FFC0], a
     ld [hl], b
     ld h, b
     ld sp, $F321
@@ -6270,7 +6270,7 @@ jr_008_57E5:
     ld [$C9ED], sp
     adc h
     ld [$30B8], sp
-    ldh a, [$E0]
+    ldh a, [$FFE0]
     nop
     nop
     ld bc, $EC00
@@ -6578,7 +6578,7 @@ jr_008_591F:
     nop
     rst $38
     nop
-    ld a, [c]
+    ldh a, [c]
     nop
     push bc
     nop
@@ -6783,8 +6783,8 @@ jr_008_59ED:
     nop
     pop hl
     pop hl
-    ld [c], a
-    ld [c], a
+    ldh [c], a
+    ldh [c], a
     ld [hl], e
     inc sp
     ld [hl-], a
@@ -6837,11 +6837,11 @@ jr_008_59ED:
     nop
     ld h, a
     nop
-    ldh a, [$C0]
-    ldh a, [$C0]
+    ldh a, [$FFC0]
+    ldh a, [$FFC0]
     rst $38
     rst $08
-    ldh a, [$C0]
+    ldh a, [$FFC0]
     cp $00
     and b
     nop
@@ -7234,7 +7234,7 @@ jr_008_5BEF:
     ret nz
 
     add b
-    ldh [$C0], a
+    ldh [$FFC0], a
     ld h, c
     ld b, c
     db $E3
@@ -7475,7 +7475,7 @@ jr_008_5CC9:
     nop
     nop
     rst $38
-    ldh [$E0], a
+    ldh [$FFE0], a
     jr c, jr_008_5D19
 
     inc d
@@ -7692,12 +7692,12 @@ jr_008_5DAE:
     nop
     rst $38
     nop
-    ldh a, [$F0]
-    ldh a, [$F0]
-    ldh a, [$F0]
-    ldh a, [$F0]
-    ldh a, [$F0]
-    ldh a, [$F0]
+    ldh a, [$FFF0]
+    ldh a, [$FFF0]
+    ldh a, [$FFF0]
+    ldh a, [$FFF0]
+    ldh a, [$FFF0]
+    ldh a, [$FFF0]
     rst $38
     nop
     nop

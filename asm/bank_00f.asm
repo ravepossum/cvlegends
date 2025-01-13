@@ -216,14 +216,14 @@ Call_00F_4141:
 
 jr_00F_417D:
     ld h, d
-    ld [c], a
+    ldh [c], a
     inc [hl]
     ld sp, $3231
     ld [hl-], a
     ld [hl-], a
     ld sp, $E132
     and c
-    ld [c], a
+    ldh [c], a
     inc [hl]
     ld sp, $3231
     ld [hl-], a
@@ -234,18 +234,18 @@ jr_00F_417D:
     ld [de], a
     pop hl
     add d
-    ld [c], a
+    ldh [c], a
     ld de, $82E1
-    ld [c], a
+    ldh [c], a
     ld de, $3134
     ld sp, $3132
     pop hl
     and c
-    ld [c], a
+    ldh [c], a
     ld [hl-], a
     and c
     ld sp, $A2E1
-    ld [c], a
+    ldh [c], a
     inc [hl]
     ld sp, $3231
     ld [hl-], a
@@ -276,7 +276,7 @@ jr_00F_417D:
     pop hl
     add c
     add c
-    ld [c], a
+    ldh [c], a
     inc d
     ld [de], a
     ld [de], a
@@ -290,7 +290,7 @@ jr_00F_417D:
     add c
     add d
     add d
-    ld [c], a
+    ldh [c], a
     ld h, d
     ld h, d
     ld h, d
@@ -333,18 +333,18 @@ jr_00F_417D:
     add c
     and c
     or c
-    ld [c], a
+    ldh [c], a
     ld sp, $FFFE
     cp $E0
     ld b, $84
     add c
-    ld [c], a
+    ldh [c], a
     ld sp, $6151
     and c
     db $E3
     ld sp, $6151
     and c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld h, c
     add c
@@ -354,7 +354,7 @@ jr_00F_417D:
     ld h, c
     add c
     or c
-    ld [c], a
+    ldh [c], a
     ld sp, $6151
     and c
     db $E3
@@ -464,12 +464,12 @@ Jump_00F_42C2:
     ld de, $81E1
     and c
     or c
-    ld [c], a
+    ldh [c], a
     ld sp, $A181
     or c
     db $E3
     ld sp, $61E1
-    ld [c], a
+    ldh [c], a
     ld sp, $8161
     and c
     or c
@@ -477,7 +477,7 @@ Jump_00F_42C2:
     ld sp, $E181
     ld b, c
     or c
-    ld [c], a
+    ldh [c], a
     ld b, c
     add c
     and c
@@ -952,7 +952,7 @@ jr_00F_4B2A:
     ld de, $E0FE
     ld b, $88
     add d
-    ld [c], a
+    ldh [c], a
     ld [bc], a
     ld h, d
     add d
@@ -969,7 +969,7 @@ jr_00F_4B49:
     db $E3
     jr z, jr_00F_4B51
 
-    ld [c], a
+    ldh [c], a
     add d
 
 jr_00F_4B51:
@@ -983,7 +983,7 @@ jr_00F_4B51:
     ld de, $B1E2
     db $E3
     ld de, $1121
-    ld [c], a
+    ldh [c], a
     or c
     add c
     ld [bc], a
@@ -993,7 +993,7 @@ jr_00F_4B51:
     db $E3
     jr jr_00F_4B6B
 
-    ld [c], a
+    ldh [c], a
     ld h, d
 
 jr_00F_4B6B:
@@ -1002,7 +1002,7 @@ jr_00F_4B6B:
     db $E3
     jr z, jr_00F_4B72
 
-    ld [c], a
+    ldh [c], a
     add d
 
 jr_00F_4B72:
@@ -1019,7 +1019,7 @@ jr_00F_4B72:
     sub d
     ld h, d
     ld [de], a
-    ld [c], a
+    ldh [c], a
     sub d
     ld h, e
     add e
@@ -1029,7 +1029,7 @@ jr_00F_4B72:
     add h
     ld d, h
     inc b
-    ld [c], a
+    ldh [c], a
     ld de, $8151
     or c
     db $E3
@@ -1054,7 +1054,7 @@ jr_00F_4B72:
     add d
     db $E3
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     ld [hl], c
     ld bc, $7271
@@ -1066,7 +1066,7 @@ jr_00F_4B72:
     ld [hl], d
     db $E3
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     ld [hl], c
     ld [hl], c
@@ -1092,7 +1092,7 @@ jr_00F_4B72:
     add d
     ld bc, $6343
     inc de
-    ld [c], a
+    ldh [c], a
     sub h
     add d
     ld h, d
@@ -1105,7 +1105,7 @@ jr_00F_4B72:
     ld h, d
     db $E3
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     ld [hl], c
     ld [hl], c
@@ -1119,7 +1119,7 @@ jr_00F_4B72:
     ld [hl], d
     db $E3
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     ld [hl], c
     ld [hl], c
@@ -1134,7 +1134,7 @@ jr_00F_4B72:
     ld [hl], c
     db $E3
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     ld [hl], c
     ld [hl], c
@@ -1148,7 +1148,7 @@ jr_00F_4B72:
     ld [hl], d
     db $E3
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     ld [hl], c
     ld [hl], c
@@ -1693,32 +1693,32 @@ Jump_00F_52E4:
     ld [hl], c
     add c
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
     add c
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
     pop bc
     add c
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld de, $A151
@@ -1729,7 +1729,7 @@ Jump_00F_52E4:
     ld de, $51A1
     ld [de], a
     ld d, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld hl, $8151
@@ -1750,7 +1750,7 @@ Jump_00F_52E4:
     ld d, c
     ld de, $71C1
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
@@ -1758,7 +1758,7 @@ Jump_00F_52E4:
     ld d, c
     ld de, $71C1
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld de, $81E3
@@ -1766,11 +1766,11 @@ Jump_00F_52E4:
     ld de, $C4E2
     db $E3
     ld bc, $2111
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld de, $4121
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld hl, $5141
@@ -1986,17 +1986,17 @@ Jump_00F_52E4:
 
     ld b, [hl]
     add [hl]
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld hl, $A151
     db $E4
     ld hl, $A1E3
-    ld [c], a
+    ldh [c], a
     ld sp, $A171
     db $E3
     ld sp, $3171
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld [hl], c
     pop bc
@@ -2006,7 +2006,7 @@ Jump_00F_52E4:
     ld b, c
     pop hl
     sub c
-    ld [c], a
+    ldh [c], a
     ld de, $41E2
     sub c
     db $E3
@@ -2021,31 +2021,31 @@ Jump_00F_52E4:
     ld hl, $91E2
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld hl, $91E2
@@ -2055,53 +2055,53 @@ Jump_00F_52E4:
     ld hl, $91E2
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld hl, $91E2
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld hl, $91E2
@@ -2111,69 +2111,69 @@ Jump_00F_52E4:
     ld hl, $91E2
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld hl, $A1E2
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     sub c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     sub c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
@@ -2221,19 +2221,19 @@ Jump_00F_52E4:
     sub c
     ld d, c
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     pop bc
@@ -2251,35 +2251,35 @@ Jump_00F_52E4:
     ld d, c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
@@ -2344,7 +2344,7 @@ Jump_00F_52E4:
     ld sp, $71E4
     db $E3
     ld sp, $91E4
-    ld [c], a
+    ldh [c], a
     sub c
     sub c
     db $E3
@@ -2370,25 +2370,25 @@ Jump_00F_52E4:
     sub c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     sub c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E4
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E4
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E4
     ld hl, $91E2
     db $E3
     sub c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
@@ -2396,31 +2396,31 @@ Jump_00F_52E4:
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
-    pop bc
-    db $E3
-    ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
+    pop bc
+    db $E3
+    ld [hl], c
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
@@ -2442,49 +2442,49 @@ Jump_00F_52E4:
     pop bc
     db $E4
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     sub c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E4
     ld d, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E4
     ld b, c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E4
     ld hl, $91E2
     db $E3
     sub c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld d, c
@@ -2492,31 +2492,31 @@ Jump_00F_52E4:
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
-    pop bc
-    db $E3
-    ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
+    pop bc
+    db $E3
+    ld [hl], c
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
@@ -2538,23 +2538,23 @@ Jump_00F_52E4:
     pop bc
     db $E4
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E4
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     sub c
@@ -2588,7 +2588,7 @@ Jump_00F_52E4:
     ld d, d
     sub [hl]
     ld [bc], a
-    ld [c], a
+    ldh [c], a
     sub d
     jp nz, Jump_000_22E3
 
@@ -2624,7 +2624,7 @@ Jump_00F_52E4:
     call nz, $92A2
     ld [hl+], a
     ld [hl+], a
-    ld [c], a
+    ldh [c], a
     jp nz, Jump_000_22E3
 
     ld b, d
@@ -2636,7 +2636,7 @@ Jump_00F_52E4:
     ld d, d
     ld b, d
     ld [hl+], a
-    ld [c], a
+    ldh [c], a
     jp nz, Jump_000_22E3
 
     sub d
@@ -2662,7 +2662,7 @@ Jump_00F_52E4:
     ld [hl], d
     ld d, d
     halt
-    ld [c], a
+    ldh [c], a
     jp nz, $C1C1
 
     db $E3
@@ -3236,13 +3236,13 @@ Jump_00F_52E4:
     db $E3
     or h
     and c
-    ld [c], a
+    ldh [c], a
     and c
     ld h, c
     db $E3
     ld sp, $3138
     ld sp, $4132
-    ld [c], a
+    ldh [c], a
     add c
     or c
     db $E3
@@ -3353,7 +3353,7 @@ Jump_00F_62B2:
     ld b, e
     add e
     ld b, d
-    ld [c], a
+    ldh [c], a
     ld sp, $6151
     and c
     db $E3
@@ -3380,12 +3380,12 @@ Jump_00F_62B2:
     ld sp, $E311
     add c
     ld bc, $A1E1
-    ld [c], a
+    ldh [c], a
     ld sp, $6151
     and c
     ld h, c
     ld sp, $31E3
-    ld [c], a
+    ldh [c], a
     or c
     ld h, c
     ld sp, $51E3
@@ -3410,7 +3410,7 @@ Jump_00F_62B2:
     db $E4
     ld sp, $6151
     and c
-    ld [c], a
+    ldh [c], a
     add c
     ld de, $8141
     db $E3
@@ -3419,7 +3419,7 @@ Jump_00F_62B2:
     ld de, $81B1
     ld b, c
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     add c
     ld b, c
     ld de, $5131
@@ -3434,7 +3434,7 @@ Jump_00F_62B2:
     ld h, c
     ld d, c
     ld sp, $A1E1
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld h, c
     add c
@@ -3447,9 +3447,9 @@ Jump_00F_62B2:
     ld de, $4131
     ld sp, $E311
     add c
-    ld [c], a
+    ldh [c], a
     ld de, $81E1
-    ld [c], a
+    ldh [c], a
     ld de, $4131
     ld de, $4131
     add c
@@ -3459,7 +3459,7 @@ Jump_00F_62B2:
     ld b, c
     ld sp, $E111
     add c
-    ld [c], a
+    ldh [c], a
     ld sp, $A181
     push hl
     inc sp
@@ -3472,7 +3472,7 @@ Jump_00F_62B2:
     ld sp, $11E4
     db $E3
     ld sp, $81E1
-    ld [c], a
+    ldh [c], a
     ld sp, $A181
     push hl
     inc sp
@@ -3486,7 +3486,7 @@ Jump_00F_62B2:
     db $E3
     ld sp, $11E1
     add c
-    ld [c], a
+    ldh [c], a
     ld sp, $8141
     db $E3
     ld sp, $8141
@@ -3497,7 +3497,7 @@ Jump_00F_62B2:
     ld de, $B1E2
     pop hl
     sub c
-    ld [c], a
+    ldh [c], a
     ld b, c
     sub c
     or c
@@ -3516,7 +3516,7 @@ Jump_00F_62B2:
     ld b, c
     pop hl
     add c
-    ld [c], a
+    ldh [c], a
     ld de, $B161
     db $E3
     ld b, c
@@ -3531,11 +3531,11 @@ Jump_00F_62B2:
     pop hl
     ld h, c
     pop bc
-    ld [c], a
+    ldh [c], a
     ld sp, $E181
     add c
     pop bc
-    ld [c], a
+    ldh [c], a
     ld sp, $8181
     pop bc
     db $E3
@@ -4033,7 +4033,7 @@ Jump_00F_62B2:
     db $28, $E1, $A8, $E2, $18, $E1, $B8, $88, $E7, $06, $A2, $A2, $E7, $02, $E2, $38
     db $28, $E1, $A8
 
-    ld [c], a
+    ldh [c], a
     jr @-$1D
 
     cp b
@@ -4041,127 +4041,127 @@ Jump_00F_62B2:
     rst $20
     ld b, $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     ld [hl], c
     or c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     ld [hl], c
     or c
     db $E3
     ld [hl], c
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld b, c
     db $E3
     ld [hl], c
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     and d
     and d
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     ld hl, $11E3
@@ -4177,119 +4177,119 @@ Jump_00F_62B2:
     ld hl, $B1E2
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     sub c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     ld b, c
-    ld [c], a
+    ldh [c], a
     and c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
     and c
-    ld [c], a
+    ldh [c], a
     ld de, $A161
     db $E3
     ld de, $7161
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
     and c
-    ld [c], a
+    ldh [c], a
     ld de, $A161
     db $E3
     ld de, $7161
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, c
     and c
-    ld [c], a
+    ldh [c], a
     ld de, $A161
     db $E3
     ld de, $7161
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     ld [hl], c
     pop hl
     ld h, c
     and c
-    ld [c], a
+    ldh [c], a
     ld de, $E361
     ld h, c
     ld [hl], c
@@ -4327,7 +4327,7 @@ Jump_00F_62B2:
     ld b, c
     db $E3
     or c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld b, c
@@ -4456,7 +4456,7 @@ Jump_00F_62B2:
     ld [hl], c
     pop hl
     ld h, c
-    ld [c], a
+    ldh [c], a
     ld h, c
     ld d, c
     ld h, c
@@ -4719,13 +4719,13 @@ jr_00F_6C01:
 
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld hl, $91E2
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld h, c
@@ -4737,15 +4737,15 @@ jr_00F_6C01:
     ld hl, $91E2
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     sub c
@@ -4755,7 +4755,7 @@ jr_00F_6C01:
     sub c
     ld b, c
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     sub c
     db $E3
     ld hl, $91E2
@@ -4768,12 +4768,12 @@ jr_00F_6C01:
     db $E3
     ld c, b
     ld l, b
-    ld [c], a
+    ldh [c], a
     ret z
 
     db $E3
     ld c, b
-    ld [c], a
+    ldh [c], a
     sbc b
     ret z
 
@@ -4782,53 +4782,53 @@ jr_00F_6C01:
     rst $20
     ld b, $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld hl, $91E2
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld hl, $91E2
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld hl, $91E2
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     or c
     db $E3
     ld hl, $91E2
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld b, c
     ld h, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld h, c
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     add c
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
     db $E3
     add c
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
@@ -4838,13 +4838,13 @@ jr_00F_6C01:
     ld [hl], c
     ld sp, $8171
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
     add c
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
@@ -4905,7 +4905,7 @@ jr_00F_6C01:
     ld h, h
     jr c, @+$46
 
-    ld [c], a
+    ldh [c], a
     add h
     rst $20
     ld [bc], a
@@ -4925,22 +4925,22 @@ jr_00F_6D8A:
     adc b
     sbc b
     ld l, b
-    ld [c], a
+    ldh [c], a
     ld l, b
     db $E3
     ld l, b
     ld e, b
-    ld [c], a
+    ldh [c], a
     ld e, b
     db $E3
     ld e, b
     ld e, b
-    ld [c], a
+    ldh [c], a
     ld e, b
     db $E3
     ld e, b
     adc b
-    ld [c], a
+    ldh [c], a
     jr z, jr_00F_6D8A
 
     adc b
@@ -4961,35 +4961,35 @@ jr_00F_6D8A:
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     ld b, c
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     pop hl
     pop bc
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     pop hl
     pop bc
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     pop hl
     pop bc
@@ -4997,106 +4997,106 @@ jr_00F_6D8A:
     pop hl
     or c
     or c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or c
     or c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or c
     or c
-    ld [c], a
+    ldh [c], a
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
-    ld b, c
-    ld b, c
-    db $E3
-    ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
-    ld b, c
-    db $E3
-    ld b, c
-    ld [c], a
-    ld b, c
-    db $E3
-    ld b, c
-    ld [c], a
-    ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
-    ld [c], a
-    ld b, c
-    ld b, c
-    db $E3
-    ld b, c
-    ld [c], a
-    ld b, c
-    db $E3
-    ld b, c
-    ld [c], a
-    ld b, c
-    db $E3
-    ld b, c
-    ld [c], a
-    ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
+    ld b, c
+    db $E3
+    ld b, c
+    ldh [c], a
+    ld b, c
+    ldh [c], a
+    ld b, c
+    ld b, c
+    db $E3
+    ld b, c
+    ldh [c], a
+    ld b, c
+    db $E3
+    ld b, c
+    ldh [c], a
+    ld b, c
+    db $E3
+    ld b, c
+    ldh [c], a
+    ld b, c
+    ldh [c], a
+    ld b, c
+    ld b, c
+    db $E3
+    ld b, c
+    ldh [c], a
+    ld b, c
+    db $E3
+    ld b, c
+    ldh [c], a
     ld b, c
 
 jr_00F_6EB8:
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
-    ld b, c
-    db $E3
-    ld b, c
-    ld [c], a
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     db $E3
     ld b, c
-    ld [c], a
+    ldh [c], a
+    ld b, c
+    db $E3
+    ld b, c
+    ldh [c], a
     ld b, c
     rst $20
     ld [bc], a
@@ -5106,12 +5106,12 @@ jr_00F_6EB8:
 
     ld b, $11
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $11E2
     db $E3
     ld de, $11E2
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $E311
     ld de, $11E2
     db $E3
@@ -5119,76 +5119,76 @@ jr_00F_6EB8:
     db $E3
     ld de, $11E2
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $E311
     ld de, $11E2
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $E311
     ld de, $A1E2
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     and c
-    ld [c], a
-    and c
-    and c
-    db $E3
-    and c
-    ld [c], a
+    ldh [c], a
     and c
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
+    and c
+    and c
+    db $E3
+    and c
+    ldh [c], a
     and c
     db $E3
     and c
     and c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     and c
     ld de, $E311
     ld de, $11E2
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $1111
     db $E3
     ld de, $11E2
@@ -5198,33 +5198,33 @@ jr_00F_6EB8:
     ld sp, $51E2
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     ld hl, $21E3
-    ld [c], a
+    ldh [c], a
     ld hl, $E341
     ld b, c
-    ld [c], a
+    ldh [c], a
     ld b, c
     pop hl
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     pop hl
     pop bc
-    ld [c], a
+    ldh [c], a
     ld hl, $21E3
-    ld [c], a
+    ldh [c], a
     ld b, c
     db $E3
     ld b, c
     rst $20
     ld [bc], a
-    ld [c], a
+    ldh [c], a
     ld c, b
     ld e, b
     ld a, b
@@ -5238,80 +5238,80 @@ jr_00F_6EB8:
     ld d, c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld d, c
     ld d, c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld d, c
     ld d, c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld d, c
     ld d, c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld d, c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld d, c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld sp, $E331
     ld sp, $31E2
     ld sp, $31E3
-    ld [c], a
+    ldh [c], a
     ld sp, $E331
     ld sp, $31E2
     ld sp, $31E3
-    ld [c], a
+    ldh [c], a
     ld sp, $31E3
-    ld [c], a
+    ldh [c], a
     ld sp, $31E3
-    ld [c], a
+    ldh [c], a
     ld de, $E311
     ld de, $11E2
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $E311
     ld de, $11E2
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $11E3
-    ld [c], a
+    ldh [c], a
     ld de, $11E3
     pop hl
     or c
     or c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or c
     or c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or c
     or c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or c
     or c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or c
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or c
-    ld [c], a
+    ldh [c], a
     or c
     rst $20
     ld [bc], a
@@ -5322,36 +5322,36 @@ jr_00F_6EB8:
     jr @+$3A
 
     ld e, b
-    ld [c], a
+    ldh [c], a
     ld l, b
     db $E3
     ld l, b
-    ld [c], a
+    ldh [c], a
     ld l, b
     ld c, b
     db $E3
     ld c, b
-    ld [c], a
+    ldh [c], a
     ld c, b
     xor b
     db $E3
     xor b
-    ld [c], a
+    ldh [c], a
     xor b
     sbc b
     db $E3
     sbc b
-    ld [c], a
+    ldh [c], a
     sbc b
     adc b
     db $E3
     adc b
-    ld [c], a
+    ldh [c], a
     adc b
     ld e, b
     db $E3
     ld e, b
-    ld [c], a
+    ldh [c], a
     ld e, b
     rst $20
     ld b, $FE
@@ -5483,7 +5483,7 @@ jr_00F_7131:
     ld sp, $3131
     ld sp, $EEFE
     db $10
-    ldh [$09], a
+    ldh [$FF09], a
     add a
     add h
     db $E3
@@ -5779,7 +5779,7 @@ jr_00F_7259:
 
     add hl, bc
     ld e, b
-    ld [c], a
+    ldh [c], a
     rst $20
 
 jr_00F_7276:
@@ -5816,12 +5816,12 @@ jr_00F_7276:
     ld d, a
     nop
     ld b, $FE
-    ldh [$09], a
+    ldh [$FF09], a
     ld b, [hl]
     add l
 
 jr_00F_7299:
-    ld [c], a
+    ldh [c], a
     ld d, h
     call nz, $03E7
 
@@ -5830,7 +5830,7 @@ jr_00F_729E:
     jr jr_00F_72D9
 
     ld e, b
-    ld [c], a
+    ldh [c], a
     ret z
 
     db $E3
@@ -5840,7 +5840,7 @@ jr_00F_729E:
     add hl, bc
     ld h, h
     ld b, h
-    ld [c], a
+    ldh [c], a
 
 jr_00F_72AC:
     ld d, h
@@ -5856,7 +5856,7 @@ jr_00F_72AC:
     inc d
     cp $E7
     inc bc
-    ld [c], a
+    ldh [c], a
     ret z
 
     db $E3
@@ -5867,7 +5867,7 @@ jr_00F_72AC:
     db $E3
     call nz, $E7A4
     inc bc
-    ld [c], a
+    ldh [c], a
     ret z
 
     db $E3
@@ -5906,7 +5906,7 @@ jr_00F_72DF:
     ld h, h
     rst $20
     inc bc
-    ld [c], a
+    ldh [c], a
 
 jr_00F_72EB:
     ret z
@@ -5918,7 +5918,7 @@ jr_00F_72EB:
     add hl, bc
     call nz, $E7A4
     inc bc
-    ld [c], a
+    ldh [c], a
     ret z
 
 jr_00F_72F7:
@@ -5929,7 +5929,7 @@ jr_00F_72F7:
     add hl, bc
     and h
     add h
-    ld [c], a
+    ldh [c], a
     and c
     ld h, c
     ld h, c
@@ -5943,7 +5943,7 @@ jr_00F_72F7:
     ld h, c
     ld h, c
     and c
-    ld [c], a
+    ldh [c], a
     ld d, c
     ld h, c
     and c
@@ -5951,7 +5951,7 @@ jr_00F_72F7:
 
 jr_00F_7317:
     ld de, $1151
-    ld [c], a
+    ldh [c], a
     and c
     ld h, c
     and c
@@ -5993,7 +5993,7 @@ jr_00F_7338:
     ld e, b
     ld e, b
     ld l, b
-    ld [c], a
+    ldh [c], a
     xor b
     db $E3
     jr @-$1C
@@ -6046,7 +6046,7 @@ jr_00F_7352:
     ld d, c
     db $E3
     ld de, $51E4
-    ld [c], a
+    ldh [c], a
     and c
     sub c
     db $E3
@@ -6055,7 +6055,7 @@ jr_00F_737A:
     or h
 
 jr_00F_737B:
-    ld [c], a
+    ldh [c], a
     or h
     rst $20
     inc bc
@@ -6091,7 +6091,7 @@ jr_00F_737B:
     add hl, bc
     db $E3
     or h
-    ld [c], a
+    ldh [c], a
     or h
 
 jr_00F_73A1:
@@ -6174,7 +6174,7 @@ jr_00F_73DA:
     jr c, jr_00F_73C0
 
     xor b
-    ld [c], a
+    ldh [c], a
     ld l, b
     xor b
     db $E3
@@ -6197,7 +6197,7 @@ jr_00F_73DA:
     pop bc
     db $E4
     ld de, $6131
-    ld [c], a
+    ldh [c], a
 
 jr_00F_73FD:
     and c
@@ -6207,51 +6207,51 @@ jr_00F_73FE:
     ld d, c
     ld sp, $1151
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
     ld sp, $1151
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
 
 jr_00F_742B:
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld d, c
     db $E3
 
@@ -6269,13 +6269,13 @@ jr_00F_7433:
     ld h, c
 
 jr_00F_7444:
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld h, c
     ld de, $3161
     ld h, c
-    ld [c], a
+    ldh [c], a
 
 jr_00F_744D:
     ld h, c
@@ -6285,7 +6285,7 @@ jr_00F_744D:
     ld sp, $81E2
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld h, c
     db $E3
     ld sp, $31E2
@@ -6296,33 +6296,33 @@ jr_00F_744D:
     db $E3
     ld h, c
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld sp, $C1E2
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld h, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     and c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
     add c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
     ld h, c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     add c
     add c
     pop bc
@@ -6336,35 +6336,35 @@ jr_00F_744D:
     ld sp, $81E2
     db $E3
     ld h, c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     add c
     db $E3
     ld sp, $81E2
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
     ld sp, $1151
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld sp, $51E3
-    ld [c], a
+    ldh [c], a
     and c
     db $E3
     ld d, c
-    ld [c], a
+    ldh [c], a
     pop bc
     db $E3
     ld d, c
@@ -6389,14 +6389,14 @@ jr_00F_744D:
     pop hl
     and d
     and d
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     and d
     and c
     ld [bc], a
     and d
-    ld [c], a
+    ldh [c], a
     and d
     pop hl
     and c
@@ -6408,21 +6408,21 @@ jr_00F_744D:
     jp nz, $02C1
 
     ld d, d
-    ld [c], a
+    ldh [c], a
     ld d, d
     pop hl
     ld d, c
     ld d, c
     and d
     and d
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     and d
     and c
     ld [bc], a
     and d
-    ld [c], a
+    ldh [c], a
     and d
     pop hl
     and c
@@ -6434,49 +6434,49 @@ jr_00F_744D:
     jp nz, $02C1
 
     ld d, d
-    ld [c], a
+    ldh [c], a
     ld d, d
     pop hl
     ld d, c
     ld d, c
     cp $A2
     and d
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     and d
     and c
     ld [bc], a
     and d
-    ld [c], a
+    ldh [c], a
     and d
     pop hl
     and c
     and c
     add d
     add d
-    ld [c], a
+    ldh [c], a
     add c
     pop hl
     add d
     add c
     ld [bc], a
     add d
-    ld [c], a
+    ldh [c], a
     add d
     pop hl
     add c
     add c
     ld h, d
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, d
     ld h, c
     ld [bc], a
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, d
     pop hl
     ld h, c
@@ -6488,97 +6488,97 @@ jr_00F_744D:
     jp nz, $02C1
 
     ld d, d
-    ld [c], a
+    ldh [c], a
     ld d, d
     pop hl
     ld d, c
     ld d, c
     and d
     and d
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     and d
     and c
     ld [bc], a
     and d
-    ld [c], a
+    ldh [c], a
     and d
     pop hl
     and c
     and c
     add d
     add d
-    ld [c], a
+    ldh [c], a
     add c
     pop hl
     add d
     add c
     ld [bc], a
     add d
-    ld [c], a
+    ldh [c], a
     add d
     pop hl
     add c
     add c
     ld h, d
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, d
     ld h, c
     ld [bc], a
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, d
     pop hl
     ld h, c
     ld h, c
     ld h, d
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, d
     ld h, c
     ld [bc], a
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, d
     pop hl
     ld d, c
     ld d, c
     ld [hl-], a
     ld [hl-], a
-    ld [c], a
+    ldh [c], a
     ld sp, $32E1
     ld sp, $3202
-    ld [c], a
+    ldh [c], a
     ld [hl-], a
     pop hl
     ld sp, $3231
     ld [hl-], a
-    ld [c], a
+    ldh [c], a
     ld sp, $32E1
     ld sp, $3202
-    ld [c], a
+    ldh [c], a
     ld [hl-], a
     pop hl
     ld sp, $1231
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld de, $12E1
     ld de, $1202
-    ld [c], a
+    ldh [c], a
     ld [de], a
     pop hl
     ld de, $3211
     ld [hl-], a
-    ld [c], a
+    ldh [c], a
     ld sp, $32E1
     ld sp, $3202
-    ld [c], a
+    ldh [c], a
     ld [hl-], a
     pop hl
     ld sp, $C231
@@ -6593,12 +6593,12 @@ jr_00F_744D:
     pop bc
     pop bc
     ld e, b
-    ld [c], a
+    ldh [c], a
     ld d, c
     ld sp, $3111
     pop hl
     pop bc
-    ld [c], a
+    ldh [c], a
     ld de, $C1E1
     ld d, c
     and d
@@ -6619,98 +6619,98 @@ jr_00F_744D:
     sub d
     add d
     add d
-    ld [c], a
+    ldh [c], a
     add c
     pop hl
     add d
     add c
     ld [bc], a
     add d
-    ld [c], a
+    ldh [c], a
     add d
     pop hl
     add c
     add c
     ld [de], a
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld de, $12E1
     ld de, $1202
-    ld [c], a
+    ldh [c], a
     ld [de], a
     pop hl
     ld de, $6211
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, c
     pop hl
     ld h, d
     ld h, c
     ld [bc], a
     ld h, d
-    ld [c], a
+    ldh [c], a
     ld h, d
     pop hl
     ld h, c
     ld h, c
     ld b, d
     ld b, d
-    ld [c], a
+    ldh [c], a
     ld b, c
     pop hl
     ld b, d
     ld b, c
     ld [bc], a
     ld [hl-], a
-    ld [c], a
+    ldh [c], a
     ld [hl-], a
     pop hl
     ld de, $8211
     add d
-    ld [c], a
+    ldh [c], a
     add c
     pop hl
     add d
     add c
     ld [bc], a
     add d
-    ld [c], a
+    ldh [c], a
     add d
     pop hl
     add c
     add c
     ld [de], a
     ld [de], a
-    ld [c], a
+    ldh [c], a
     ld de, $12E1
     ld de, $5202
-    ld [c], a
+    ldh [c], a
     ld d, d
     pop hl
     ld d, c
     ld d, c
     ld b, d
     ld b, d
-    ld [c], a
+    ldh [c], a
     ld b, c
     pop hl
     ld b, d
     ld b, c
     ld [bc], a
     ld b, d
-    ld [c], a
+    ldh [c], a
     ld b, d
     pop hl
     ld b, c
     ld b, c
     ld [hl-], a
     ld [hl-], a
-    ld [c], a
+    ldh [c], a
     ld sp, $32E1
     ld sp, $3101
     ld [hl], c
     and c
-    ld [c], a
+    ldh [c], a
     ld b, c
     ld sp, $E111
     and c
@@ -6727,24 +6727,24 @@ jr_00F_744D:
     pop bc
     or d
     or d
-    ld [c], a
+    ldh [c], a
     or c
     pop hl
     or d
     or c
     ld [bc], a
     or d
-    ld [c], a
+    ldh [c], a
     or d
     pop hl
     and c
     add c
     ld [hl-], a
     ld [hl-], a
-    ld [c], a
+    ldh [c], a
     ld sp, $32E1
     ld sp, $1202
-    ld [c], a
+    ldh [c], a
     ld [de], a
 
 jr_00F_767B:
@@ -6764,7 +6764,7 @@ jr_00F_767B:
 
     inc bc
     xor b
-    ld [c], a
+    ldh [c], a
     ld e, b
 
 Jump_00F_7692:
@@ -6775,7 +6775,7 @@ Jump_00F_7692:
     ld d, d
     ld d, d
     ld d, d
-    ld [c], a
+    ldh [c], a
     ld d, d
     ld d, d
     ld d, d
@@ -6784,7 +6784,7 @@ Jump_00F_7692:
     and c
     and c
     and d
-    ld [c], a
+    ldh [c], a
     and d
     add c
     and c
@@ -6797,7 +6797,7 @@ Jump_00F_7692:
     and c
     and c
     and d
-    ld [c], a
+    ldh [c], a
     and d
     add c
     and c
@@ -6808,23 +6808,23 @@ Jump_00F_7692:
     ld d, c
     ld sp, $E111
     ld sp, $3231
-    ld [c], a
+    ldh [c], a
     ld [hl-], a
     ld de, $0131
     pop hl
     and c
-    ld [c], a
+    ldh [c], a
     ld de, $6131
     ld sp, $E111
     and c
     pop hl
     ld sp, $3231
-    ld [c], a
+    ldh [c], a
     ld [hl-], a
     ld de, $0131
     pop hl
     and c
-    ld [c], a
+    ldh [c], a
     ld de, $6131
     ld sp, $E111
     and c
@@ -6832,7 +6832,7 @@ Jump_00F_7692:
     add c
     add c
     add d
-    ld [c], a
+    ldh [c], a
     add d
     ld h, c
     add c
@@ -6845,7 +6845,7 @@ jr_00F_76F8:
     add c
     add c
     add d
-    ld [c], a
+    ldh [c], a
     add d
     ld h, c
     add c
@@ -6980,19 +6980,19 @@ jr_00F_77CE:
     add c
     ld de, $E381
     ld d, c
-    ld [c], a
+    ldh [c], a
     add c
     ld sp, $E3A1
     add c
-    ld [c], a
+    ldh [c], a
     and c
     ld sp, $E3A1
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     and c
     ld sp, $E3A1
     ld d, c
-    ld [c], a
+    ldh [c], a
     and c
     ld sp, $E3A1
     ld sp, $A1E2
@@ -7001,19 +7001,19 @@ jr_00F_77CE:
     ld d, c
     ld [hl], c
     add c
-    ld [c], a
+    ldh [c], a
     ld sp, $31E3
     ld d, c
     ld [hl], c
-    ld [c], a
+    ldh [c], a
     ld de, $11E3
     ld sp, $E151
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     ld de, $E131
     and c
-    ld [c], a
+    ldh [c], a
     ld d, c
     and c
     db $E3
@@ -7023,7 +7023,7 @@ jr_00F_77CE:
     ld d, c
     pop hl
     pop bc
-    ld [c], a
+    ldh [c], a
     ld [hl], c
     pop bc
     db $E3
@@ -7057,7 +7057,7 @@ jr_00F_77CE:
     and c
     ld sp, $E171
     ld d, c
-    ld [c], a
+    ldh [c], a
     ld d, c
     ld d, c
     ld d, c
@@ -7067,24 +7067,24 @@ jr_00F_77CE:
     ld de, $11E2
     ld de, $E111
     pop bc
-    ld [c], a
+    ldh [c], a
     pop bc
     pop bc
     pop bc
     pop hl
     and c
-    ld [c], a
+    ldh [c], a
     and c
     and c
     and c
     and c
     pop hl
     and c
-    ld [c], a
+    ldh [c], a
     and c
     pop hl
     and c
-    ld [c], a
+    ldh [c], a
     pop bc
     pop bc
     pop bc
@@ -7335,7 +7335,7 @@ jr_00F_77CE:
     ld d, d
     ld [hl], e
     inc b
-    ld [c], a
+    ldh [c], a
     ld [hl+], a
     ld [de], a
     pop hl
@@ -7343,7 +7343,7 @@ jr_00F_77CE:
     sub d
     add d
     ld b, d
-    ld [c], a
+    ldh [c], a
     ld [hl+], a
     ld [de], a
     pop hl
@@ -7351,7 +7351,7 @@ jr_00F_77CE:
     sub d
     add d
     ld b, d
-    ld [c], a
+    ldh [c], a
     ld [hl+], a
     ld [de], a
     ld [hl+], a
@@ -7362,14 +7362,14 @@ jr_00F_77CE:
     sub d
     jp nz, Jump_00F_62B2
 
-    ld [c], a
+    ldh [c], a
     ld b, d
     ld [hl-], a
     pop hl
     sub d
     jp nz, Jump_00F_62B2
 
-    ld [c], a
+    ldh [c], a
     ld b, d
     ld [hl-], a
     ld b, d

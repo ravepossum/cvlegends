@@ -2179,12 +2179,12 @@ jr_007_7C80:
     nop
     nop
     nop
-    ldh [$09], a
+    ldh [$FF09], a
     ld bc, $0006
     inc bc
     ld [bc], a
     inc b
-    ldh a, [$03]
+    ldh a, [$FF03]
     dec h
     ld [bc], a
     inc b

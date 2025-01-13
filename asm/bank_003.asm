@@ -806,8 +806,8 @@ jr_003_44D4:
     call Call_003_4588
     pop de
     xor a
-    ldh [$87], a
-    ldh [$86], a
+    ldh [$FF87], a
+    ldh [$FF86], a
     call Call_000_1E49
     call Call_000_1E51
     ret
@@ -1371,8 +1371,8 @@ jr_003_48CE:
     ld [$C77B], a
     ld [$C777], a
     ld [$C779], a
-    ldh [$87], a
-    ldh [$86], a
+    ldh [$FF87], a
+    ldh [$FF86], a
     call Call_000_301B
     ld [$C780], a
     call Call_000_1E84
@@ -1410,8 +1410,8 @@ jr_003_49B5:
     ld [$C774], a
     ld [$C778], a
     ld [$C77B], a
-    ldh [$87], a
-    ldh [$86], a
+    ldh [$FF87], a
+    ldh [$FF86], a
     call Call_000_301B
     ld [$C780], a
     call Call_000_1B50
@@ -2525,7 +2525,7 @@ jr_003_5082:
     add b
     ld [bc], a
     nop
-    ldh [$5C], a
+    ldh [$FF5C], a
     ld [bc], a
     nop
     or e
@@ -2695,7 +2695,7 @@ jr_003_51CE:
     ld d, a
     ld [bc], a
     inc c
-    ldh [$5D], a
+    ldh [$FF5D], a
     ld [bc], a
     inc c
     db $EA
@@ -2924,7 +2924,7 @@ jr_003_51CE:
     ld d, l
     ld de, $0055
     nop
-    ldh [$58], a
+    ldh [$FF58], a
     ld bc, $4A06
     ld h, c
     ld [bc], a
@@ -3121,7 +3121,7 @@ jr_003_51CE:
     db $48, $60, $07, $38, $88, $FF, $01, $90, $00, $10, $A8, $68, $02, $50, $40, $10
     db $A8, $68, $03, $70, $00, $10, $A8, $68, $FF, $05, $70, $00, $1F, $A8, $60, $FD
 
-    ldh [$58], a
+    ldh [$FF58], a
     ld b, $59
     jr nz, @+$5B
 
@@ -3472,7 +3472,7 @@ jr_003_61A3:
     ld [$44A8], sp
     rlca
     ld l, b
-    ldh [$08], a
+    ldh [$FF08], a
     xor b
     inc a
     db $FD

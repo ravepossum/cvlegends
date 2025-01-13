@@ -568,13 +568,13 @@ jr_005_450D:
     db $00, $00, $00, $C8, $00
 
     dec bc
-    ldh a, [$E8]
+    ldh a, [$FFE8]
     or d
     nop
-    ldh a, [$F0]
+    ldh a, [$FFF0]
     or h
     nop
-    ldh a, [$F8]
+    ldh a, [$FFF8]
     or [hl]
     nop
     ldh a, [rP1]
@@ -584,7 +584,7 @@ jr_005_450D:
     cp d
     nop
     nop
-    ldh a, [$CA]
+    ldh a, [$FFCA]
     nop
     nop
     ld hl, sp-$34
@@ -595,7 +595,7 @@ jr_005_450D:
     ld [$D008], sp
     nop
     db $10
-    ldh a, [$D2]
+    ldh a, [$FFD2]
     nop
     db $10
     ld hl, sp-$2C
@@ -621,7 +621,7 @@ jr_005_450D:
     ldh [rP1], a
     nop
     nop
-    ld [c], a
+    ldh [c], a
     nop
 
     db $02, $FC, $FC, $AC, $00, $0C, $FC, $AE, $00, $12, $00, $00, $00, $00, $00, $08
@@ -641,10 +641,10 @@ jr_005_450D:
     db $AA, $00
 
     dec b
-    ldh a, [$F4]
+    ldh a, [$FFF4]
     xor h
     nop
-    ldh a, [$FC]
+    ldh a, [$FFFC]
     sbc [hl]
     nop
     ldh a, [rDIV]
@@ -688,17 +688,17 @@ jr_005_450D:
     ld [$F0F0], sp
     add b
     nop
-    ldh a, [$F8]
+    ldh a, [$FFF8]
     add d
     nop
     ldh a, [rP1]
     add h
     nop
-    ldh a, [$08]
+    ldh a, [$FF08]
     add [hl]
     nop
     nop
-    ldh a, [$88]
+    ldh a, [$FF88]
     nop
     nop
     ld hl, sp-$76
@@ -712,17 +712,17 @@ jr_005_450D:
     ld [$F0F0], sp
     cp h
     nop
-    ldh a, [$F8]
+    ldh a, [$FFF8]
     cp [hl]
     nop
     ldh a, [rP1]
     ret nz
 
     nop
-    ldh a, [$08]
+    ldh a, [$FF08]
     jp nz, RST_00
 
-    ldh a, [$C4]
+    ldh a, [$FFC4]
     nop
     nop
     ld hl, sp-$3A
@@ -737,7 +737,7 @@ jr_005_450D:
     ld b, $F0
     or $90
     nop
-    ldh a, [$FE]
+    ldh a, [$FFFE]
     sub d
     nop
     ldh a, [rTMA]
@@ -753,7 +753,7 @@ jr_005_450D:
     ld b, $9A
     nop
     inc b
-    ldh a, [$FA]
+    ldh a, [$FFFA]
     sbc h
     nop
     ldh a, [rSC]
@@ -768,7 +768,7 @@ jr_005_450D:
     ld b, $F0
     or $A4
     nop
-    ldh a, [$FE]
+    ldh a, [$FFFE]
     and [hl]
     nop
     ldh a, [rTMA]
@@ -789,7 +789,7 @@ jr_005_450D:
     ldh a, [rP1]
     or d
     nop
-    ldh a, [$08]
+    ldh a, [$FF08]
     or h
     nop
     nop
@@ -821,17 +821,17 @@ jr_005_450D:
     ld [$F0F0], sp
     add b
     nop
-    ldh a, [$F8]
+    ldh a, [$FFF8]
     add d
     nop
     ldh a, [rP1]
     add h
     nop
-    ldh a, [$08]
+    ldh a, [$FF08]
     add [hl]
     nop
     nop
-    ldh a, [$D8]
+    ldh a, [$FFD8]
     nop
     nop
     ld hl, sp-$76

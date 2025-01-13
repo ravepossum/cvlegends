@@ -188,7 +188,7 @@ VBlank:
 jr_000_0078:
     push af
     push hl
-    ldh a, [$81]
+    ldh a, [$FF81]
     ld hl, $026E
     add a
     add l

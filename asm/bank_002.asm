@@ -3446,11 +3446,11 @@ Jump_002_54C6:
     call Call_000_0875
     call Call_000_20F2
     xor a
-    ldh [$86], a
+    ldh [$FF86], a
     call Call_000_1E51
-    ldh a, [$8B]
+    ldh a, [$FF8B]
     add $04
-    ldh [$8B], a
+    ldh [$FF8B], a
     ld a, $06
     ld e, $14
     ld [de], a
@@ -3460,9 +3460,9 @@ Jump_002_54C6:
     call Call_000_21F1
     ret nz
 
-    ldh a, [$8B]
+    ldh a, [$FF8B]
     sub $04
-    ldh [$8B], a
+    ldh [$FF8B], a
     call Call_002_5792
     ld a, $50
     ld e, $14
@@ -3481,7 +3481,7 @@ Jump_002_54C6:
     call $DEC9
     pop de
     xor a
-    ldh [$86], a
+    ldh [$FF86], a
     call Call_000_1E51
     call Call_000_1E61
     call Call_002_55F0
@@ -6202,7 +6202,7 @@ jr_002_65C9:
     ld [$D7DC], a
     ld [$C757], a
     ld a, $E4
-    ldh [$88], a
+    ldh [$FF88], a
     ld a, $0F
     jp Jump_000_0E35
 
@@ -6634,7 +6634,7 @@ Jump_002_691A:
     ld [$D7DC], a
     ld [$C757], a
     ld a, $E4
-    ldh [$88], a
+    ldh [$FF88], a
     ld a, $06
     jp Jump_000_2084
 
@@ -6667,7 +6667,7 @@ Jump_002_694A:
     ld [$D7DC], a
     ld [$C757], a
     ld a, $E4
-    ldh [$88], a
+    ldh [$FF88], a
     ret
 
 

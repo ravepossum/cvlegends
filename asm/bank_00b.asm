@@ -12,9 +12,9 @@ SECTION "ROM Bank $00b", ROMX
 
     ld hl, $C50E
     set 0, [hl]
-    ldh a, [$87]
+    ldh a, [$FF87]
     add $04
-    ldh [$87], a
+    ldh [$FF87], a
     ld a, $10
     ld [$C731], a
     ld a, $04
@@ -133,9 +133,9 @@ jr_00B_4081:
     dec [hl]
     ret nz
 
-    ldh a, [$86]
+    ldh a, [$FF86]
     sub $04
-    ldh [$86], a
+    ldh [$FF86], a
     ld a, $06
     ld [$C731], a
     jp Jump_000_0E29
@@ -147,9 +147,9 @@ jr_00B_4081:
 
     ld a, $28
     call Call_000_0875
-    ldh a, [$86]
+    ldh a, [$FF86]
     add $04
-    ldh [$86], a
+    ldh [$FF86], a
     ld a, $04
     ld [$C731], a
     jp Jump_000_0E29
@@ -514,8 +514,8 @@ jr_00B_42A5:
     ret c
 
     xor a
-    ldh [$87], a
-    ldh [$86], a
+    ldh [$FF87], a
+    ldh [$FF86], a
     ld bc, $0790
     call Call_000_05B2
     ld hl, $43C5
@@ -1112,8 +1112,8 @@ jr_00B_44E4:
     ld de, $C800
     call Call_000_2183
     xor a
-    ldh [$87], a
-    ldh [$86], a
+    ldh [$FF87], a
+    ldh [$FF86], a
     ld bc, $0790
     call Call_000_05B2
     ld hl, $43C5
@@ -1703,7 +1703,7 @@ Jump_00B_4CEF:
 
     db $07, $58, $27, $59, $80, $5A, $B1, $5B, $D3, $5B
 
-    ldh a, [$5B]
+    ldh a, [$FF5B]
     inc bc
     ld e, h
     ld e, e
@@ -2682,7 +2682,7 @@ Jump_00B_59A3:
     ld [$C736], a
     pop de
     ld a, $00
-    ldh [$8A], a
+    ldh [$FF8A], a
     push de
     ld de, $CD00
     ld a, $1A
@@ -3272,21 +3272,21 @@ jr_00B_5CE9:
 
 
     ld a, $E4
-    ldh [$88], a
+    ldh [$FF88], a
     ld e, $14
     ld a, [de]
     bit 0, a
     jr z, jr_00B_5D29
 
     ld a, $00
-    ldh [$88], a
+    ldh [$FF88], a
 
 jr_00B_5D29:
     call Call_000_21F1
     ret nz
 
     ld a, $E4
-    ldh [$88], a
+    ldh [$FF88], a
     push de
     ld a, [$C500]
     bit 3, a

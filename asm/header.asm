@@ -1,4 +1,6 @@
+; rst vectors
 
+SECTION "rst0", ROM0[$0000]
 RST_00::
     jp Jump_000_03FF
 
@@ -9,6 +11,7 @@ RST_00::
     rst $38
     rst $38
 
+SECTION "rst8", ROM0[$0008]
 RST_08::
     ld a, [hl+]
     ld h, [hl]
@@ -21,6 +24,7 @@ RST_08::
     rst $38
     rst $38
 
+SECTION "rst10", ROM0[$0010]    
 RST_10::
     cpl
     inc a
@@ -33,7 +37,7 @@ RST_10::
     dec h
     ret
 
-
+SECTION "rst18", ROM0[$0018]
 RST_18::
     cpl
     inc a
@@ -46,7 +50,7 @@ RST_18::
     dec d
     ret
 
-
+SECTION "rst20", ROM0[$0020]
 RST_20::
     cpl
     inc a
@@ -59,7 +63,7 @@ RST_20::
     dec b
     ret
 
-
+SECTION "rst28", ROM0[$0028]
 RST_28::
     add l
     ld l, a
@@ -73,6 +77,7 @@ RST_28::
     rst $38
     rst $38
 
+SECTION "rst30", ROM0[$0030]
 RST_30::
     add e
     ld e, a
@@ -86,6 +91,7 @@ RST_30::
     rst $38
     rst $38
 
+SECTION "rst38", ROM0[$0038]
 RST_38::
     add c
     ld c, a
@@ -99,6 +105,7 @@ RST_38::
     rst $38
     rst $38
 
+SECTION "vblank", ROM0[$0040]
 VBlankInterrupt::
     jr VBlank
 
@@ -109,6 +116,7 @@ VBlankInterrupt::
     rst $38
     rst $38
 
+SECTION "lcd", ROM0[$0048]
 LCDCInterrupt::
     jr jr_000_0078
 
@@ -119,6 +127,7 @@ LCDCInterrupt::
     rst $38
     rst $38
 
+SECTION "timer", ROM0[$0050]    
 TimerOverflowInterrupt::
     reti
 
@@ -131,6 +140,7 @@ TimerOverflowInterrupt::
     rst $38
     rst $38
 
+SECTION "serial", ROM0[$0058]
 SerialTransferCompleteInterrupt::
     reti
 
@@ -144,6 +154,7 @@ Call_000_0059:
     rst $38
     rst $38
 
+SECTION "joypad", ROM0[$0060]
 JoypadTransitionInterrupt::
     reti
 
@@ -155,6 +166,9 @@ JoypadTransitionInterrupt::
     rst $38
     db $01
     nop
+
+
+SECTION "High Home", ROM0
 
 VBlank:
     push af
@@ -312,45 +326,14 @@ Jump_000_00FD:
     rst $38
     rst $38
 
+SECTION "Header", ROM0[$0100]
+
 Start::
 ; Nintendo requires all Game Boy ROMs to begin with a nop ($00) and a jp ($C3)
 ; to the starting address.
     nop
     jp _Start
 
-
-HeaderLogo::
-    NINTENDO_LOGO
-
-HeaderTitle::
-    db "CASTLEVANIA", $00, $00, $00, $00, $00
-
-HeaderNewLicenseeCode::
-    db $41, $34
-
-HeaderSGBFlag::
-    db CART_INDICATOR_SGB
-
-HeaderCartridgeType::
-    db CART_ROM_MBC1
-
-HeaderROMSize::
-    db CART_ROM_256KB
-
-HeaderRAMSize::
-    db CART_SRAM_NONE
-
-HeaderDestinationCode::
-    db $01
-
-HeaderOldLicenseeCode::
-    db $33
-
-HeaderMaskROMVersion::
-    db $00
-
-HeaderComplementCheck::
-    db $0C
-
-HeaderGlobalChecksum::
-    db $66, $F5
+; The Game Boy cartridge header data is patched over by rgbfix.
+; This makes sure it doesn't get used for anything else.
+	ds $0150 - @

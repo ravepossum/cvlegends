@@ -2,8 +2,10 @@
 ; This file was created with:
 ; mgbdis v2.0 - Game Boy ROM disassembler by Matt Currie and contributors.
 ; https://github.com/mattcurrie/mgbdis
-
-INCLUDE "hardware.inc"
+; constants
+INCLUDE "constants/hardware.inc"
+INCLUDE "constants/constants.asm"
+; asm
 INCLUDE "asm/bank_000.asm"
 INCLUDE "asm/bank_001.asm"
 INCLUDE "asm/bank_002.asm"

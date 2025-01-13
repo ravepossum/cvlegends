@@ -1,8 +1,3 @@
-; Disassembly of "cvlegends.gb"
-; This file was created with:
-; mgbdis v2.0 - Game Boy ROM disassembler by Matt Currie and contributors.
-; https://github.com/mattcurrie/mgbdis
-
 SECTION "ROM Bank $001", ROMX
 
     ld hl, $0000

@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Checkout rgbds
+        uses: actions/checkout@master
+        with:
+          path: rgbds
+          ref: v0.9.0
+          repository: gbdev/rgbds
+
+      - name: Install rgbds
+        working-directory: rgbds
+        run: |
+          sudo apt-get install -yq libpng-dev
+          sudo make install
+
+      - name: Remove rgbds
+        run: |
+          rm -rf rgbds
+
+      - name: Compare
+        run: |
+          make -j$(nproc) compare

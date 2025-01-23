@@ -4018,7 +4018,7 @@ jr_009_7A5F:
     ld a, $3F
     ld a, $3F
     ld a, $22
-    ld hl, $2000
+    ld hl, rROMB0
     ccf
     ld a, $3F
     ld a, $1F

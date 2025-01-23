@@ -330,7 +330,7 @@ Jump_000_0343:
 
 jr_000_0346:
     di
-    ld [$2000], a
+    ld [rROMB0], a
     ld [$C522], a
     ei
     pop af
@@ -1172,7 +1172,7 @@ Jump_000_0875:
     push af
     call Call_000_08F8
     ld a, [$C522]
-    ld [$2000], a
+    ld [rROMB0], a
     pop af
     pop bc
     pop de
@@ -1190,13 +1190,13 @@ Call_000_0891:
     jp c, Jump_000_08A2
 
     ld a, $0F
-    ld [$2000], a
+    ld [rROMB0], a
     pop af
     jr jr_000_08A8
 
 Jump_000_08A2:
     ld a, $0E
-    ld [$2000], a
+    ld [rROMB0], a
     pop af
 
 jr_000_08A8:
@@ -1213,7 +1213,7 @@ jr_000_08A8:
     ld a, [de]
     ld [$D7D4], a
     ld a, $0E
-    ld [$2000], a
+    ld [rROMB0], a
     pop de
     ret
 
@@ -1262,7 +1262,7 @@ Call_000_08F8:
     jr nz, jr_000_0906
 
     ld a, $0E
-    ld [$2000], a
+    ld [rROMB0], a
     jp $4CE3
 
 
@@ -1310,7 +1310,7 @@ jr_000_0939:
     jr nc, jr_000_094D
 
     ld a, $0E
-    ld [$2000], a
+    ld [rROMB0], a
     ld a, b
     ld hl, $3FFE
     jp Jump_000_0958
@@ -1318,7 +1318,7 @@ jr_000_0939:
 
 jr_000_094D:
     ld a, $0F
-    ld [$2000], a
+    ld [rROMB0], a
     ld a, b
     ld hl, $3FFE
     sub $50
@@ -1514,7 +1514,7 @@ Jump_000_0A6A:
     ld a, $40
     call Call_000_0A86
     ld a, [$C522]
-    ld [$2000], a
+    ld [rROMB0], a
     ret
 
 
@@ -1526,7 +1526,7 @@ Call_000_0A86:
     ret z
 
     ld a, $0E
-    ld [$2000], a
+    ld [rROMB0], a
     jp $465C
 
 

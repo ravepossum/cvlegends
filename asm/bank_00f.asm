@@ -329,7 +329,7 @@ jr_00F_417D:
     and c
     or c
     ldh [c], a
-    ld sp, $FFFE
+    ld sp, hUnk_FFFE
     cp $E0
     ld b, $84
     add c

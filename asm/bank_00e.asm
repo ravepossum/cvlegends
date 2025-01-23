@@ -364,14 +364,14 @@ jr_00E_41D7:
 
     db $99, $99, $99, $99, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 
-    ldh a, [$FFF0]
-    ldh a, [$FFF0]
-    ldh a, [$FFF0]
-    ldh a, [$FFF0]
-    ldh a, [$FFF0]
-    ldh a, [$FFF0]
-    ldh a, [$FFF0]
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF0]
     inc bc
     inc [hl]
     ld d, [hl]
@@ -610,7 +610,7 @@ jr_00E_4434:
 
     ld [hl+], a
     ld hl, $1AFE
-    ldh a, [$FF80]
+    ldh a, [hUnk_FF80]
     cp $10
     add hl, de
 
@@ -654,7 +654,7 @@ jr_00E_446A:
     ld a, [de]
     add hl, de
     cp $1A
-    ldh [$FFA0], a
+    ldh [hUnk_FFA0], a
     cp $10
     ld hl, $1112
     jr nz, jr_00E_449B
@@ -766,7 +766,7 @@ Call_00E_44E5:
     push bc
 
 jr_00E_44F0:
-    jp nz, $FFA1
+    jp nz, hUnk_FFA1
 
     and $A2
     pop bc
@@ -779,7 +779,7 @@ jr_00E_44F0:
     inc de
     rst $38
     ldh [c], a
-    call nc, $FFE6
+    call nc, hUnk_FFE6
     ld [hl+], a
     inc sp
     ld d, h
@@ -867,7 +867,7 @@ jr_00E_4582:
     nop
     db $E4
     ld b, e
-    ldh a, [$FFE0]
+    ldh a, [hUnk_FFE0]
     ld bc, $0086
     db $E3
     pop bc
@@ -890,7 +890,7 @@ jr_00E_45A6:
     nop
     db $E3
     and e
-    ldh a, [$FFE0]
+    ldh a, [hUnk_FFE0]
     ld bc, $0086
     ld [hl], c
     ldh a, [c]
@@ -910,7 +910,7 @@ jr_00E_45A6:
     nop
     db $E3
     inc sp
-    ldh a, [$FFE0]
+    ldh a, [hUnk_FFE0]
     ld bc, $0086
     ldh [c], a
     pop bc
@@ -4040,7 +4040,7 @@ jr_00E_5657:
 
 jr_00E_5791:
     rst $38
-    ldh [$FF82], a
+    ldh [hUnk_FF82], a
     add b
     nop
     db $E3
@@ -4167,7 +4167,7 @@ jr_00E_57B1:
     ld bc, $0001
     nop
     rst $38
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     add b
     nop
     db $E3
@@ -4232,7 +4232,7 @@ jr_00E_57B1:
     push hl
     add hl, de
     rst $38
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     add b
     nop
     ldh [c], a
@@ -4516,7 +4516,7 @@ jr_00E_57B1:
     add e
     add d
     add c
-    ldh [$FFA0], a
+    ldh [hUnk_FFA0], a
     add b
     nop
     nop
@@ -4580,7 +4580,7 @@ jr_00E_57B1:
     add d
     ld [hl], d
     rst $38
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     ldh [rP1], a
     ld [$E485], a
     xor a
@@ -4660,7 +4660,7 @@ jr_00E_57B1:
     ld d, h
     rst $38
     rst $38
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     add d
     nop
     push hl
@@ -4696,14 +4696,14 @@ jr_00E_57B1:
     ld sp, $51F3
     pop af
     ld h, c
-    ldh a, [$FFA1]
+    ldh a, [hUnk_FFA1]
     xor $40
     di
     sub c
     ldh [c], a
     ldh a, [c]
     ld sp, $81F1
-    ldh a, [$FFEE]
+    ldh a, [hUnk_FFEE]
     sub b
     ld hl, $64E8
     or h
@@ -4976,7 +4976,7 @@ jr_00E_5D1B:
     and d
     ld [hl], d
     ld d, d
-    jp nz, $FFFE
+    jp nz, hUnk_FFFE
 
     db $FE, $E0, $05, $88, $C4, $E3, $32, $32, $62, $32, $32, $62, $82, $92, $A2, $A2
     db $E3, $32, $32, $62, $32, $32, $62, $82, $92, $A2, $A2, $E4, $32, $32, $32, $22

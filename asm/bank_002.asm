@@ -353,7 +353,7 @@ Call_002_41F8:
     jp Jump_000_2089
 
 
-    ld bc, $FFE0
+    ld bc, hUnk_FFE0
     call Call_000_20E6
     call Call_000_21F1
     ret nz
@@ -434,7 +434,7 @@ Jump_002_4257:
 
 Jump_002_42AD:
     call Call_000_20F2
-    ld bc, $FFA0
+    ld bc, hUnk_FFA0
     call Call_000_20E2
     ld e, $0E
     ld a, [de]
@@ -658,7 +658,7 @@ Jump_002_43BB:
 jr_002_442B:
     ld hl, $2807
     call Call_000_2F9F
-    ld bc, $FFF8
+    ld bc, hUnk_FFF8
     ld e, $0E
     ld a, [de]
     bit 5, a
@@ -1068,7 +1068,7 @@ jr_002_469A:
     ld a, $48
     ld e, $0D
     ld [de], a
-    ld bc, $FFA0
+    ld bc, hUnk_FFA0
     call Call_000_20E2
     ld e, $0E
     ld a, [de]
@@ -1413,7 +1413,7 @@ jr_002_48A7:
     call Call_000_26AB
     ld bc, $2815
     call Call_000_2F92
-    ld bc, $FFC0
+    ld bc, hUnk_FFC0
     call Call_000_20E2
     ld e, $0E
     ld a, [de]
@@ -2571,7 +2571,7 @@ jr_002_4F7F:
     ld a, $95
     ld e, $0D
     ld [de], a
-    ld bc, $FFB0
+    ld bc, hUnk_FFB0
     call Call_000_20E2
     ld bc, $FE00
     call Call_000_20E6
@@ -2777,7 +2777,7 @@ jr_002_5129:
     cp $28
     ret nz
 
-    ld bc, $FF80
+    ld bc, hUnk_FF80
     call Call_000_20E6
 
 jr_002_5135:
@@ -3396,7 +3396,7 @@ Jump_002_54C6:
     jp Jump_000_2084
 
 
-    ld bc, $FF80
+    ld bc, hUnk_FF80
     call Call_000_20E6
     ld bc, $5C40
     call Call_000_2098
@@ -3441,11 +3441,11 @@ Jump_002_54C6:
     call Call_000_0875
     call Call_000_20F2
     xor a
-    ldh [$FF86], a
+    ldh [hUnk_FF86], a
     call Call_000_1E51
-    ldh a, [$FF8B]
+    ldh a, [hUnk_FF8B]
     add $04
-    ldh [$FF8B], a
+    ldh [hUnk_FF8B], a
     ld a, $06
     ld e, $14
     ld [de], a
@@ -3455,9 +3455,9 @@ Jump_002_54C6:
     call Call_000_21F1
     ret nz
 
-    ldh a, [$FF8B]
+    ldh a, [hUnk_FF8B]
     sub $04
-    ldh [$FF8B], a
+    ldh [hUnk_FF8B], a
     call Call_002_5792
     ld a, $50
     ld e, $14
@@ -3476,7 +3476,7 @@ Jump_002_54C6:
     call $DEC9
     pop de
     xor a
-    ldh [$FF86], a
+    ldh [hUnk_FF86], a
     call Call_000_1E51
     call Call_000_1E61
     call Call_002_55F0
@@ -3620,7 +3620,7 @@ Call_002_5684:
     ld hl, $C777
     call Call_000_1E7A
     ld a, [$C77B]
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     ld [hl], a
     xor a
     ld [$C77A], a
@@ -4869,7 +4869,7 @@ Jump_002_5E1B:
     ld [de], a
     ld bc, $287A
     call Call_000_2F92
-    ld bc, $FFA0
+    ld bc, hUnk_FFA0
     call Call_000_20E2
     call Call_000_21BB
     call Call_000_26AB
@@ -5548,7 +5548,7 @@ Jump_002_616F:
     ld a, $87
     ld e, $0D
     ld [de], a
-    ld bc, $FFE0
+    ld bc, hUnk_FFE0
     call Call_000_20E2
     ld e, $0E
     ld a, [de]
@@ -5915,7 +5915,7 @@ jr_002_6460:
     ld h, d
     ld e, $0E
     res 5, [hl]
-    ld bc, $FF90
+    ld bc, hUnk_FF90
     call Call_000_20E2
     ld a, $03
     jp Jump_000_2084
@@ -6197,7 +6197,7 @@ jr_002_65C9:
     ld [$D7DC], a
     ld [$C757], a
     ld a, $E4
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ld a, $0F
     jp Jump_000_0E35
 
@@ -6629,7 +6629,7 @@ Jump_002_691A:
     ld [$D7DC], a
     ld [$C757], a
     ld a, $E4
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ld a, $06
     jp Jump_000_2084
 
@@ -6662,7 +6662,7 @@ Jump_002_694A:
     ld [$D7DC], a
     ld [$C757], a
     ld a, $E4
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ret
 
 

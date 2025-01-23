@@ -563,13 +563,13 @@ jr_005_450D:
     db $00, $00, $00, $C8, $00
 
     dec bc
-    ldh a, [$FFE8]
+    ldh a, [hUnk_FFE8]
     or d
     nop
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
     or h
     nop
-    ldh a, [$FFF8]
+    ldh a, [hUnk_FFF8]
     or [hl]
     nop
     ldh a, [rP1]
@@ -579,7 +579,7 @@ jr_005_450D:
     cp d
     nop
     nop
-    ldh a, [$FFCA]
+    ldh a, [hUnk_FFCA]
     nop
     nop
     ld hl, sp-$34
@@ -590,7 +590,7 @@ jr_005_450D:
     ld [$D008], sp
     nop
     db $10
-    ldh a, [$FFD2]
+    ldh a, [hUnk_FFD2]
     nop
     db $10
     ld hl, sp-$2C
@@ -636,10 +636,10 @@ jr_005_450D:
     db $AA, $00
 
     dec b
-    ldh a, [$FFF4]
+    ldh a, [hUnk_FFF4]
     xor h
     nop
-    ldh a, [$FFFC]
+    ldh a, [hUnk_FFFC]
     sbc [hl]
     nop
     ldh a, [rDIV]
@@ -683,7 +683,7 @@ jr_005_450D:
     ld [$F0F0], sp
     add b
     nop
-    ldh a, [$FFF8]
+    ldh a, [hUnk_FFF8]
     add d
     nop
     ldh a, [rP1]
@@ -693,7 +693,7 @@ jr_005_450D:
     add [hl]
     nop
     nop
-    ldh a, [$FF88]
+    ldh a, [hUnk_FF88]
     nop
     nop
     ld hl, sp-$76
@@ -707,7 +707,7 @@ jr_005_450D:
     ld [$F0F0], sp
     cp h
     nop
-    ldh a, [$FFF8]
+    ldh a, [hUnk_FFF8]
     cp [hl]
     nop
     ldh a, [rP1]
@@ -717,7 +717,7 @@ jr_005_450D:
     ldh a, [$FF08]
     jp nz, RST_00
 
-    ldh a, [$FFC4]
+    ldh a, [hUnk_FFC4]
     nop
     nop
     ld hl, sp-$3A
@@ -732,7 +732,7 @@ jr_005_450D:
     ld b, $F0
     or $90
     nop
-    ldh a, [$FFFE]
+    ldh a, [hUnk_FFFE]
     sub d
     nop
     ldh a, [rTMA]
@@ -748,7 +748,7 @@ jr_005_450D:
     ld b, $9A
     nop
     inc b
-    ldh a, [$FFFA]
+    ldh a, [hUnk_FFFA]
     sbc h
     nop
     ldh a, [rSC]
@@ -763,7 +763,7 @@ jr_005_450D:
     ld b, $F0
     or $A4
     nop
-    ldh a, [$FFFE]
+    ldh a, [hUnk_FFFE]
     and [hl]
     nop
     ldh a, [rTMA]
@@ -816,7 +816,7 @@ jr_005_450D:
     ld [$F0F0], sp
     add b
     nop
-    ldh a, [$FFF8]
+    ldh a, [hUnk_FFF8]
     add d
     nop
     ldh a, [rP1]
@@ -826,7 +826,7 @@ jr_005_450D:
     add [hl]
     nop
     nop
-    ldh a, [$FFD8]
+    ldh a, [hUnk_FFD8]
     nop
     nop
     ld hl, sp-$76

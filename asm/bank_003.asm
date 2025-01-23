@@ -246,7 +246,7 @@ Call_003_4165:
     cp $FF
     ret z
 
-    ld bc, $FFFA
+    ld bc, hUnk_FFFA
     add hl, bc
     ret
 
@@ -496,7 +496,7 @@ Call_003_4243:
     ld [de], a
     ld a, $01
     call Call_000_2190
-    ld bc, $FFA0
+    ld bc, hUnk_FFA0
     call Call_000_20E2
     call Call_000_2565
     call Call_000_2688
@@ -801,8 +801,8 @@ jr_003_44D4:
     call Call_003_4588
     pop de
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     call Call_000_1E49
     call Call_000_1E51
     ret
@@ -1366,8 +1366,8 @@ jr_003_48CE:
     ld [$C77B], a
     ld [$C777], a
     ld [$C779], a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     call Call_000_301B
     ld [$C780], a
     call Call_000_1E84
@@ -1405,8 +1405,8 @@ jr_003_49B5:
     ld [$C774], a
     ld [$C778], a
     ld [$C77B], a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     call Call_000_301B
     ld [$C780], a
     call Call_000_1B50
@@ -1852,7 +1852,7 @@ jr_003_4C35:
 
     push hl
     push de
-    ld bc, $FFFA
+    ld bc, hUnk_FFFA
     add hl, bc
     ld a, $06
     rst $18

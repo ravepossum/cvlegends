@@ -130,7 +130,7 @@ jr_009_40B5:
     ld e, $0E
     ld [de], a
     xor a
-    ldh [$FF8A], a
+    ldh [hUnk_FF8A], a
     ld a, $08
     call Call_000_0629
     jp Jump_000_0E29
@@ -374,7 +374,7 @@ jr_009_42AF:
     ld e, $0E
     ld [de], a
     xor a
-    ldh [$FF8A], a
+    ldh [hUnk_FF8A], a
     ld a, $08
     call Call_000_0629
     jp Jump_000_0E29
@@ -658,7 +658,7 @@ Jump_009_4496:
     jp Jump_009_448D
 
 
-    ld hl, $FF8B
+    ld hl, hUnk_FF8B
     dec [hl]
     dec [hl]
     ld hl, $D023
@@ -1165,7 +1165,7 @@ jr_009_480A:
     jp Jump_009_448D
 
 
-    ld hl, $FF8B
+    ld hl, hUnk_FF8B
     inc [hl]
     inc [hl]
     ld hl, $D023
@@ -2694,7 +2694,7 @@ jr_009_75EA:
     db $E4
     sbc e
     sbc a
-    ldh [$FF91], a
+    ldh [hUnk_FF91], a
     xor $F1
     adc [hl]
     ld a, a
@@ -2714,11 +2714,11 @@ jr_009_75EA:
     db $DB
     xor $FA
     ld a, $FE
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
     ret nc
 
     or b
-    ldh a, [$FF90]
+    ldh a, [hUnk_FF90]
     add sp, $58
     add sp, -$28
     cp b
@@ -2858,7 +2858,7 @@ jr_009_76B6:
     rst $10
     ld hl, sp-$11
     ld hl, sp+$0F
-    ldh a, [$FFF7]
+    ldh a, [hUnk_FFF7]
     ld b, $F9
     ld [bc], a
     db $FD
@@ -2926,8 +2926,8 @@ jr_009_76EB:
     or b
     ret nc
 
-    ldh [$FFE0], a
-    ldh a, [$FFB0]
+    ldh [hUnk_FFE0], a
+    ldh a, [hUnk_FFB0]
     jr nc, jr_009_76EB
 
     or b
@@ -3058,8 +3058,8 @@ jr_009_7780:
     nop
     rst $38
     ldh a, [rIF]
-    ldh a, [$FFE7]
-    ldh a, [$FFD1]
+    ldh a, [hUnk_FFE7]
+    ldh a, [hUnk_FFD1]
     nop
     rst $38
     add e
@@ -3263,7 +3263,7 @@ Call_009_7878:
     nop
     rst $38
     nop
-    ldh [$FF80], a
+    ldh [hUnk_FF80], a
     jr nz, jr_009_78D6
 
     or b

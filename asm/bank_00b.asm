@@ -7,9 +7,9 @@ SECTION "ROM Bank $00b", ROMX
 
     ld hl, $C50E
     set 0, [hl]
-    ldh a, [$FF87]
+    ldh a, [hUnk_FF87]
     add $04
-    ldh [$FF87], a
+    ldh [hUnk_FF87], a
     ld a, $10
     ld [$C731], a
     ld a, $04
@@ -30,7 +30,7 @@ SECTION "ROM Bank $00b", ROMX
     ld a, $04
     bit 0, [hl]
     call nz, Call_000_0547
-    ld hl, $FF87
+    ld hl, hUnk_FF87
     add [hl]
     ld [hl], a
     ret
@@ -128,9 +128,9 @@ jr_00B_4081:
     dec [hl]
     ret nz
 
-    ldh a, [$FF86]
+    ldh a, [hUnk_FF86]
     sub $04
-    ldh [$FF86], a
+    ldh [hUnk_FF86], a
     ld a, $06
     ld [$C731], a
     jp Jump_000_0E29
@@ -142,9 +142,9 @@ jr_00B_4081:
 
     ld a, $28
     call Call_000_0875
-    ldh a, [$FF86]
+    ldh a, [hUnk_FF86]
     add $04
-    ldh [$FF86], a
+    ldh [hUnk_FF86], a
     ld a, $04
     ld [$C731], a
     jp Jump_000_0E29
@@ -509,8 +509,8 @@ jr_00B_42A5:
     ret c
 
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     ld bc, $0790
     call Call_000_05B2
     ld hl, $43C5
@@ -565,7 +565,7 @@ jr_00B_438D:
     jp Jump_000_0E29
 
 
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     inc [hl]
     ld a, $25
     call Call_000_1FB9
@@ -578,7 +578,7 @@ jr_00B_438D:
     jp Jump_000_0E29
 
 
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     inc [hl]
     ld hl, $C731
     dec [hl]
@@ -590,7 +590,7 @@ jr_00B_438D:
     jp Jump_000_0E29
 
 
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     inc [hl]
     ld a, $25
     call Call_000_1FB9
@@ -1107,8 +1107,8 @@ jr_00B_44E4:
     ld de, $C800
     call Call_000_2183
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     ld bc, $0790
     call Call_000_05B2
     ld hl, $43C5
@@ -1161,7 +1161,7 @@ jr_00B_49B8:
     jp Jump_000_0E29
 
 
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     inc [hl]
     ld a, $25
     call Call_000_1FB9
@@ -1174,7 +1174,7 @@ jr_00B_49B8:
     jp Jump_000_0E29
 
 
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     inc [hl]
     ld hl, $C731
     dec [hl]
@@ -1186,7 +1186,7 @@ jr_00B_49B8:
     jp Jump_000_0E29
 
 
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     inc [hl]
     ld a, $25
     call Call_000_1FB9
@@ -2677,7 +2677,7 @@ Jump_00B_59A3:
     ld [$C736], a
     pop de
     ld a, $00
-    ldh [$FF8A], a
+    ldh [hUnk_FF8A], a
     push de
     ld de, $CD00
     ld a, $1A
@@ -2692,7 +2692,7 @@ Call_00B_59CF:
     ld a, $28
     ld e, $00
     ld [de], a
-    ld bc, $FF80
+    ld bc, hUnk_FF80
     call Call_000_20E6
     ld bc, $2078
     call Call_000_2098
@@ -2728,7 +2728,7 @@ Call_00B_5A05:
     ld a, $02
     ld e, $01
     ld [de], a
-    ld bc, $FF80
+    ld bc, hUnk_FF80
     call Call_000_20E6
     ld bc, $2880
     call Call_000_2098
@@ -3267,21 +3267,21 @@ jr_00B_5CE9:
 
 
     ld a, $E4
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ld e, $14
     ld a, [de]
     bit 0, a
     jr z, jr_00B_5D29
 
     ld a, $00
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
 
 jr_00B_5D29:
     call Call_000_21F1
     ret nz
 
     ld a, $E4
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     push de
     ld a, [$C500]
     bit 3, a

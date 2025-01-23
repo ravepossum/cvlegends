@@ -18,3 +18,5 @@ INCLUDE "asm/bank_00c.asm"
 INCLUDE "asm/bank_00d.asm"
 INCLUDE "asm/bank_00e.asm"
 INCLUDE "asm/bank_00f.asm"
+; ram
+INCLUDE "ram/hram.asm"

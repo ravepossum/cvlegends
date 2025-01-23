@@ -11,7 +11,7 @@ _Start:
     ld [$0024], a
     call Call_000_0BCC
     ld a, $0C
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ldh [rBGP], a
 
 Jump_000_0160:
@@ -24,7 +24,7 @@ Jump_000_0160:
     ld a, $7F
     ld [$C52B], a
     ld a, $91
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ldh [rLCDC], a
     call Call_000_0343
     call Call_000_074A
@@ -34,10 +34,10 @@ Jump_000_0160:
     xor a
     call Call_000_01F4
     ld a, $01
-    ldh [$FF80], a
+    ldh [hUnk_FF80], a
     call Call_000_06A4
     ld a, $03
-    ldh [$FF80], a
+    ldh [hUnk_FF80], a
     call Call_000_06A4
     ei
     xor a
@@ -58,12 +58,12 @@ jr_000_01A7: ; main game loop?
 
 Call_000_01B9:
 jr_000_01B9:
-    ldh a, [$FF80]
+    ldh a, [hUnk_FF80]
     bit 0, a
     jr z, jr_000_01B9
 
     xor $03
-    ldh [$FF80], a
+    ldh [hUnk_FF80], a
     ret
 
 
@@ -101,11 +101,11 @@ Call_000_01F4:
     ld de, $020E
     add hl, de
     ld a, [hl+]
-    ldh [$FF85], a
+    ldh [hUnk_FF85], a
     ld a, [hl+]
-    ldh [$FF82], a
+    ldh [hUnk_FF82], a
     ld a, [hl+]
-    ldh [$FF83], a
+    ldh [hUnk_FF83], a
     pop hl
     ret
 
@@ -117,8 +117,8 @@ Call_000_01F4:
     ld [bc], a
 
 Call_000_0217:
-    call $FFE0
-    ldh a, [$FF80]
+    call hUnk_FFE0
+    ldh a, [hUnk_FF80]
     rra
     rra
     ld hl, $C530
@@ -134,7 +134,7 @@ jr_000_0226:
 
 
 Call_000_022A:
-    ldh a, [$FF80]
+    ldh a, [hUnk_FF80]
     rra
     rra
     ld hl, $C532
@@ -146,7 +146,7 @@ jr_000_0236:
     ld a, [hl+]
     ldh [rLCDC], a
     ld a, [hl+]
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     ld a, [hl+]
     ldh [rSCY], a
     ld a, [hl+]
@@ -161,14 +161,14 @@ jr_000_0236:
     ldh [rWY], a
     ld a, [hl+]
     ldh [rWX], a
-    ld hl, $FF80
+    ld hl, hUnk_FF80
     set 0, [hl]
     ret
 
 
     call Call_000_022A
     ld a, $01
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     ld a, $7F
     ldh [rLYC], a
     ret
@@ -176,7 +176,7 @@ jr_000_0236:
 
     call Call_000_022A
     ld a, $02
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     xor a
     ldh [rLYC], a
     ret
@@ -231,7 +231,7 @@ jr_000_029C:
     ldh [rSCX], a
     ldh [rSCY], a
     ld a, $03
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     ld a, $17
     ldh [rLYC], a
     jp Jump_000_0278
@@ -268,10 +268,10 @@ jr_000_02E3:
     nop
     nop
     call Call_000_0089
-    ldh a, [$FF88]
+    ldh a, [hUnk_FF88]
     ldh [rBGP], a
     ld a, $04
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     ld a, $80
     ldh [rLYC], a
     jp Jump_000_0278
@@ -290,7 +290,7 @@ jr_000_02E3:
     ldh [rSCX], a
     ldh [rSCY], a
     ld a, $02
-    ldh [$FF81], a
+    ldh [hUnk_FF81], a
     xor a
     ldh [rLYC], a
     jp Jump_000_0278
@@ -578,7 +578,7 @@ Call_000_0491:
     ld a, $01
     call Call_000_0BCC
     ld a, $FF
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ldh [rBGP], a
     ld a, $00
     call Call_000_0875
@@ -764,12 +764,12 @@ Call_000_0572:
 
 
 Call_000_057C:
-    ld hl, $FF84
+    ld hl, hUnk_FF84
     bit 3, [hl]
     jr jr_000_0588
 
 Call_000_0583:
-    ld hl, $FF84
+    ld hl, hUnk_FF84
     bit 6, [hl]
 
 jr_000_0588:
@@ -802,9 +802,9 @@ Call_000_05A0:
 
 Call_000_05AB:
     ld a, l
-    ldh [$FF86], a
+    ldh [hUnk_FF86], a
     ld a, h
-    ldh [$FF87], a
+    ldh [hUnk_FF87], a
     ret
 
 
@@ -812,9 +812,9 @@ Call_000_05B2:
 Jump_000_05B2:
 jr_000_05B2:
     ld a, l
-    ldh [$FF8B], a
+    ldh [hUnk_FF8B], a
     ld a, h
-    ldh [$FF8C], a
+    ldh [hUnk_FF8C], a
     ret
 
 
@@ -824,9 +824,9 @@ Call_000_05B9:
     ld hl, $0790
     jr jr_000_05B2
 
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     or $80
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ld [$C532], a
     ld [$C542], a
     ldh [rLCDC], a
@@ -834,58 +834,58 @@ Call_000_05B9:
 
 
 Call_000_05D3:
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     or $20
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
 Call_000_05DA:
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     and $DF
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
 Call_000_05E1:
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     or $23
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
 Call_000_05E8:
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     and $DC
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     or $03
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     and $FC
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
 Call_000_05FD:
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
     or $02
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
 Call_000_0604:
-    ldh a, [$FF84]
+    ldh a, [hUnk_FF84]
 
 Jump_000_0606:
     and $FD
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ret
 
 
@@ -912,11 +912,11 @@ jr_000_061C:
 
 jr_000_061F:
     ld a, c
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ld a, d
-    ldh [$FF89], a
+    ldh [hUnk_FF89], a
     ld a, e
-    ldh [$FF8A], a
+    ldh [hUnk_FF8A], a
     ret
 
 
@@ -968,13 +968,13 @@ Call_000_064D:
     add [hl]
     rst $30
     ld a, [de]
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     inc de
     ld a, [de]
-    ldh [$FF89], a
+    ldh [hUnk_FF89], a
     inc de
     ld a, [de]
-    ldh [$FF8A], a
+    ldh [hUnk_FF8A], a
     scf
     ret
 
@@ -989,18 +989,18 @@ Call_000_0692:
     ret nz
 
     ld [hl], $08
-    ldh a, [$FF88]
+    ldh a, [hUnk_FF88]
     inc a
     and $03
     ret z
 
     or $0C
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ret
 
 
 Call_000_06A4:
-    ldh a, [$FF80]
+    ldh a, [hUnk_FF80]
     rra
     rra
     jr c, jr_000_06C5
@@ -1011,7 +1011,7 @@ Call_000_06A4:
     call $DB80
     call $DB80
     call $DB80
-    ld hl, $FF82
+    ld hl, hUnk_FF82
     ld de, $C540
     jp $DBD7
 
@@ -1023,7 +1023,7 @@ jr_000_06C5:
     call $DB80
     call $DB80
     call $DB80
-    ld hl, $FF82
+    ld hl, hUnk_FF82
     ld de, $C530
     jp $DBD7
 
@@ -1041,12 +1041,12 @@ jr_000_06C5:
     call $DB80
     call $DB80
     di
-    call $FFE0
+    call hUnk_FFE0
     ei
     ret
 
 
-    ld [$FF95], sp
+    ld [hUnk_FF95], sp
 
 jr_000_070D:
     di
@@ -1086,16 +1086,16 @@ jr_000_0717:
     ld [hl+], a
     ld e, l
     ld d, h
-    ld [$FF97], sp
-    ldh a, [$FF95]
+    ld [hUnk_FF97], sp
+    ldh a, [hUnk_FF95]
     ld l, a
-    ldh a, [$FF96]
+    ldh a, [hUnk_FF96]
     ld h, a
     ld sp, hl
     ei
-    ldh a, [$FF97]
+    ldh a, [hUnk_FF97]
     ld l, a
-    ldh a, [$FF98]
+    ldh a, [hUnk_FF98]
     ld h, a
     dec bc
     ld a, c
@@ -1984,8 +1984,8 @@ Call_000_0BDE:
     ret c
 
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     ld hl, $0790
     call Call_000_05B2
     ld a, $05
@@ -2205,8 +2205,8 @@ Call_000_0E58:
     ld hl, $0790
     call Call_000_05B2
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     ld [$C777], a
     ld [$C779], a
     ld [$C778], a
@@ -3880,8 +3880,8 @@ Call_000_1B01:
     ld [$C774], a
     ld [$C778], a
     ld [$C77B], a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     call Call_000_159D
     ld de, $8000
 
@@ -3970,7 +3970,7 @@ Call_000_1BB4:
 
     call Call_000_1BCB
     ld a, [$C773]
-    ld hl, $FF87
+    ld hl, hUnk_FF87
     add [hl]
     ld [hl], a
     ret
@@ -4026,7 +4026,7 @@ Jump_000_1C0F:
 
     call Call_000_1C26
     ld a, [$C77A]
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     add [hl]
     ld [hl], a
     ret
@@ -6312,7 +6312,7 @@ Call_000_2711:
 
     rst $30
     ld a, [de]
-    ldh [$FF8A], a
+    ldh [hUnk_FF8A], a
     scf
     ret
 
@@ -7925,7 +7925,7 @@ jr_000_3194:
     or a
     ret z
 
-    ld hl, $FF86
+    ld hl, hUnk_FF86
     add [hl]
     ld [hl], a
     ld hl, $C732
@@ -8033,8 +8033,8 @@ Jump_000_334B:
     call Call_000_0604
     call Call_000_057C
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     call Call_000_01F4
     call Call_000_05DA
     ld a, $20
@@ -8413,8 +8413,8 @@ jr_000_36E9:
     ld hl, $372D
     call Call_000_3067
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     call Call_000_1E49
     call Call_000_1E51
     call Call_000_037D
@@ -8836,7 +8836,7 @@ jr_000_38FE:
 
 Call_000_390C:
     ldh a, [rIE]
-    ldh [$FF80], a
+    ldh [hUnk_FF80], a
     res 0, a
     ldh [rIE], a
 
@@ -8848,7 +8848,7 @@ jr_000_3914:
     ldh a, [rLCDC]
     and $7F
     ldh [rLCDC], a
-    ldh a, [$FF80]
+    ldh a, [hUnk_FF80]
     ldh [rIE], a
     ret
 

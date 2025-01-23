@@ -10,7 +10,7 @@ SECTION "ROM Bank $00a", ROMX
     ld hl, $0790
     call Call_000_05B2
     ld a, $E7
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     call Call_000_0597
     ld hl, $424F
     call Call_000_2E53
@@ -403,8 +403,8 @@ Jump_00A_4354:
     ret c
 
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     call Call_000_01F4
     call Call_000_0562
     call Call_000_05DA
@@ -505,8 +505,8 @@ Jump_00A_4423:
     call Call_000_05DA
     call Call_000_0604
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     ld hl, $4510
     call Call_000_2E53
     ld hl, $5464
@@ -536,8 +536,8 @@ Jump_00A_4423:
     call Call_000_0562
     call Call_000_05DA
     xor a
-    ldh [$FF87], a
-    ldh [$FF86], a
+    ldh [hUnk_FF87], a
+    ldh [hUnk_FF86], a
     ld hl, $451F
     call Call_000_2E53
     ld hl, $5EE6

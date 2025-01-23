@@ -87,7 +87,7 @@ SECTION "ROM Bank $007", ROMX
 
 
     db $DB
-    jp $FFC7
+    jp hUnk_FFC7
 
 
     rst $38
@@ -228,7 +228,7 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    jp $FFC7
+    jp hUnk_FFC7
 
 
     rst $38
@@ -672,7 +672,7 @@ SECTION "ROM Bank $007", ROMX
 
 
     db $DB
-    jp $FFC7
+    jp hUnk_FFC7
 
 
     rst $38
@@ -813,7 +813,7 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    jp $FFC7
+    jp hUnk_FFC7
 
 
     rst $38
@@ -1273,7 +1273,7 @@ SECTION "ROM Bank $007", ROMX
 
 
     db $DB
-    jp $FFC7
+    jp hUnk_FFC7
 
 
     rst $38
@@ -1414,7 +1414,7 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    jp $FFC7
+    jp hUnk_FFC7
 
 
     rst $38

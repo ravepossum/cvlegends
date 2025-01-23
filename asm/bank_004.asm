@@ -158,7 +158,7 @@ jr_004_4720:
 
     jr c, jr_004_4720
 
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
     ret nz
 
     ret nz
@@ -225,7 +225,7 @@ jr_004_4720:
 
 jr_004_4767:
     ld hl, sp-$10
-    ldh a, [$FFC0]
+    ldh a, [hUnk_FFC0]
     ret nz
 
     nop
@@ -293,7 +293,7 @@ jr_004_47A0:
 
     jr c, jr_004_47A0
 
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
     ret nz
 
     ret nz
@@ -399,7 +399,7 @@ jr_004_6EF2:
     nop
     nop
     nop
-    ldh [$FFE0], a
+    ldh [hUnk_FFE0], a
     ret c
 
     ld hl, sp-$52
@@ -536,7 +536,7 @@ jr_004_6EF2:
     sbc b
     ld [hl], b
     ld [hl], b
-    ldh [$FFE0], a
+    ldh [hUnk_FFE0], a
     ldh [rNR41], a
     ldh [$FF60], a
     ret nz
@@ -607,7 +607,7 @@ jr_004_6EF2:
     nop
     ld bc, $0101
     ld bc, $B070
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
     sub b
     ldh a, [$FF78]
     adc b
@@ -764,8 +764,8 @@ jr_004_7023:
     inc c
     add sp, $18
     db $10
-    ldh a, [$FFF0]
-    ldh a, [$FFF8]
+    ldh a, [hUnk_FFF0]
+    ldh a, [hUnk_FFF8]
     ld [$F8F8], sp
     db $10
     ldh a, [rNR41]
@@ -804,7 +804,7 @@ jr_004_7023:
 
     db $10
     ldh a, [rNR10]
-    ldh a, [$FF88]
+    ldh a, [hUnk_FF88]
     ld hl, sp+$08
     ld hl, sp-$10
 
@@ -886,7 +886,7 @@ jr_004_711A:
     ldh [rNR41], a
     ldh [rSVBK], a
     or b
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
     sub b
     ld [hl], b
     ret nc
@@ -897,7 +897,7 @@ jr_004_711A:
 
     ld h, b
     ld h, b
-    ldh [$FFC0], a
+    ldh [hUnk_FFC0], a
     ret nz
 
     jr nz, jr_004_711A
@@ -923,7 +923,7 @@ jr_004_711A:
     ld h, a
 
 jr_004_714E:
-    ldh [$FFDF], a
+    ldh [hUnk_FFDF], a
 
 jr_004_7150:
     rst $38
@@ -1105,7 +1105,7 @@ jr_004_71E4:
     ld d, b
     jr nz, jr_004_71E4
 
-    ldh a, [$FFF0]
+    ldh a, [hUnk_FFF0]
     ret nc
 
     db $10
@@ -1174,7 +1174,7 @@ jr_004_722C:
     nop
     nop
     nop
-    ldh [$FFE0], a
+    ldh [hUnk_FFE0], a
     jr nz, jr_004_722C
 
     ret nz
@@ -1275,7 +1275,7 @@ jr_004_72A4:
     rrca
     inc a
     inc sp
-    ldh [$FFDF], a
+    ldh [hUnk_FFDF], a
     add l
     rst $38
     rst $00
@@ -1476,7 +1476,7 @@ jr_004_72F5:
     sbc l
     pop hl
     sbc [hl]
-    ldh a, [$FF8F]
+    ldh a, [hUnk_FF8F]
     ld [hl], b
     ld c, a
     ld a, b
@@ -1495,7 +1495,7 @@ jr_004_72F5:
     nop
     ld b, b
     ld b, b
-    ldh [$FFA0], a
+    ldh [hUnk_FFA0], a
     or b
     ret nc
 
@@ -1607,8 +1607,8 @@ jr_004_73F6:
 jr_004_73F8:
     jr c, jr_004_7421
 
-    ldh [$FFDF], a
-    ldh a, [$FF8F]
+    ldh [hUnk_FFDF], a
+    ldh a, [hUnk_FF8F]
     ld a, h
     ld b, e
     ccf
@@ -1651,7 +1651,7 @@ jr_004_7421:
 
 jr_004_7422:
     ld hl, sp+$18
-    ldh [$FFE0], a
+    ldh [hUnk_FFE0], a
     nop
     nop
     ld [bc], a

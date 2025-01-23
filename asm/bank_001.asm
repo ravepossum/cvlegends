@@ -20,7 +20,7 @@ SECTION "ROM Bank $001", ROMX
     ld bc, $0060
     call $DED7
     ld a, $E1
-    ldh [$FF84], a
+    ldh [hUnk_FF84], a
     ld a, $E4
     call Call_000_061C
     ret
@@ -32,9 +32,9 @@ SECTION "ROM Bank $001", ROMX
     rra
     ret nc
 
-    ldh a, [$FF86]
+    ldh a, [hUnk_FF86]
     inc a
-    ldh [$FF86], a
+    ldh [hUnk_FF86], a
     cp $16
     scf
     ret z
@@ -137,9 +137,9 @@ jr_001_4067:
     rra
     ret nc
 
-    ldh a, [$FF8B]
+    ldh a, [hUnk_FF8B]
     inc a
-    ldh [$FF8B], a
+    ldh [hUnk_FF8B], a
     cp $90
     scf
     ret z
@@ -1303,7 +1303,7 @@ jr_001_4D55:
     ld de, $C500
     ld bc, $5975
     call Call_000_2F92
-    ld bc, $FFA0
+    ld bc, hUnk_FFA0
     ld a, c
     ld [$C509], a
     ld a, b
@@ -1373,7 +1373,7 @@ Call_001_4DD0:
 
 
 Call_001_4DE4:
-    ld bc, $FFA0
+    ld bc, hUnk_FFA0
     ld a, c
     ld [$C509], a
     ld a, b
@@ -1786,7 +1786,7 @@ Jump_001_5070:
 
 Call_001_507F:
 Jump_001_507F:
-    ld bc, $FFA0
+    ld bc, hUnk_FFA0
     ld a, c
     ld [$C504], a
     ld a, b
@@ -2651,7 +2651,7 @@ jr_001_55A2:
     ret c
 
     ld a, $27
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ld de, $C900
     ld b, $13
 
@@ -2800,13 +2800,13 @@ Jump_001_56C6:
     ret z
 
     ld a, $E4
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ld a, [$C550]
     bit 0, a
     jr z, jr_001_56DB
 
     ld a, $FF
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
 
 jr_001_56DB:
     ld hl, $C51D
@@ -2840,7 +2840,7 @@ jr_001_56F9:
     ld hl, $C757
     res 2, [hl]
     ld a, $E4
-    ldh [$FF88], a
+    ldh [hUnk_FF88], a
     ret
 
 

@@ -954,7 +954,7 @@ jr_00D_6A38:
     ld d, a
     dec b
     ld c, $0D
-    call nz, $C001
+    call nz, wUnk_C001
 
 jr_00D_6A3F:
     ld [bc], a
@@ -1840,7 +1840,7 @@ jr_00D_6DFC:
     sbc $47
     db $EC
     ld d, l
-    jp nz, $C624
+    jp nz, wUnk_C624
 
     ld [hl+], a
     rst $38

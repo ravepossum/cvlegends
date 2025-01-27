@@ -497,7 +497,7 @@ Jump_00F_42C2:
     ld de, $81E3
     ld b, c
     ld sp, $3111
-    ld de, $C1E2
+    ld de, wUnk_C1E2
     or c
     add c
     or c
@@ -528,15 +528,15 @@ Jump_00F_42C2:
     add c
     pop bc
     db $E3
-    ld sp, $C181
+    ld sp, wUnk_C181
     db $E4
-    ld sp, $C181
+    ld sp, wUnk_C181
     push hl
-    ld sp, $C1E4
+    ld sp, wUnk_C1E4
     add c
-    ld sp, $C1E3
+    ld sp, wUnk_C1E3
     add c
-    ld sp, $C1E2
+    ld sp, wUnk_C1E2
     cp $FF
     cp $E7
     ld b, $C4
@@ -675,7 +675,7 @@ Jump_00F_42C2:
     ld [hl-], a
     ld [hl-], a
     ld [hl+], a
-    ld hl, $C421
+    ld hl, wUnk_C421
     rst $20
     ld [bc], a
     sub h
@@ -1266,32 +1266,32 @@ jr_00F_4B72:
     ld b, c
     jp nz, Jump_00F_42C2
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld b, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld b, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld b, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld b, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld b, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld b, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld b, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C242
+    jp nz, wUnk_C242
 
     call nz, Call_00F_4141
     ld b, c
@@ -1382,7 +1382,7 @@ jr_00F_4B72:
     sub d
     db $E4
     inc [hl]
-    ld hl, $C1E3
+    ld hl, wUnk_C1E3
     pop bc
     or c
     db $E4
@@ -1422,9 +1422,9 @@ jr_00F_4B72:
     ld [hl], c
     ld d, c
     ld sp, $3151
-    ld hl, $C1E3
+    ld hl, wUnk_C1E3
     db $E4
-    ld hl, $C1E3
+    ld hl, wUnk_C1E3
     and c
     sub c
     and c
@@ -1598,7 +1598,7 @@ Jump_00F_5252:
     ld [hl], c
     ld d, c
     ld sp, $3121
-    ld hl, $C1E3
+    ld hl, wUnk_C1E3
     and c
     pop bc
     and c
@@ -1614,7 +1614,7 @@ Jump_00F_5252:
     ld bc, $A191
     pop bc
     push hl
-    ld hl, $C1E4
+    ld hl, wUnk_C1E4
     and c
     sub d
     ld [hl], d
@@ -1626,7 +1626,7 @@ Jump_00F_5252:
     ld sp, $E321
     pop bc
     db $E4
-    ld hl, $C1E3
+    ld hl, wUnk_C1E3
     and c
     sub c
     and c
@@ -1647,7 +1647,7 @@ Jump_00F_5252:
     db $E4
     ld [hl], c
     ld sp, $71C1
-    ld sp, $C1E3
+    ld sp, wUnk_C1E3
     db $E4
     ld hl, $A1E3
     db $E4
@@ -1669,12 +1669,12 @@ Jump_00F_52E4:
     add c
     ld d, c
     ld [hl], c
-    ld sp, $C171
+    ld sp, wUnk_C171
     push hl
-    ld sp, $C1E4
+    ld sp, wUnk_C1E4
     ld [hl], c
     ld sp, $3101
-    ld hl, $C1E3
+    ld hl, wUnk_C1E3
     and c
     pop bc
     and c
@@ -1743,7 +1743,7 @@ Jump_00F_52E4:
     ld d, c
     call nz, $81C1
     ld d, c
-    ld de, $C1C4
+    ld de, wUnk_C1C4
     add c
     ld d, c
     ld de, $71C1
@@ -1761,7 +1761,7 @@ Jump_00F_52E4:
     db $E4
     ld de, $81E3
     ld d, c
-    ld de, $C4E2
+    ld de, wUnk_C4E2
     db $E3
     ld bc, $2111
     ldh [c], a
@@ -1796,7 +1796,7 @@ Jump_00F_52E4:
     ld [hl], d
     ld [hl], d
     ld [hl], d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     jp nz, Jump_00F_5252
 
@@ -1863,17 +1863,17 @@ Jump_00F_52E4:
     ld d, d
     ld d, d
     ld d, d
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld [de], a
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     ld [de], a
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     jp nz, $A2A2
 
@@ -2287,7 +2287,7 @@ Jump_00F_52E4:
     db $E3
     ld hl, $91E4
     db $E3
-    ld hl, $C1E4
+    ld hl, wUnk_C1E4
     db $E3
     ld hl, $91E4
     db $E3
@@ -2661,7 +2661,7 @@ Jump_00F_52E4:
     ld d, d
     halt
     ldh [c], a
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     db $E3
     jp nz, $92A2
@@ -2812,7 +2812,7 @@ Jump_00F_52E4:
     ld hl, $2221
     ld hl, $2221
     ld hl, $2221
-    ld hl, $C221
+    ld hl, wUnk_C221
     pop bc
     pop bc
     and d
@@ -2866,11 +2866,11 @@ Jump_00F_52E4:
     ld [hl+], a
     ld hl, $2221
     ld hl, $2221
-    ld hl, $C221
+    ld hl, wUnk_C221
     ld de, $2211
     ld hl, $2221
     ld hl, $2221
-    ld hl, $C221
+    ld hl, wUnk_C221
     ld de, $A211
     and c
     and c
@@ -2963,14 +2963,14 @@ Jump_00F_52E4:
     ld hl, $2221
     ld hl, $2221
     ld hl, $2221
-    ld hl, $C221
+    ld hl, wUnk_C221
     pop bc
     pop bc
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     or d
     or c
@@ -2990,22 +2990,22 @@ Jump_00F_52E4:
     and d
     and c
     and c
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     ld [hl+], a
     ld hl, $2221
     ld hl, $2221
     ld hl, $2221
-    ld hl, $C221
+    ld hl, wUnk_C221
     pop bc
     pop bc
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     or d
     or c
@@ -3025,9 +3025,9 @@ Jump_00F_52E4:
     and d
     and c
     and c
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     ld [hl+], a
     ld hl, $2221
@@ -3062,116 +3062,116 @@ Jump_00F_52E4:
     pop bc
     pop bc
     pop bc
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C1C2
+    jp nz, wUnk_C1C2
 
     ld b, c
     pop bc
     pop bc
     pop bc
     pop bc
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     ei
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     ei
     rlca
-    jp nz, $C1C2
+    jp nz, wUnk_C1C2
 
     pop bc
     pop bc
     pop bc
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     ei
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     ei
     inc bc
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
-    jp nz, $C1C1
-
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    jp nz, $C2C2
+    jp nz, wUnk_C1C1
 
     pop bc
     pop bc
-    jp nz, $C1C1
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    pop bc
+    jp nz, wUnk_C2C2
+
+    pop bc
+    pop bc
+    jp nz, wUnk_C1C1
 
     pop bc
     pop bc
     pop bc
     pop bc
     ei
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     ei
     rlca
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
-    jp nz, $C1C1
-
-    pop bc
-    pop bc
-    pop bc
-    pop bc
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     pop bc
     pop bc
-    jp nz, $C1C1
+    pop bc
+    pop bc
+    jp nz, wUnk_C1C1
+
+    pop bc
+    pop bc
+    jp nz, wUnk_C1C1
 
     pop bc
     sub c
@@ -3179,7 +3179,7 @@ Jump_00F_52E4:
     sub c
     sub c
     sub c
-    jp nz, $C1C1
+    jp nz, wUnk_C1C1
 
     pop bc
     pop bc
@@ -3857,7 +3857,7 @@ Jump_00F_62B2:
     ld [hl-], a
     ld [hl-], a
     ld [hl+], a
-    ld hl, $C421
+    ld hl, wUnk_C421
     rst $20
     ld [bc], a
     sub h
@@ -4482,12 +4482,12 @@ jr_00F_6A38:
     ld [hl-], a
     jp nz, $32C2
 
-    ld hl, $C421
+    ld hl, wUnk_C421
     call nz, $3131
     ld sp, $3131
     ld sp, $3131
     ei
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     jp nz, $3131
 
@@ -4497,7 +4497,7 @@ jr_00F_6A38:
     jp nz, Jump_000_2121
 
     ld [hl+], a
-    jp nz, $C222
+    jp nz, wUnk_C222
 
     ei
     inc bc
@@ -5362,34 +5362,34 @@ jr_00F_6EB8:
     db $C1, $C1, $31, $C1, $C1, $31, $C1, $21, $C1, $21, $FB, $09, $C2, $31
 
     ld hl, $3101
-    ld sp, $C131
+    ld sp, wUnk_C131
     pop bc
-    ld sp, $C1C1
-    ld sp, $C1C1
-    ld hl, $C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
+    ld hl, wUnk_C1C1
     ld sp, $31C1
     pop bc
-    ld sp, $C1C1
-    ld sp, $C1C1
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
     pop bc
     pop bc
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
     ld sp, $31C1
     pop bc
-    ld sp, $C1C1
-    ld sp, $C1C1
-    ld sp, $C1C1
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
     ld sp, $31C1
     pop bc
-    ld sp, $C1C1
-    ld sp, $C1C1
-    ld sp, $C1C1
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
+    ld sp, wUnk_C1C1
     ld sp, $31C1
     pop bc
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
     pop bc
     ld hl, $3121
     pop bc
@@ -5397,7 +5397,7 @@ jr_00F_6EB8:
     pop bc
     ld hl, $2121
     pop bc
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
     pop bc
     pop bc
     ld sp, $2121
@@ -5406,41 +5406,41 @@ jr_00F_6EB8:
     pop bc
     ld hl, $2121
     pop bc
-    ld hl, $C2C1
+    ld hl, wUnk_C2C1
     ld sp, $0121
     ld sp, $21C2
-    jp nz, $C131
+    jp nz, wUnk_C131
 
     ld hl, $21C1
     pop bc
     pop bc
-    ld hl, $C1C1
-    ld hl, $C1C1
-    ld hl, $C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
     ld hl, $21C1
     pop bc
 
 jr_00F_7101:
-    ld hl, $C1C1
-    ld hl, $C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
 
 jr_00F_7107:
-    ld hl, $C1C1
-    ld hl, $C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
 
 jr_00F_710D:
     ld hl, $21C1
     pop bc
-    ld hl, $C1C1
-    ld hl, $C1C1
-    ld hl, $C1C1
-    ld hl, $C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
     ld hl, $21C1
     pop bc
-    ld hl, $C1C1
-    ld hl, $C1C1
-    ld hl, $C1C1
-    ld hl, $C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
+    ld hl, wUnk_C1C1
     ld hl, $21C1
     pop bc
 
@@ -5502,7 +5502,7 @@ jr_00F_7165:
     ld [de], a
     db $E3
     ld d, e
-    jp $C2A4
+    jp wUnk_C2A4
 
 
     db $E4
@@ -5650,7 +5650,7 @@ jr_00F_71EF:
     jr jr_00F_722B
 
     ld d, b
-    ld bc, $C1E2
+    ld bc, wUnk_C1E2
     and c
     sub c
     and c
@@ -6297,7 +6297,7 @@ jr_00F_744D:
     ldh [c], a
     pop bc
     db $E3
-    ld sp, $C1E2
+    ld sp, wUnk_C1E2
     db $E3
     ld d, c
     ldh [c], a
@@ -6327,7 +6327,7 @@ jr_00F_744D:
     and c
     pop bc
     db $E3
-    ld de, $C1E2
+    ld de, wUnk_C1E2
     and c
     pop bc
     db $E3
@@ -6372,14 +6372,14 @@ jr_00F_744D:
     sub c
     pop bc
     db $E4
-    ld sp, $C1E3
+    ld sp, wUnk_C1E3
     sub c
     ld h, c
     ld d, c
     ld h, c
     ld d, c
     ld sp, $3111
-    ld de, $C1E2
+    ld de, wUnk_C1E2
     cp $E0
     add hl, bc
     ld d, h
@@ -6579,13 +6579,13 @@ jr_00F_744D:
     ldh [c], a
     ld [hl-], a
     pop hl
-    ld sp, $C231
-    jp nz, $C1E2
+    ld sp, wUnk_C231
+    jp nz, wUnk_C1E2
 
     pop hl
     jp nz, $02C1
 
-    jp nz, $C2E2
+    jp nz, wUnk_C2E2
 
     pop hl
     pop bc
@@ -6597,7 +6597,7 @@ jr_00F_744D:
     pop hl
     pop bc
     ldh [c], a
-    ld de, $C1E1
+    ld de, wUnk_C1E1
     ld d, c
     and d
     and d
@@ -6718,7 +6718,7 @@ jr_00F_744D:
     pop hl
     jp nz, $02C1
 
-    jp nz, $C2E2
+    jp nz, wUnk_C2E2
 
     pop hl
     pop bc
@@ -6747,13 +6747,13 @@ jr_00F_744D:
 
 jr_00F_767B:
     pop hl
-    ld de, $C211
-    jp nz, $C1E2
+    ld de, wUnk_C211
+    jp nz, wUnk_C1E2
 
     pop hl
     jp nz, $02C1
 
-    jp nz, $C2E2
+    jp nz, wUnk_C2E2
 
     pop hl
     pop bc
@@ -6881,7 +6881,7 @@ jr_00F_76F8:
     pop bc
     ld sp, $31C1
     pop bc
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
     ld sp, $0FFB
     ei
     pop bc
@@ -6893,7 +6893,7 @@ jr_00F_76F8:
     pop bc
     ld sp, $31C1
     pop bc
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
     ld sp, $0BFB
     and d
     and d
@@ -6913,7 +6913,7 @@ jr_00F_76F8:
     pop bc
     ld sp, $31C1
     pop bc
-    ld sp, $C1C1
+    ld sp, wUnk_C1C1
     ld sp, $0EFB
     db $FE
 
@@ -7121,7 +7121,7 @@ jr_00F_77CE:
     pop bc
     sub c
     sub c
-    ld sp, $C191
+    ld sp, wUnk_C191
     sub c
     pop bc
     db $FE
@@ -7383,10 +7383,10 @@ jr_00F_77CE:
     ld b, $32
     sub c
     sub c
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     sub d
-    jp nz, $C292
+    jp nz, wUnk_C292
 
     sub d
     ld [hl-], a
@@ -7394,14 +7394,14 @@ jr_00F_77CE:
     ld [hl-], a
     sub d
     ld [hl-], a
-    jp nz, $C2C2
+    jp nz, wUnk_C2C2
 
     sub d
     jp nz, $3232
 
     jp nz, $92C2
 
-    jp nz, $C292
+    jp nz, wUnk_C292
 
     ld [hl-], a
     jp nz, $3232

@@ -40,9 +40,9 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    call z, $CC88
+    call z, wUnk_CC88
     adc b
-    call z, $CC88
+    call z, wUnk_CC88
     adc b
     xor $88
     rst $38
@@ -79,11 +79,11 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
@@ -98,7 +98,7 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     xor d
-    call z, $CCBB
+    call z, wUnk_CCBB
     sbc c
     xor $CC
     rst $38
@@ -204,7 +204,7 @@ SECTION "ROM Bank $007", ROMX
     rst $00
     rst $38
     rst $38
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
@@ -212,7 +212,7 @@ SECTION "ROM Bank $007", ROMX
 
 
     db $DB
-    jp $CFC7
+    jp wUnk_CFC7
 
 
     rst $18
@@ -625,9 +625,9 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    call z, $CC88
+    call z, wUnk_CC88
     adc b
-    call z, $CC88
+    call z, wUnk_CC88
     adc b
     xor $88
     rst $38
@@ -664,11 +664,11 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
@@ -683,7 +683,7 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     xor d
-    call z, $CCBB
+    call z, wUnk_CCBB
     sbc c
     xor $CC
     rst $38
@@ -789,7 +789,7 @@ SECTION "ROM Bank $007", ROMX
     rst $00
     rst $38
     rst $38
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
@@ -797,7 +797,7 @@ SECTION "ROM Bank $007", ROMX
 
 
     db $DB
-    jp $CFC7
+    jp wUnk_CFC7
 
 
     rst $18
@@ -1226,9 +1226,9 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    call z, $CC88
+    call z, wUnk_CC88
     adc b
-    call z, $CC88
+    call z, wUnk_CC88
     adc b
     xor $88
     rst $38
@@ -1265,11 +1265,11 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     rst $38
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
@@ -1284,7 +1284,7 @@ SECTION "ROM Bank $007", ROMX
     rst $38
     rst $38
     xor d
-    call z, $CCBB
+    call z, wUnk_CCBB
     sbc c
     xor $CC
     rst $38
@@ -1390,7 +1390,7 @@ SECTION "ROM Bank $007", ROMX
     rst $00
     rst $38
     rst $38
-    jp $C9C7
+    jp wUnk_C9C7
 
 
     db $DB
@@ -1398,7 +1398,7 @@ SECTION "ROM Bank $007", ROMX
 
 
     db $DB
-    jp $CFC7
+    jp wUnk_CFC7
 
 
     rst $18
@@ -1980,7 +1980,7 @@ jr_007_7BE3:
     stop
     rst $38
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
     call z, $EE00
     nop
@@ -2219,13 +2219,13 @@ jr_007_7C80:
     nop
     adc h
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
     pop de
     nop

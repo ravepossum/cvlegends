@@ -1511,7 +1511,7 @@ jr_004_72F5:
     daa
     rst $20
     ld b, e
-    jp $C141
+    jp wUnk_C141
 
 
     ld b, b
@@ -1574,7 +1574,7 @@ jr_004_73A0:
     pop bc
     ld a, a
     cp l
-    jp $C143
+    jp wUnk_C143
 
 
     pop bc

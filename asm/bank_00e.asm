@@ -4566,7 +4566,7 @@ jr_00E_57B1:
     ld [de], a
     ld [de], a
     db $E3
-    jp nz, $C212
+    jp nz, wUnk_C212
 
     or d
     or d
@@ -4949,7 +4949,7 @@ jr_00E_5D1B:
     ld d, d
     ldh [c], a
     or d
-    jp nz, $C272
+    jp nz, wUnk_C272
 
     ld [hl], d
     db $E3

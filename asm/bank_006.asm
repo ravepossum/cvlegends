@@ -1,12 +1,12 @@
 SECTION "ROM Bank $006", ROMX
 
     ld hl, $4012
-    ld a, [$C725]
+    ld a, [wUnk_C725]
     call $DDD6
     ld a, h
-    ld [$C784], a
+    ld [wUnk_C784], a
     ld a, l
-    ld [$C783], a
+    ld [wUnk_C783], a
     ret
 
 
@@ -21,9 +21,9 @@ SECTION "ROM Bank $006", ROMX
     ld hl, $402F
     call Call_000_2FCD
     ld a, h
-    ld [$C786], a
+    ld [wUnk_C786], a
     ld a, l
-    ld [$C785], a
+    ld [wUnk_C785], a
     ret
 
 

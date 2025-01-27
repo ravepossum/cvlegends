@@ -41,12 +41,12 @@ Call_002_4047:
     ld a, $1F
     call Call_000_0875
     call Call_000_21BB
-    ld hl, $C500
+    ld hl, wUnk_C500
     set 6, [hl]
-    ld hl, $C50E
+    ld hl, wUnk_C50E
     set 0, [hl]
     ld a, $01
-    ld [$C752], a
+    ld [wUnk_C752], a
     ld a, $05
     ld e, $14
     ld [de], a
@@ -61,7 +61,7 @@ Jump_002_406E:
     cp $01
     call nz, Call_000_2133
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     ld hl, $27DF
     call Call_000_2F9F
     ld e, $10
@@ -102,10 +102,10 @@ jr_002_40A9:
 
 jr_002_40AB:
     call Call_000_2168
-    ld hl, $C500
+    ld hl, wUnk_C500
     res 6, [hl]
     ld a, $01
-    ld [$C737], a
+    ld [wUnk_C737], a
     call Call_000_262C
     call Call_000_2699
     scf
@@ -127,7 +127,7 @@ Jump_002_40CD:
     ld a, [de]
     ld c, a
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     push bc
     call Call_000_2183
     pop bc
@@ -171,7 +171,7 @@ jr_002_4106:
     cp $A0
     ret nc
 
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     cp [hl]
     jr nc, jr_002_4124
 
@@ -383,11 +383,11 @@ Call_002_41F8:
 
 
 Jump_002_4257:
-    ld a, [$C73B]
+    ld a, [wUnk_C73B]
     bit 1, a
     jp z, Jump_000_2515
 
-    ld hl, $C73C
+    ld hl, wUnk_C73C
     inc [hl]
     jp Jump_000_2515
 
@@ -408,7 +408,7 @@ Jump_002_4257:
     call Call_000_2F9F
     ld e, $0C
     ld a, [de]
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     sub [hl]
     add $20
     cp $40
@@ -482,10 +482,10 @@ Call_002_42D6:
     ld hl, $27F4
     call Call_000_2F9F
     ld bc, $1808
-    ld a, [$C507]
-    ld [$C7D0], a
-    ld a, [$C50C]
-    ld [$C7D2], a
+    ld a, [wUnk_C507]
+    ld [wUnk_C7D0], a
+    ld a, [wUnk_C50C]
+    ld [wUnk_C7D2], a
     ld h, d
     ld l, e
     call Call_000_23AB
@@ -619,7 +619,7 @@ Jump_002_43BB:
     ld bc, $FF60
     ld e, $07
     ld a, [de]
-    ld hl, $C507
+    ld hl, wUnk_C507
     cp [hl]
     call c, $DCE3
     jp Jump_000_20E6
@@ -632,10 +632,10 @@ Jump_002_43BB:
     ret nz
 
     ld bc, $0A0C
-    ld a, [$C507]
-    ld [$C7D0], a
-    ld a, [$C50C]
-    ld [$C7D2], a
+    ld a, [wUnk_C507]
+    ld [wUnk_C7D0], a
+    ld a, [wUnk_C50C]
+    ld [wUnk_C7D2], a
     ld h, d
     ld l, e
     call Call_000_23AB
@@ -681,7 +681,7 @@ jr_002_443F:
 
     ld e, $0C
     ld a, [de]
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     sub [hl]
     bit 7, a
     jp z, Jump_000_21CF
@@ -692,7 +692,7 @@ jr_002_443F:
 jr_002_446F:
     ld e, $0C
     ld a, [de]
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     sub [hl]
     bit 7, a
     jp nz, Jump_000_21CF
@@ -700,7 +700,7 @@ jr_002_446F:
     jp Jump_000_21B3
 
 
-    ld a, [$C50E]
+    ld a, [wUnk_C50E]
     bit 5, a
     jp nz, Jump_000_21BB
 
@@ -709,7 +709,7 @@ jr_002_446F:
     jp Jump_000_219F
 
 
-    ld a, [$C50E]
+    ld a, [wUnk_C50E]
     bit 5, a
     jp nz, Jump_000_21BB
 
@@ -717,7 +717,7 @@ jr_002_446F:
     jp Jump_000_21CF
 
 
-    ld a, [$C50E]
+    ld a, [wUnk_C50E]
     bit 5, a
     jp nz, Jump_000_21BB
 
@@ -726,7 +726,7 @@ jr_002_446F:
     jp Jump_000_219F
 
 
-    ld a, [$C50E]
+    ld a, [wUnk_C50E]
     bit 5, a
     jp z, Jump_000_21BB
 
@@ -735,7 +735,7 @@ jr_002_446F:
     jp Jump_000_219F
 
 
-    ld a, [$C50E]
+    ld a, [wUnk_C50E]
     bit 5, a
     jp z, Jump_000_21BB
 
@@ -743,7 +743,7 @@ jr_002_446F:
     jp Jump_000_21CF
 
 
-    ld a, [$C50E]
+    ld a, [wUnk_C50E]
     bit 5, a
     jp z, Jump_000_21BB
 
@@ -771,7 +771,7 @@ jr_002_446F:
 
 
     call Call_002_462F
-    ld a, [$C550]
+    ld a, [wUnk_C550]
     and $3F
     ret nz
 
@@ -782,17 +782,17 @@ jr_002_446F:
     ld l, $0E
     set 4, [hl]
     xor a
-    ld [$C7E1], a
+    ld [wUnk_C7E1], a
     call Call_000_25AC
     res 7, a
     cp $04
     jp nc, Jump_002_451E
 
     ld a, $01
-    ld [$C7E1], a
+    ld [wUnk_C7E1], a
 
 Jump_002_451E:
-    ld a, [$C7E1]
+    ld a, [wUnk_C7E1]
     ld e, $1C
     ld [de], a
     ld e, $0C
@@ -831,10 +831,10 @@ Jump_002_451E:
     ret nz
 
     xor a
-    ld [$C7E1], a
+    ld [wUnk_C7E1], a
     ld e, $1C
     ld a, [de]
-    ld [$C7E1], a
+    ld [wUnk_C7E1], a
     ld e, $0C
     ld a, [de]
     ld b, a
@@ -862,8 +862,8 @@ Jump_002_451E:
 
 
 Call_002_4581:
-    ld [$C7E0], a
-    ld a, [$C7E1]
+    ld [wUnk_C7E0], a
+    ld a, [wUnk_C7E1]
     or a
     jp nz, Jump_002_45AF
 
@@ -872,7 +872,7 @@ Call_002_4581:
     ld e, $0C
     ld [de], a
     ld b, $00
-    ld a, [$C7E0]
+    ld a, [wUnk_C7E0]
     or a
     jr nz, jr_002_45A5
 
@@ -885,7 +885,7 @@ Call_002_4581:
     ld b, $F9
 
 jr_002_45A5:
-    ld [$C7E2], a
+    ld [wUnk_C7E2], a
     ld a, b
     add c
     ld e, $07
@@ -897,7 +897,7 @@ Jump_002_45AF:
     add b
     ld e, $0C
     ld [de], a
-    ld a, [$C7E0]
+    ld a, [wUnk_C7E0]
     or a
     jr nz, jr_002_45C3
 
@@ -926,7 +926,7 @@ jr_002_45C7:
     call Call_000_2190
     ld bc, $00A0
     call Call_000_20E2
-    ld a, [$C7E1]
+    ld a, [wUnk_C7E1]
     or a
     ret nz
 
@@ -938,8 +938,8 @@ jr_002_45C7:
 
 
 Call_002_45F0:
-    ld [$C7E0], a
-    ld a, [$C7E1]
+    ld [wUnk_C7E0], a
+    ld a, [wUnk_C7E1]
     or a
     jp nz, Jump_002_4612
 
@@ -948,7 +948,7 @@ Call_002_45F0:
     ld e, $0C
     ld [de], a
     ld b, $0A
-    ld a, [$C7E2]
+    ld a, [wUnk_C7E2]
     or a
     jr nz, jr_002_460A
 
@@ -1020,10 +1020,10 @@ Call_002_462F:
     call Call_000_2F9F
     call Call_000_2576
     ld bc, $1808
-    ld a, [$C507]
-    ld [$C7D0], a
-    ld a, [$C50C]
-    ld [$C7D2], a
+    ld a, [wUnk_C507]
+    ld [wUnk_C7D0], a
+    ld a, [wUnk_C50C]
+    ld [wUnk_C7D2], a
     ld h, d
     ld l, e
     call Call_000_23AB
@@ -1228,9 +1228,9 @@ Call_002_4797:
     ld a, [de]
     sub c
     sub $06
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld a, $03
-    ld [$C7D1], a
+    ld [wUnk_C7D1], a
 
 jr_002_47A5:
     ld e, $0E
@@ -1238,7 +1238,7 @@ jr_002_47A5:
     bit 5, a
     jr nz, jr_002_47BC
 
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld c, a
     ld e, $0C
     ld a, [de]
@@ -1249,7 +1249,7 @@ jr_002_47A5:
     ret nz
 
 jr_002_47BC:
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld c, a
     ld e, $0C
     ld a, [de]
@@ -1263,7 +1263,7 @@ jr_002_47BC:
     bit 5, a
     jr z, jr_002_47E1
 
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld c, a
     ld e, $0C
     ld a, [de]
@@ -1274,15 +1274,15 @@ jr_002_47BC:
     ret nz
 
 jr_002_47E1:
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     dec a
     or a
     ret z
 
-    ld [$C7D1], a
-    ld a, [$C7D0]
+    ld [wUnk_C7D1], a
+    ld a, [wUnk_C7D0]
     add $08
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     jr jr_002_47A5
 
     ld h, d
@@ -1469,10 +1469,10 @@ Jump_002_48F3:
     ld c, a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $11
     ld a, [de]
-    ld [$C7D1], a
+    ld [wUnk_C7D1], a
     pop de
     ld a, b
     ld e, $0C
@@ -1480,7 +1480,7 @@ Jump_002_48F3:
     ld a, c
     ld e, $07
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld e, $0E
     ld [de], a
     ret
@@ -1542,7 +1542,7 @@ Call_002_4947:
     ld e, $07
     ld a, [de]
     ld b, a
-    ld a, [$C507]
+    ld a, [wUnk_C507]
     sub b
     add $06
     srl a
@@ -1552,7 +1552,7 @@ Call_002_4947:
     ld e, $07
     ld a, [de]
     ld b, a
-    ld a, [$C507]
+    ld a, [wUnk_C507]
     sub b
     bit 7, a
     jr z, jr_002_49A9
@@ -1620,10 +1620,10 @@ jr_002_49C1:
     ld c, a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     push de
     inc d
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     bit 5, a
     jr nz, jr_002_49FE
 
@@ -1653,7 +1653,7 @@ jr_002_4A01:
     ld a, $04
     ld e, $01
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     bit 5, a
     call nz, Call_000_214A
     ld a, $01
@@ -2027,7 +2027,7 @@ Call_002_4CA2:
 
 
 Call_002_4CAB:
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     inc d
     ld e, $00
     ld a, [de]
@@ -2048,7 +2048,7 @@ jr_002_4CBC:
     ld e, $1B
     ld a, [de]
     ld h, a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     cp h
     ret z
 
@@ -2064,7 +2064,7 @@ jr_002_4CCB:
     ld e, $1B
     ld a, [de]
     ld h, a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     cp h
     ret z
 
@@ -2183,7 +2183,7 @@ Jump_002_4D16:
     call z, Call_000_26AB
     ld e, $0C
     ld a, [de]
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     sub [hl]
     add $14
     cp $28
@@ -2435,7 +2435,7 @@ Call_002_4ECE:
     ld e, $0C
     ld a, [de]
     sub $40
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     cp [hl]
     ret nc
 
@@ -2455,7 +2455,7 @@ jr_002_4F29:
     ld e, $0C
     ld a, [de]
     add $40
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     cp [hl]
     ret c
 
@@ -2528,7 +2528,7 @@ jr_002_4F7F:
     ld c, a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     push de
     ld a, $F0
     ld h, d
@@ -2550,7 +2550,7 @@ jr_002_4F7F:
     ld a, $01
     ld e, $01
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     set 0, a
     ld e, $0E
     ld [de], a
@@ -2665,12 +2665,12 @@ Call_002_5071:
     ld a, [de]
     sub c
     sub $06
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld a, $03
-    ld [$C7D1], a
+    ld [wUnk_C7D1], a
 
 jr_002_507F:
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld c, a
     ld e, $0C
     ld a, [de]
@@ -2680,7 +2680,7 @@ jr_002_507F:
     bit 0, a
     ret nz
 
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld c, a
     ld e, $0C
     ld a, [de]
@@ -2689,7 +2689,7 @@ jr_002_507F:
     bit 0, a
     ret nz
 
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld c, a
     ld e, $0C
     ld a, [de]
@@ -2699,15 +2699,15 @@ jr_002_507F:
     bit 0, a
     ret nz
 
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     dec a
     or a
     ret z
 
-    ld [$C7D1], a
-    ld a, [$C7D0]
+    ld [wUnk_C7D1], a
+    ld a, [wUnk_C7D0]
     add $08
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     jr jr_002_507F
 
 Jump_002_50C0:
@@ -2728,18 +2728,18 @@ Jump_002_50C0:
 
     db $DB, $50, $FD, $50, $14, $51, $5B, $51, $96, $51, $CB, $53
 
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     cp $50
     ret c
 
     ld a, $00
     call Call_000_0875
-    ld hl, $C500
+    ld hl, wUnk_C500
     set 6, [hl]
-    ld hl, $C50E
+    ld hl, wUnk_C50E
     set 0, [hl]
     ld a, $01
-    ld [$C752], a
+    ld [wUnk_C752], a
     ld a, $11
     ld e, $0E
     ld [de], a
@@ -2793,10 +2793,10 @@ jr_002_5135:
     call Call_000_20E2
     ld bc, $00A0
     call Call_000_20E6
-    ld hl, $C500
+    ld hl, wUnk_C500
     res 6, [hl]
     xor a
-    ld [$C752], a
+    ld [wUnk_C752], a
     jp Jump_000_2089
 
 
@@ -2856,7 +2856,7 @@ jr_002_5135:
 
     ld hl, $2848
     call Call_002_53FA
-    ld a, [$C550]
+    ld a, [wUnk_C550]
     and $3F
     ret nz
 
@@ -3018,7 +3018,7 @@ jr_002_5271:
     ld hl, $52F4
 
 jr_002_52BF:
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     srl a
     srl a
     srl a
@@ -3267,10 +3267,10 @@ Call_002_53FA:
     pop de
     ret c
 
-    ld hl, $C500
+    ld hl, wUnk_C500
     res 6, [hl]
     xor a
-    ld [$C752], a
+    ld [wUnk_C752], a
     ld a, $53
     call Call_000_0875
     xor a
@@ -3296,19 +3296,19 @@ Call_002_53FA:
     call Call_002_5782
     inc a
     and $03
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $1B
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     or a
     jp z, Jump_002_54C6
 
 jr_002_5494:
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld hl, $540D
     rst $28
     ld a, [hl]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld hl, $54D3
     add a
     rst $28
@@ -3316,12 +3316,12 @@ jr_002_5494:
     inc hl
     ld b, [hl]
     call Call_000_2098
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     call Call_002_56AE
     ld a, $38
     ld e, $14
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld b, a
     ld e, $1C
     ld a, [de]
@@ -3470,7 +3470,7 @@ Jump_002_54C6:
     ret c
 
     push de
-    ld hl, $C100
+    ld hl, wUnk_C100
     ld bc, $0400
     xor a
     call $DEC9
@@ -3480,7 +3480,7 @@ Jump_002_54C6:
     call Call_000_1E51
     call Call_000_1E61
     call Call_002_55F0
-    ld hl, $C2E0
+    ld hl, wUnk_C2E0
     call Call_002_55D9
     ld hl, $99E0
     call Call_002_55D9
@@ -3569,7 +3569,7 @@ jr_002_563F:
     ld e, $01
     ld [de], a
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     call Call_000_2183
     ld de, $D100
     call Call_000_2183
@@ -3613,28 +3613,28 @@ jr_002_566E:
 
 
 Call_002_5684:
-    ld hl, $C777
+    ld hl, wUnk_C777
     call Call_000_1E7A
-    ld a, [$C77B]
+    ld a, [wUnk_C77B]
     ld hl, hUnk_FF86
     ld [hl], a
     xor a
-    ld [$C77A], a
+    ld [wUnk_C77A], a
     ret
 
 
 Call_002_5696:
     xor a
-    ld [$C75C], a
+    ld [wUnk_C75C], a
     ld b, $73
-    ld a, [$C507]
+    ld a, [wUnk_C507]
     sub b
     add $08
     cp $10
     ret nc
 
-    ld [$C75D], a
-    ld hl, $C75C
+    ld [wUnk_C75D], a
+    ld hl, wUnk_C75C
     set 0, [hl]
     ret
 
@@ -3729,7 +3729,7 @@ Call_002_5704:
     ld a, [de]
     ld c, a
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     ld a, [de]
     or a
     call z, Call_002_5744
@@ -3744,7 +3744,7 @@ Call_002_5704:
     ld a, [de]
     ld c, a
     push de
-    ld de, $CF00
+    ld de, wUnk_CF00
     ld a, [de]
     or a
     call z, Call_002_5744
@@ -3891,7 +3891,7 @@ Call_002_57F1:
     call Call_000_20EE
     ld bc, $0180
     call Call_000_20E6
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     sub $08
     ld b, a
     ld c, $00
@@ -3943,7 +3943,7 @@ Call_002_57F1:
     call Call_000_21F5
     ret nz
 
-    ld a, [$C507]
+    ld a, [wUnk_C507]
     cp $40
     jr c, jr_002_587C
 
@@ -3990,18 +3990,18 @@ jr_002_587C:
 
     ld e, $0C
     ld a, [de]
-    ld [$C7D1], a
+    ld [wUnk_C7D1], a
     ld e, $07
     ld a, [de]
-    ld [$C7D2], a
+    ld [wUnk_C7D2], a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     ld bc, $58D6
     call Call_002_5A39
-    ld de, $CF00
+    ld de, wUnk_CF00
     ld bc, $58E1
     call Call_002_5A39
     ld de, $D000
@@ -4018,12 +4018,12 @@ jr_002_587C:
     push de
     ld hl, $2867
     call Call_002_5A74
-    ld de, $CE00
+    ld de, wUnk_CE00
     ld a, [de]
     or a
     jr nz, jr_002_5925
 
-    ld de, $CF00
+    ld de, wUnk_CF00
     ld a, [de]
     or a
     jr nz, jr_002_5925
@@ -4194,7 +4194,7 @@ Jump_002_59EC:
     ld [de], a
     call Call_000_21BB
     pop de
-    ld a, [$C757]
+    ld a, [wUnk_C757]
     bit 0, a
     jr nz, jr_002_5A1E
 
@@ -4228,7 +4228,7 @@ Call_002_5A24:
 
 Call_002_5A39:
     call Call_000_2650
-    ld a, [$C7D2]
+    ld a, [wUnk_C7D2]
     add $04
     ld e, $07
     ld [de], a
@@ -4241,14 +4241,14 @@ Call_002_5A39:
     ld a, $01
     ld e, $18
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     bit 5, a
     call nz, Call_000_26AB
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     bit 5, a
     jr nz, jr_002_5A6B
 
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     sub $18
     ld e, $0C
     ld [de], a
@@ -4256,7 +4256,7 @@ Call_002_5A39:
 
 
 jr_002_5A6B:
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     add $18
     ld e, $0C
     ld [de], a
@@ -4302,14 +4302,14 @@ Call_002_5A74:
     call Call_000_0875
     xor a
     ld [$D7DC], a
-    ld [$C757], a
+    ld [wUnk_C757], a
     ld a, $53
     call Call_000_0875
     ld a, $01
     ld e, $11
     ld [de], a
     xor a
-    ld [$C752], a
+    ld [wUnk_C752], a
     call Call_000_219F
     jp Jump_000_2089
 
@@ -4392,7 +4392,7 @@ jr_002_5B37:
 
 jr_002_5B3E:
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     ld a, [de]
     pop de
     or a
@@ -4405,7 +4405,7 @@ jr_002_5B3E:
 
 jr_002_5B50:
     push de
-    ld de, $CF00
+    ld de, wUnk_CF00
     ld a, [de]
     pop de
     or a
@@ -4440,15 +4440,15 @@ jr_002_5B64:
 
     ld e, $0C
     ld a, [de]
-    ld [$C7D1], a
+    ld [wUnk_C7D1], a
     ld e, $07
     ld a, [de]
     ld c, a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     ld a, $08
     add c
     ld e, $07
@@ -4461,11 +4461,11 @@ jr_002_5B64:
     ld [de], a
     ld bc, $5BDC
     call Call_000_2640
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     bit 5, a
     jr nz, jr_002_5BC4
 
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     sub $16
     ld e, $0C
     ld [de], a
@@ -4475,7 +4475,7 @@ jr_002_5B64:
     jr jr_002_5BD4
 
 jr_002_5BC4:
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     add $16
     ld e, $0C
     ld [de], a
@@ -4501,9 +4501,9 @@ jr_002_5BD4:
     ld c, a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     push de
-    ld de, $CF00
+    ld de, wUnk_CF00
     call Call_002_5D88
     pop de
     ld a, $10
@@ -4524,7 +4524,7 @@ jr_002_5BD4:
     ld c, a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     push de
     ld de, $D000
     call Call_002_5D88
@@ -4567,7 +4567,7 @@ Call_002_5C50:
     jr z, jr_002_5C66
 
     push de
-    ld de, $CF00
+    ld de, wUnk_CF00
     call Call_000_219F
     pop de
     xor a
@@ -4630,7 +4630,7 @@ jr_002_5C66:
     ld a, [de]
     ld c, a
     xor a
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     push bc
     ld a, b
     sub $09
@@ -4680,7 +4680,7 @@ jr_002_5CF9:
 
 jr_002_5D07:
     pop bc
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     or a
     ret z
 
@@ -4692,7 +4692,7 @@ jr_002_5D07:
 
 Call_002_5D12:
     ld a, $01
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     call Call_000_26AB
     ld h, d
     ld l, $0A
@@ -4710,7 +4710,7 @@ jr_002_5D27:
 
 Call_002_5D2D:
     ld a, $01
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     call Call_000_2159
     ld h, d
     ld l, $05
@@ -4757,9 +4757,9 @@ jr_002_5D58:
 
 jr_002_5D6A:
     push de
-    ld de, $CE00
+    ld de, wUnk_CE00
     call Call_000_2183
-    ld de, $CF00
+    ld de, wUnk_CF00
     call Call_000_2183
     ld de, $D000
     call Call_000_2183
@@ -4798,11 +4798,11 @@ Call_002_5D88:
     ld a, [hl]
     ld b, a
     call Call_000_20E2
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     set 0, a
     ld e, $0E
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     bit 5, a
     call nz, Call_000_214A
     ld a, $08
@@ -4836,7 +4836,7 @@ Call_002_5D88:
 
     db $01, $5E, $35, $5E, $44, $5E, $64, $5E, $7D, $5E
 
-    ld a, [$C507]
+    ld a, [wUnk_C507]
     cp $40
     ret c
 
@@ -4951,7 +4951,7 @@ Jump_002_5E98:
     ld c, a
     ld e, $11
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0E
     ld a, [de]
     pop de
@@ -4964,7 +4964,7 @@ Jump_002_5E98:
     add $10
     ld e, $07
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     and $01
     ld b, a
     ld e, $11
@@ -4991,7 +4991,7 @@ Jump_002_5E98:
     ld c, a
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0D
     ld a, [de]
     pop de
@@ -5004,7 +5004,7 @@ Jump_002_5E98:
     ld a, $01
     ld e, $11
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     bit 5, a
     jr nz, jr_002_5F24
 
@@ -5062,7 +5062,7 @@ jr_002_5F24:
 
 
     push de
-    ld de, $CC00
+    ld de, wUnk_CC00
     ld e, $00
     ld a, [de]
     pop de
@@ -5070,7 +5070,7 @@ jr_002_5F24:
     ret nz
 
     xor a
-    ld [$C78B], a
+    ld [wUnk_C78B], a
     push de
     call Call_000_3626
     pop de
@@ -5093,7 +5093,7 @@ Call_002_5F6C:
 
 jr_002_5F7C:
     push de
-    ld de, $C900
+    ld de, wUnk_C900
     call Call_000_24F0
     jp c, Jump_002_5F9E
 
@@ -5103,7 +5103,7 @@ jr_002_5F7C:
     res 0, [hl]
     ld l, $19
     ld [hl], $20
-    ld hl, $CA00
+    ld hl, wUnk_CA00
     ld l, $11
     res 7, [hl]
     res 0, [hl]
@@ -5130,12 +5130,12 @@ Jump_002_5F9E:
     ld a, [de]
     ld c, a
     push bc
-    ld de, $CA00
+    ld de, wUnk_CA00
     call Call_000_2183
-    ld de, $CB00
+    ld de, wUnk_CB00
     call Call_000_2183
     pop bc
-    ld de, $CC00
+    ld de, wUnk_CC00
     ld a, b
     ld e, $0C
     ld [de], a
@@ -5153,7 +5153,7 @@ Jump_002_5F9E:
     ld [de], a
     pop de
     call Call_000_262C
-    ld a, [$C757]
+    ld a, [wUnk_C757]
     bit 0, a
     jr nz, jr_002_5FEC
 
@@ -5220,7 +5220,7 @@ jr_002_5FEC:
     ld a, [de]
     bit 5, a
     call nz, Call_000_214A
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     ld e, $1B
     ld [de], a
     ld a, $20
@@ -5249,7 +5249,7 @@ jr_002_5FEC:
     bit 5, a
     jr nz, jr_002_6086
 
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     ld e, $0C
     ld a, [de]
     cp [hl]
@@ -5268,7 +5268,7 @@ jr_002_5FEC:
 
 
 jr_002_6086:
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     ld e, $0C
     ld a, [de]
     cp [hl]
@@ -5331,7 +5331,7 @@ jr_002_60A4:
     call Call_000_21F1
     ret nz
 
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     cp $30
     jp c, Jump_002_613C
 
@@ -5343,14 +5343,14 @@ jr_002_60A4:
     bit 5, a
     jr nz, jr_002_6123
 
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     ld e, $0C
     ld a, [de]
     sub $16
     cp [hl]
     jp c, Jump_002_616F
 
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     cp $50
     jp c, Jump_002_614B
 
@@ -5359,14 +5359,14 @@ jr_002_60A4:
 
 
 jr_002_6123:
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     ld e, $0C
     ld a, [de]
     add $16
     cp [hl]
     jp nc, Jump_002_616F
 
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     cp $50
     jp nc, Jump_002_614B
 
@@ -5438,7 +5438,7 @@ Jump_002_616F:
 
     ld e, $0E
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0C
     ld a, [de]
     ld b, a
@@ -5450,7 +5450,7 @@ Jump_002_616F:
     inc d
     push bc
     ld a, $E8
-    ld hl, $C7D0
+    ld hl, wUnk_C7D0
     bit 5, [hl]
     call nz, Call_000_0547
     add b
@@ -5471,7 +5471,7 @@ Jump_002_616F:
     ld a, $01
     ld e, $18
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld e, $0E
     set 0, a
     ld [de], a
@@ -5480,7 +5480,7 @@ Jump_002_616F:
     pop bc
     inc d
     ld a, $E8
-    ld hl, $C7D0
+    ld hl, wUnk_C7D0
     bit 5, [hl]
     call nz, Call_000_0547
     add b
@@ -5501,7 +5501,7 @@ Jump_002_616F:
     ld a, $01
     ld e, $18
     ld [de], a
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld e, $0E
     set 0, a
     ld [de], a
@@ -5808,17 +5808,17 @@ jr_002_63AF:
 
 jr_002_63C1:
     push de
-    ld de, $CA00
+    ld de, wUnk_CA00
     call Call_000_2183
-    ld de, $CB00
+    ld de, wUnk_CB00
     call Call_000_2183
-    ld de, $CC00
+    ld de, wUnk_CC00
     call Call_000_2183
-    ld de, $CD00
+    ld de, wUnk_CD00
     call Call_000_2183
     pop de
     ld a, $09
-    ld [$C728], a
+    ld [wUnk_C728], a
     ld a, $01
     ld [$D02A], a
     ld a, $20
@@ -5827,10 +5827,10 @@ jr_002_63C1:
     ld a, $03
     call Call_000_2091
     ld a, $01
-    ld [$C752], a
+    ld [wUnk_C752], a
     xor a
     ld [$D7DC], a
-    ld [$C757], a
+    ld [wUnk_C757], a
     xor a
     ret
 
@@ -5995,11 +5995,11 @@ jr_002_6470:
 
 
     xor a
-    ld [$C78B], a
+    ld [wUnk_C78B], a
     push de
     call Call_000_3634
     pop de
-    ld a, [$C757]
+    ld a, [wUnk_C757]
     bit 0, a
     jr nz, jr_002_6502
 
@@ -6145,39 +6145,39 @@ Jump_002_659D:
 
     db $B5, $65, $17, $66, $85, $67, $96, $67
 
-    ld a, [$C776]
+    ld a, [wUnk_C776]
     or a
     ret nz
 
     push de
-    ld hl, $C500
+    ld hl, wUnk_C500
     bit 3, [hl]
     jr z, jr_002_65C9
 
     res 3, [hl]
     ld a, $63
-    ld [$C507], a
+    ld [wUnk_C507], a
 
 jr_002_65C9:
     ld a, $00
-    ld [$C50D], a
-    ld hl, $C50E
+    ld [wUnk_C50D], a
+    ld hl, wUnk_C50E
     set 0, [hl]
     call Call_000_1FCB
     call Call_000_1FD2
-    ld de, $C600
+    ld de, wUnk_C600
     call Call_000_2183
-    ld de, $C700
+    ld de, wUnk_C700
     call Call_000_2183
-    ld de, $C800
+    ld de, wUnk_C800
     call Call_000_2183
     ld a, $02
     call Call_000_35C1
     ld a, $0E
-    ld [$C736], a
+    ld [wUnk_C736], a
     pop de
     ld a, $01
-    ld [$C782], a
+    ld [wUnk_C782], a
     xor a
     ld e, $1B
     ld [de], a
@@ -6187,7 +6187,7 @@ jr_002_65C9:
     call Call_000_0875
     xor a
     ld [$D7DC], a
-    ld [$C757], a
+    ld [wUnk_C757], a
     ld a, $E4
     ldh [hUnk_FF88], a
     ld a, $0F
@@ -6271,7 +6271,7 @@ jr_002_667E:
     ld h, d
     ld l, $0E
     res 5, [hl]
-    ld a, [$C50C]
+    ld a, [wUnk_C50C]
     ld l, $0C
     cp [hl]
     jr c, jr_002_669C
@@ -6294,17 +6294,17 @@ jr_002_669C:
 
     ld e, $0C
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $07
     ld a, [de]
-    ld [$C7D1], a
+    ld [wUnk_C7D1], a
     ld e, $0E
     ld a, [de]
 
 jr_002_66C0:
-    ld [$C7D2], a
+    ld [wUnk_C7D2], a
     push de
-    ld de, $CD00
+    ld de, wUnk_CD00
     ld b, $05
 
 jr_002_66C9:
@@ -6318,9 +6318,9 @@ jr_002_66C9:
     inc hl
     ld b, [hl]
     call Call_000_2640
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld b, a
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     ld c, a
     call Call_000_2098
     ld a, $1F
@@ -6332,7 +6332,7 @@ jr_002_66C9:
     ld a, $01
     ld e, $18
     ld [de], a
-    ld a, [$C7D2]
+    ld a, [wUnk_C7D2]
     bit 5, a
     call nz, Call_000_214A
     pop bc
@@ -6355,7 +6355,7 @@ jr_002_66C9:
     ld hl, $28AA
     call Call_000_2F9F
     push de
-    ld de, $CD00
+    ld de, wUnk_CD00
     ld b, $05
 
 jr_002_675F:
@@ -6381,12 +6381,12 @@ jr_002_6773:
     ret
 
 
-    ld a, [$C513]
+    ld a, [wUnk_C513]
     or a
     ret z
 
     ld a, $11
-    ld [$C728], a
+    ld [wUnk_C728], a
     ld a, $04
     ld [$D02A], a
     ret
@@ -6425,12 +6425,12 @@ jr_002_6773:
     ld [de], a
     ld e, $0C
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $07
     ld a, [de]
-    ld [$C7D1], a
+    ld [wUnk_C7D1], a
     push de
-    ld de, $CD00
+    ld de, wUnk_CD00
     ld b, $08
 
 jr_002_67CF:
@@ -6444,9 +6444,9 @@ jr_002_67CF:
     inc hl
     ld b, [hl]
     call Call_000_2640
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     ld b, a
-    ld a, [$C7D1]
+    ld a, [wUnk_C7D1]
     add $0C
     ld c, a
     call Call_000_2098
@@ -6478,7 +6478,7 @@ jr_002_67CF:
     db $40, $FF, $40, $FF, $02, $02, $B1, $28
 
     push de
-    ld de, $CD00
+    ld de, wUnk_CD00
     ld b, $08
 
 jr_002_6880:
@@ -6597,7 +6597,7 @@ jr_002_68FE:
 
 jr_002_6910:
     push de
-    ld de, $CA00
+    ld de, wUnk_CA00
     call Call_000_2183
     pop de
     xor a
@@ -6606,11 +6606,11 @@ jr_002_6910:
 
 Jump_002_691A:
     push de
-    ld de, $CD00
+    ld de, wUnk_CD00
     call Call_000_2183
-    ld de, $CE00
+    ld de, wUnk_CE00
     call Call_000_2183
-    ld de, $CF00
+    ld de, wUnk_CF00
     call Call_000_2183
     ld de, $D000
     call Call_000_2183
@@ -6619,7 +6619,7 @@ Jump_002_691A:
     pop de
     xor a
     ld [$D7DC], a
-    ld [$C757], a
+    ld [wUnk_C757], a
     ld a, $E4
     ldh [hUnk_FF88], a
     ld a, $06
@@ -6628,11 +6628,11 @@ Jump_002_691A:
 
 Jump_002_694A:
     push de
-    ld de, $CD00
+    ld de, wUnk_CD00
     call Call_000_2183
-    ld de, $CE00
+    ld de, wUnk_CE00
     call Call_000_2183
-    ld de, $CF00
+    ld de, wUnk_CF00
     call Call_000_2183
     ld de, $D000
     call Call_000_2183
@@ -6647,12 +6647,12 @@ Jump_002_694A:
     pop de
     call Call_000_262C
     ld a, $10
-    ld [$C728], a
+    ld [wUnk_C728], a
     ld a, $03
     ld [$D02A], a
     xor a
     ld [$D7DC], a
-    ld [$C757], a
+    ld [wUnk_C757], a
     ld a, $E4
     ldh [hUnk_FF88], a
     ret
@@ -6690,7 +6690,7 @@ Jump_002_694A:
     call Call_000_2565
     ld e, $0C
     ld a, [de]
-    ld hl, $C50C
+    ld hl, wUnk_C50C
     sub [hl]
     add $0E
     cp $1C
@@ -6882,7 +6882,7 @@ jr_002_6AD1:
     ld b, a
     ld e, $11
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0E
     ld a, [de]
     pop de
@@ -6892,7 +6892,7 @@ jr_002_6AD1:
     add $20
     ld c, a
     call Call_000_2098
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     res 7, a
     ld e, $11
     ld [de], a
@@ -6909,7 +6909,7 @@ jr_002_6AD1:
     ld b, a
     ld e, $11
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0E
     ld a, [de]
     pop de
@@ -6919,7 +6919,7 @@ jr_002_6AD1:
     add $20
     ld c, a
     call Call_000_2098
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     res 7, a
     ld e, $11
     ld [de], a
@@ -6939,7 +6939,7 @@ jr_002_6AD1:
     ld b, a
     ld e, $11
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0E
     ld a, [de]
     pop de
@@ -6949,7 +6949,7 @@ jr_002_6AD1:
     add $20
     ld c, a
     call Call_000_2098
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     res 7, a
     ld e, $11
     ld [de], a
@@ -6969,7 +6969,7 @@ jr_002_6AD1:
     ld b, a
     ld e, $11
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0E
     ld a, [de]
     pop de
@@ -6979,7 +6979,7 @@ jr_002_6AD1:
     add $20
     ld c, a
     call Call_000_2098
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     res 7, a
     ld e, $11
     ld [de], a
@@ -7005,7 +7005,7 @@ jr_002_6AD1:
     ld c, a
     ld e, $0D
     ld a, [de]
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld e, $0E
     ld a, [de]
     pop de
@@ -7014,7 +7014,7 @@ jr_002_6AD1:
     bit 5, a
     jr nz, jr_002_6BDE
 
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     cp $A5
     jr z, jr_002_6BBC
 
@@ -7063,7 +7063,7 @@ jr_002_6BCD:
 
 
 jr_002_6BDE:
-    ld a, [$C7D0]
+    ld a, [wUnk_C7D0]
     cp $A5
     jr z, jr_002_6BFA
 
@@ -7137,7 +7137,7 @@ Call_002_6C26:
 
 jr_002_6C36:
     push de
-    ld de, $C900
+    ld de, wUnk_C900
     call Call_000_24F0
     jr c, jr_002_6C4E
 

@@ -222,14 +222,14 @@ jr_000_008C:
 
 Call_000_0098:
 Jump_000_0098:
-    ld hl, $C523
+    ld hl, wUnk_C523
     ld a, [hl]
     and $03
     jr nz, jr_000_00AA
 
     set 0, [hl]
     call Call_000_0A38
-    ld hl, $C523
+    ld hl, wUnk_C523
     res 0, [hl]
 
 jr_000_00AA:

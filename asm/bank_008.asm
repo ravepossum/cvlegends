@@ -111,7 +111,7 @@ jr_008_4050:
     ld bc, $0004
     call Call_000_38FB
     ld a, $01
-    ld [$C73D], a
+    ld [wUnk_C73D], a
     ret
 
 
@@ -4195,7 +4195,7 @@ jr_008_4F39:
     nop
     nop
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
     call z, RST_00
     nop
@@ -4315,7 +4315,7 @@ jr_008_4F9E:
     nop
     adc e
     nop
-    jp $C340
+    jp wUnk_C340
 
 
     ld b, b
@@ -5225,13 +5225,13 @@ jr_008_52FA:
     ld [hl+], a
     cp e
     ld [hl+], a
-    call z, $CC00
+    call z, wUnk_CC00
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
     ld [hl], e
     ld [bc], a
@@ -6013,9 +6013,9 @@ jr_008_56A8:
     nop
     nop
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
-    call z, $CC00
+    call z, wUnk_CC00
     nop
     call z, RST_00
 
@@ -6230,7 +6230,7 @@ jr_008_5773:
     nop
     ld [hl+], a
     ld [hl+], a
-    ld de, $CE11
+    ld de, wUnk_CE11
     adc h
     adc e
     ld a, [bc]
@@ -6262,7 +6262,7 @@ jr_008_57E5:
     cp $1B
     inc de
     inc c
-    ld [$C9ED], sp
+    ld [wUnk_C9ED], sp
     adc h
     ld [$30B8], sp
     ldh a, [hUnk_FFE0]
@@ -6356,7 +6356,7 @@ jr_008_57E5:
     db $FC
     nop
     add sp, $00
-    jp c, $C700
+    jp c, wUnk_C700
 
     nop
     rst $28
@@ -6828,7 +6828,7 @@ jr_008_59ED:
     nop
     sbc e
     nop
-    call z, $CF00
+    call z, wUnk_CF00
     nop
     ld h, a
     nop

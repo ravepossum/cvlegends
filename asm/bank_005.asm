@@ -2,10 +2,10 @@ SECTION "ROM Bank $005", ROMX
 
     call Call_000_0597
     ld a, $28
-    ld [$C7DE], a
+    ld [wUnk_C7DE], a
     ld a, $19
-    ld [$C7DD], a
-    ld hl, $C500
+    ld [wUnk_C7DD], a
+    ld hl, wUnk_C500
 
 jr_005_4010:
     push hl
@@ -13,13 +13,13 @@ jr_005_4010:
     pop hl
     ld bc, $0100
     add hl, bc
-    ld a, [$C7DD]
+    ld a, [wUnk_C7DD]
     dec a
-    ld [$C7DD], a
+    ld [wUnk_C7DD], a
     jr nz, jr_005_4010
 
     xor a
-    ld [$C72D], a
+    ld [wUnk_C72D], a
     ret
 
 
@@ -33,7 +33,7 @@ Call_005_4027:
     bit 0, a
     jr z, jr_005_4046
 
-    ld [$C72A], a
+    ld [wUnk_C72A], a
     ld a, l
     or $07
     ld l, a
@@ -51,9 +51,9 @@ Call_005_4027:
 
 
 jr_005_4046:
-    ld a, [$C7DE]
+    ld a, [wUnk_C7DE]
     dec a
-    ld [$C7DE], a
+    ld [wUnk_C7DE], a
     ret
 
 
@@ -62,19 +62,19 @@ Call_005_404E:
     call $DDE1
     ld a, [de]
     inc de
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     ld h, a
-    ld a, [$C7DE]
+    ld a, [wUnk_C7DE]
     sub h
-    ld [$C7DE], a
+    ld [wUnk_C7DE], a
     ret c
 
     ld h, $DC
-    ld a, [$C72D]
+    ld a, [wUnk_C72D]
     ld l, a
 
 Jump_005_4068:
-    ld a, [$C72A]
+    ld a, [wUnk_C72A]
     bit 6, a
     ld a, [de]
     inc de
@@ -87,7 +87,7 @@ Jump_005_4075:
     add c
     add $10
     ld [hl+], a
-    ld a, [$C72A]
+    ld a, [wUnk_C72A]
     bit 5, a
     ld a, [de]
     inc de
@@ -104,19 +104,19 @@ Jump_005_4086:
     inc de
     ld [hl+], a
     push bc
-    ld a, [$C72A]
+    ld a, [wUnk_C72A]
     ld b, a
     ld a, [de]
     inc de
     xor b
     ld [hl+], a
     pop bc
-    ld a, [$C72D]
+    ld a, [wUnk_C72D]
     add $04
-    ld [$C72D], a
-    ld a, [$C7D0]
+    ld [wUnk_C72D], a
+    ld a, [wUnk_C7D0]
     dec a
-    ld [$C7D0], a
+    ld [wUnk_C7D0], a
     jp nz, Jump_005_4068
 
     ret

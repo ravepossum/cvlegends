@@ -1011,6 +1011,7 @@ jr_00E_4645:
 
     db $E0, $01, $80, $36, $E0, $01, $40, $56, $FF
 
+Jump_00E_465C:
     ld l, $A5
     bit 4, [hl]
     ret nz
@@ -2337,6 +2338,7 @@ Jump_00E_4CDE:
     ret
 
 
+Jump_00E_4CE3:
     xor a
     ld hl, $D0A0
     ld [hl+], a

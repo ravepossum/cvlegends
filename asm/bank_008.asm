@@ -35,6 +35,7 @@ SECTION "ROM Bank $008", ROMX
     jr nz, jr_008_4050
 
     ld hl, $405B
+Jump_008_4048:
     call Call_000_373C
     call Call_000_3772
     sub a
@@ -550,7 +551,6 @@ jr_008_4285:
     ld [bc], a
     adc d
     jr z, jr_008_4280
-
     add b
     ld [bc], a
     adc d
@@ -766,7 +766,7 @@ jr_008_4285:
     ld a, a
     push af
     ld h, [hl]
-    jp z, $4049
+    jp z, Jump_008_4048+1 ; ravetodo seems sus and cursed
 
     ld d, c
     jr jr_008_4425

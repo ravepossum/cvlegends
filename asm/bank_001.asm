@@ -296,11 +296,11 @@ jr_001_46E9:
     call Call_000_2035
     ld a, $11
     ld [$C50D], a
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     jp nz, Jump_001_47E5
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $20
     jp nz, Jump_001_4944
 
@@ -315,7 +315,7 @@ jr_001_4727:
 
 jr_001_472F:
     call Call_001_59A8
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $20
     jp nz, Jump_001_48D3
 
@@ -336,11 +336,11 @@ jr_001_472F:
     call Call_000_2035
     ld a, $11
     ld [$C50D], a
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     jp nz, Jump_001_47E5
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $20
     jp nz, Jump_001_4944
 
@@ -355,7 +355,7 @@ jr_001_476B:
 
 Jump_001_4773:
     call Call_001_59AE
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $20
     jp nz, Jump_001_48D3
 
@@ -373,11 +373,11 @@ Jump_001_4773:
     call Call_000_1F3D
     jp z, Jump_001_52F2
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     jp nz, Jump_001_47E5
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     ret z
 
@@ -389,7 +389,7 @@ Jump_001_47A1:
 
 
 jr_001_47AA:
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     jp nz, Jump_001_47A1
 
@@ -453,11 +453,11 @@ Jump_001_47E5:
 
 Jump_001_4809:
 jr_001_4809:
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     jp nz, Jump_001_48D3
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     ret z
 
@@ -476,15 +476,15 @@ jr_001_4809:
 
 
 jr_001_4830:
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     jp nz, Jump_001_5106
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     jr nz, jr_001_4847
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     jr nz, jr_001_4887
 
@@ -593,11 +593,11 @@ Jump_001_48D3:
     call Call_001_57D0
     ret nz
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     jp z, Jump_000_1FCB
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $04
     jr z, jr_001_48F9
 
@@ -647,11 +647,11 @@ jr_001_4944:
     call Call_001_57D0
     ret nz
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $04
     jp z, Jump_001_495D
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     jr z, jr_001_495D
 
@@ -688,7 +688,7 @@ jr_001_495D:
     jp Jump_001_4697
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $40
     jp z, Jump_001_46D3
 
@@ -1139,18 +1139,18 @@ jr_001_4C31:
     call Call_001_48D3
     ret nz
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     jp nz, Jump_001_47C0
 
     ld de, $C500
     ld hl, $596C
     call Call_000_2F9F
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     jp nz, Jump_001_4C74
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     jp nz, Jump_001_4C9B
 
@@ -1231,25 +1231,25 @@ jr_001_4CB9:
     jp z, Jump_001_5311
 
     call Call_001_4E4C
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     jp nz, Jump_001_4E59
 
 Jump_001_4CF6:
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     ld a, $03
     jp nz, Jump_001_468A
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     jr nz, jr_001_4D1D
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     jr nz, jr_001_4D55
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     ret nz
 
@@ -1282,7 +1282,7 @@ jr_001_4D1D:
 jr_001_4D40:
     call Call_000_1FCB
     call Call_001_59A8
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     ret nz
 
@@ -1315,7 +1315,7 @@ jr_001_4D55:
 Jump_001_4D79:
     call Call_000_1FCB
     call Call_001_59AE
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     ret nz
 
@@ -1329,7 +1329,7 @@ Jump_001_4D79:
     call Call_000_1F3D
     jp z, Jump_001_5311
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     ld a, $03
     jp nz, Jump_001_468A
@@ -1337,18 +1337,18 @@ Jump_001_4D79:
     ld de, $C500
     ld hl, $5975
     call Call_000_2F9F
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     call nz, Call_001_4DD0
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     call nz, Call_001_4DE4
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $03
     ld a, $01
     jp z, Jump_001_468A
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     ret nz
 
@@ -1804,7 +1804,7 @@ Jump_001_508D:
     jp Jump_001_5070
 
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $10
     jp nz, Jump_001_5106
 
@@ -1832,18 +1832,18 @@ Jump_001_50B3:
     call Call_001_4E88
     jp z, Jump_001_52F2
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $20
     jp nz, Jump_001_4944
 
     ld de, $C500
     ld hl, $597E
     call Call_000_2F9F
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $04
     jp nz, Jump_001_50F4
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     jp nz, Jump_001_50FD
 
@@ -1869,7 +1869,7 @@ Jump_001_50FD:
 
 
 Jump_001_5106:
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     jp z, Jump_001_50A3
 
@@ -1900,11 +1900,11 @@ Jump_001_5132:
     call Call_001_4E88
     jp z, Jump_001_52F2
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $08
     jp z, Jump_001_5151
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $10
     jp z, Jump_001_47C0
 
@@ -1947,13 +1947,13 @@ Call_001_5159:
     bit 1, [hl]
     ret nz
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     call nz, Call_001_52B0
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     call nz, Call_001_52D1
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     jp nz, Jump_001_521A
 
@@ -1985,7 +1985,7 @@ Call_001_51C2:
     jr nz, jr_001_51F1
 
 jr_001_51D5:
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $10
     jr nz, jr_001_51E1
 
@@ -2031,7 +2031,7 @@ jr_001_51FE:
 
 
 Jump_001_521A:
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $04
     jp z, Jump_001_5228
 
@@ -2189,13 +2189,13 @@ Jump_001_5311:
     ld [$C504], a
     jr jr_001_52F2
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     call nz, Call_001_52B0
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     call nz, Call_001_52D1
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $20
     jp nz, Jump_001_521A
 
@@ -2983,7 +2983,7 @@ Call_001_57D0:
     or a
     jr nz, jr_001_5804
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $30
     cp $30
     jr nz, jr_001_5804
@@ -3051,10 +3051,10 @@ jr_001_5804:
     bit 1, a
     jr nz, jr_001_5872
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     call nz, Call_001_4BF5
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     call nz, Call_001_4C19
 
@@ -3116,11 +3116,11 @@ jr_001_588F:
     bit 1, a
     ret nz
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $01
     jp nz, Jump_001_58EC
 
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     and $02
     jp nz, Jump_001_590B
 
@@ -3774,7 +3774,7 @@ jr_001_6026:
     jp $DED2
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $3F
     ret z
 
@@ -3782,7 +3782,7 @@ jr_001_6026:
     ld de, $C740
     ld c, $09
     call $DEC2
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     ld [$C749], a
     call Call_001_6051
     ret nz

@@ -1,5 +1,6 @@
 ; constants
 INCLUDE "constants/hardware.inc"
+INCLUDE "constants/macros.asm"
 INCLUDE "constants/constants.asm"
 ; asm
 INCLUDE "asm/bank_000.asm"
@@ -19,4 +20,5 @@ INCLUDE "asm/bank_00d.asm"
 INCLUDE "asm/bank_00e.asm"
 INCLUDE "asm/bank_00f.asm"
 ; ram
+INCLUDE "ram/wram.asm"
 INCLUDE "ram/hram.asm"

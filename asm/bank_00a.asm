@@ -50,7 +50,7 @@ SECTION "ROM Bank $00a", ROMX
     jp Jump_000_0BD6
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $80
     jr nz, jr_00A_40A6
 
@@ -116,15 +116,15 @@ jr_00A_40A6:
     ld de, $C500
     ld hl, $426D
     call Call_000_2F9F
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $13
     ret z
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $03
     jp nz, Jump_00A_4185
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     ret z
 
@@ -223,15 +223,15 @@ Jump_00A_4185:
     jp Jump_000_0BD6
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $1C
     ret z
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $0C
     jp nz, Jump_00A_4215
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     ret z
 
@@ -443,11 +443,11 @@ Jump_00A_4354:
     ld de, $C500
     ld hl, $443B
     call Call_000_2F9F
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $1C
     ret z
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $0C
     jp nz, Jump_00A_4423
 
@@ -526,7 +526,7 @@ Jump_00A_4423:
     jp Jump_000_0BD6
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     or a
     ret z
 
@@ -582,7 +582,7 @@ jr_00A_44D5:
     jp Jump_000_0BD6
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     or a
     ret z
 

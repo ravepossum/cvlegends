@@ -1258,11 +1258,11 @@ jr_00B_4AA5:
     jp Jump_000_0E29
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $43
     ret z
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $40
     jr nz, jr_00B_4B2F
 
@@ -1276,7 +1276,7 @@ jr_00B_4AA5:
     call Call_00B_4CC3
     ld a, $22
     call Call_000_0875
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $01
     jr nz, jr_00B_4B16
 

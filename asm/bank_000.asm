@@ -48,7 +48,7 @@ Jump_000_0160:
     call Call_000_0343
 
 jr_000_01A7: ; main game loop?
-    call Call_000_0435
+    call ReadJoypad
     call Call_000_0491
     call Call_000_0BDE
     call Call_000_06A4
@@ -515,38 +515,32 @@ jr_000_0419:
     db $00, $00, $01, $00, $02, $00, $04, $00, $05, $00, $06, $00, $07, $05, $41, $40
     db $45, $00, $FF, $07
 
-Call_000_0435:
-    ld a, $20
+ReadJoypad:
+    ld a, P1F_GET_DPAD
     ldh [rP1], a
+REPT 3
     ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
+ENDR
     cpl
-    and $0F
+    and %1111
     ld b, a
-    ld a, $10
+    ld a, P1F_GET_BTN
     ldh [rP1], a
+REPT 9
     ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
-    ldh a, [rP1]
+ENDR
     cpl
-    and $0F
+    and %1111
     swap a
     or b
     ld c, a
-    ld a, [$C553]
+    ld a, [wJoyInput1]
     xor c
     and c
-    ld [$C555], a
+    ld [wJoyInput2], a
     ld a, c
-    ld [$C553], a
-    ld a, $30
+    ld [wJoyInput1], a
+    ld a, P1F_GET_NONE
     ldh [rP1], a
     ret
 
@@ -570,9 +564,9 @@ jr_000_0478:
     db $FD, $C9
 
 Call_000_0491:
-    ld a, [$C553]
-    and $F0
-    cp $F0
+    ld a, [wJoyInput1]
+    and ~D_ANY 
+    cp A_BUTTON + B_BUTTON + START + SELECT ; soft reset
     ret nz
 
     ld a, $01
@@ -605,7 +599,7 @@ Call_000_04CB:
     cp $08
     ret nc
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $80
     ret z
 
@@ -638,9 +632,9 @@ jr_000_04F6:
 
 
 Call_000_0502:
-    ld hl, $C553
+    ld hl, wJoyInput1
     call Call_000_050B
-    ld hl, $C555
+    ld hl, wJoyInput2
 
 Call_000_050B:
     ld b, $00
@@ -1261,9 +1255,8 @@ Call_000_08F8:
     or a
     jr nz, jr_000_0906
 
-    ld a, $0E
-    ld [rROMB0], a
-    jp $4CE3
+    bankset Jump_00E_4CE3 
+    jp Jump_00E_4CE3
 
 
 jr_000_0906:
@@ -1524,11 +1517,8 @@ Call_000_0A86:
     ld a, [hl]
     or a
     ret z
-
-    ld a, $0E
-    ld [rROMB0], a
-    jp $465C
-
+    bankset Jump_00E_465C
+    jp Jump_00E_465C
 
 Call_000_0A96:
     ld hl, $D7C5
@@ -2053,15 +2043,15 @@ Call_000_0BDE:
     or a
     ret z
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $01
     jr nz, jr_000_0DD9
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $02
     jr nz, jr_000_0DFB
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $40
     ret z
 
@@ -7536,7 +7526,7 @@ Call_000_2F70:
     jr z, jr_000_2F8F
 
     di
-    ld hl, $FF41
+    ld hl, rSTAT
 
 jr_000_2F87:
     bit 1, [hl]
@@ -7913,7 +7903,7 @@ jr_000_3194:
     jp Jump_000_0BD6
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $80
     jp nz, Jump_000_334B
 
@@ -7980,7 +7970,7 @@ Jump_000_334B:
     jp Jump_000_0BDA
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     or a
     jp nz, Jump_000_0BD6
 
@@ -8112,7 +8102,7 @@ jr_000_3463:
     jp Jump_000_0BD6
 
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $80
     jp nz, Jump_000_34C4
 

@@ -809,7 +809,7 @@ jr_009_4600:
 
     db $61, $7A
 
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $80
     ld a, $05
     jp nz, Jump_009_4492
@@ -1064,7 +1064,7 @@ Jump_009_4778:
     db $C8, $9C, $08, $9D
 
     call Call_009_4868
-    ld a, [$C555]
+    ld a, [wJoyInput2]
     and $10
     ret z
 

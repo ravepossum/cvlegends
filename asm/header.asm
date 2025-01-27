@@ -205,7 +205,7 @@ jr_000_0085:
 
 
 Call_000_0089:
-    ld hl, $FF41
+    ld hl, rSTAT
 
 jr_000_008C:
     bit 1, [hl]

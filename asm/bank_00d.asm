@@ -803,7 +803,7 @@ jr_00D_6985:
     ld b, h
 
 jr_00D_69A6:
-    ld hl, $D77F
+    ld hl, wUnk_D77F
     rst $38
     rst $38
     ret nz
@@ -1020,7 +1020,7 @@ jr_00D_6A77:
     nop
     ld hl, sp-$40
     ld de, $0E01
-    ld hl, $DE07
+    ld hl, wUnk_DE07
     ld h, b
     db $FD
     rst $38
@@ -1071,7 +1071,7 @@ jr_00D_6A9F:
     cp l
     inc b
     ld c, a
-    ld [$DE60], sp
+    ld [wUnk_DE60], sp
     ld l, d
     ld h, h
     ld hl, $2572
@@ -1861,7 +1861,7 @@ jr_00D_6DFC:
     or b
     ret c
 
-    ld bc, $D920
+    ld bc, wUnk_D920
     nop
     rra
     ld e, $0F
@@ -1998,7 +1998,7 @@ jr_00D_6EB4:
     cp [hl]
     nop
     ei
-    ld bc, $DFFC
+    ld bc, wUnk_DFFC
     ld h, b
     rrca
     nop
@@ -2153,7 +2153,7 @@ jr_00D_6EB4:
     add e
     nop
     ld a, b
-    ld a, [$DF61]
+    ld a, [wUnk_DF61]
     ld h, b
     adc $FE
     inc bc

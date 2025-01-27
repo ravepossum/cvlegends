@@ -2,7 +2,7 @@ SECTION "ROM Bank $006", ROMX
 
     ld hl, $4012
     ld a, [wUnk_C725]
-    call $DDD6
+    call wUnk_DDD6
     ld a, h
     ld [wUnk_C784], a
     ld a, l

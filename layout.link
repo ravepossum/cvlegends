@@ -64,6 +64,8 @@ ROMX $E
 ROMX $F
     "ROM Bank $00f"
 WRAM0
-	"WRAM"
+	"WRAM0"
+WRAMX $1
+	"WRAM1"
 HRAM
 	"HRAM"

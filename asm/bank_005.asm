@@ -59,7 +59,7 @@ jr_005_4046:
 
 Call_005_404E:
     ld hl, $40AA
-    call $DDE1
+    call wUnk_DDE1
     ld a, [de]
     inc de
     ld [wUnk_C7D0], a
@@ -587,7 +587,7 @@ jr_005_450D:
     nop
     nop
     adc $00
-    ld [$D008], sp
+    ld [wUnk_D008], sp
     nop
     db $10
     ldh a, [hUnk_FFD2]

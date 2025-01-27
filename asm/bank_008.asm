@@ -3923,13 +3923,13 @@ jr_008_4D86:
     ld [hl], $2D
     ld [hl], $D2
     nop
-    jp nc, $D200
+    jp nc, wUnk_D200
 
     nop
-    jp nc, $D200
+    jp nc, wUnk_D200
 
     nop
-    jp nc, $D200
+    jp nc, wUnk_D200
 
     nop
     jp nc, $0700
@@ -4145,7 +4145,7 @@ jr_008_4F0B:
     nop
     call nz, $2200
     nop
-    jp nc, $D200
+    jp nc, wUnk_D200
 
     nop
     jp nc, $AF00
@@ -5014,7 +5014,7 @@ jr_008_5283:
     nop
     rst $08
     ld b, b
-    jp nc, $D940
+    jp nc, wUnk_D940
 
     ld e, c
     or a

@@ -10,15 +10,15 @@ SECTION "ROM Bank $001", ROMX
     ld hl, $9C00
     ld bc, $0400
     ld a, $01
-    call $DEE8
+    call wUnk_DEE8
     ld hl, $9800
     ld bc, $0400
     ld a, $01
-    call $DEE8
+    call wUnk_DEE8
     ld hl, $41E2
     ld de, $9940
     ld bc, $0060
-    call $DED7
+    call wUnk_DED7
     ld a, $E1
     ldh [hUnk_FF84], a
     ld a, $E4
@@ -115,7 +115,7 @@ Call_001_4065:
     ld hl, $9C00
     ld bc, $0400
     xor a
-    call $DEE8
+    call wUnk_DEE8
     ld a, [wUnk_C73D]
     or a
     ret z
@@ -2545,7 +2545,7 @@ jr_001_5534:
     ld hl, wUnk_C757
     set 0, [hl]
     ld a, $01
-    ld [$D7DC], a
+    ld [wUnk_D7DC], a
     ld a, $3A
     jp Jump_000_0875
 
@@ -2760,7 +2760,7 @@ jr_001_568A:
     jr nz, jr_001_566E
 
     xor a
-    ld [$D7DC], a
+    ld [wUnk_D7DC], a
     ld a, $40
     call Call_000_0875
     ret
@@ -3522,7 +3522,7 @@ Call_001_5B59:
     ld hl, wUnk_C506
     ld bc, $0008
     xor a
-    jp $DEC9
+    jp wUnk_DEC9
 
 
 Call_001_5BA5:
@@ -3570,7 +3570,7 @@ Call_001_5BA5:
     ld hl, wUnk_C000
     ld bc, $0100
     xor a
-    call $DEC9
+    call wUnk_DEC9
     ld hl, $5C0A
     call Call_000_2FCD
     ld de, wUnk_C000
@@ -3639,7 +3639,7 @@ jr_001_5C01:
     xor a
     ld hl, wUnk_CE20
     ld bc, $00A0
-    call $DEC9
+    call wUnk_DEC9
     ld hl, $5D57
     call Call_000_2FCD
     ld a, [hl+]
@@ -3769,7 +3769,7 @@ jr_001_6026:
     xor a
     ld c, $0A
     ld hl, wUnk_C740
-    jp $DED2
+    jp wUnk_DED2
 
 
     ld a, [wJoyInput2]
@@ -3779,7 +3779,7 @@ jr_001_6026:
     ld hl, wUnk_C741
     ld de, wUnk_C740
     ld c, $09
-    call $DEC2
+    call wUnk_DEC2
     ld a, [wJoyInput2]
     ld [wUnk_C749], a
     call Call_001_6051
@@ -3949,7 +3949,7 @@ Jump_001_610D:
     ld hl, wUnk_CF20
     ld c, $E0
     xor a
-    jp $DED2
+    jp wUnk_DED2
 
 
     db $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01

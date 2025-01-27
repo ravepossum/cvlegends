@@ -67,13 +67,13 @@ Jump_003_404A:
     ld b, a
     ld a, [wUnk_C776]
     ld c, a
-    call $DCB4
+    call wUnk_DCB4
     ret c
 
     push bc
     ld a, $05
     call Call_000_24CF
-    call $DCB4
+    call wUnk_DCB4
     pop bc
     jr nc, jr_003_4088
 
@@ -98,13 +98,13 @@ Jump_003_408E:
     ld b, a
     ld a, [wUnk_C77D]
     ld c, a
-    call $DCB4
+    call wUnk_DCB4
     ret c
 
     push bc
     ld a, $05
     call Call_000_24CF
-    call $DCB4
+    call wUnk_DCB4
     pop bc
     jr nc, jr_003_40C2
 
@@ -152,13 +152,13 @@ Jump_003_40CF:
     ld b, a
     ld a, [wUnk_C776]
     ld c, a
-    call $DCB4
+    call wUnk_DCB4
     ret nc
 
     push bc
     ld a, $05
     call Call_000_24B8
-    call $DCB4
+    call wUnk_DCB4
     pop bc
     jr c, jr_003_410C
 
@@ -185,13 +185,13 @@ jr_003_4113:
     ld b, a
     ld a, [wUnk_C77D]
     ld c, a
-    call $DCB4
+    call wUnk_DCB4
     ret nc
 
     push bc
     ld a, $05
     call Call_000_24B8
-    call $DCB4
+    call wUnk_DCB4
     pop bc
     jr c, jr_003_4142
 
@@ -441,7 +441,7 @@ Call_003_4243:
     ld bc, wUnk_CD00
     ret z
 
-    ld bc, $D500
+    ld bc, wUnk_D500
     ret
 
 
@@ -576,7 +576,7 @@ jr_003_4328:
     ld hl, wUnk_C507
     sub [hl]
     bit 7, a
-    call nz, $DCE3
+    call nz, wUnk_DCE3
     call Call_000_20E6
     call Call_000_2565
     call Call_000_2688
@@ -598,7 +598,7 @@ jr_003_4328:
     and $07
     ld bc, $0100
     cp $04
-    call c, $DCE3
+    call c, wUnk_DCE3
     call Call_000_20E6
     call Call_000_2688
     jp z, Jump_000_219F
@@ -789,7 +789,7 @@ jr_003_44D4:
     ld hl, wUnk_C100
     ld bc, $0400
     xor a
-    call $DEC9
+    call wUnk_DEC9
     call Call_000_057C
     call Call_000_2538
     ld a, $01
@@ -842,7 +842,7 @@ Call_003_4588:
     ld a, $00
     call Call_000_0875
     xor a
-    ld [$D7DC], a
+    ld [wUnk_D7DC], a
     ld [wUnk_C757], a
     ld a, $62
     call Call_000_0875
@@ -938,7 +938,7 @@ Call_003_4588:
     ld a, $00
     call Call_000_0875
     xor a
-    ld [$D7DC], a
+    ld [wUnk_D7DC], a
     ld [wUnk_C757], a
     ld a, $62
     call Call_000_0875
@@ -974,7 +974,7 @@ Call_003_4588:
     ld a, $00
     call Call_000_0875
     xor a
-    ld [$D7DC], a
+    ld [wUnk_D7DC], a
     ld [wUnk_C757], a
     ld a, $08
     jp Jump_000_0E35
@@ -1009,7 +1009,7 @@ Call_003_4588:
     ld a, $00
     call Call_000_0875
     xor a
-    ld [$D7DC], a
+    ld [wUnk_D7DC], a
     ld [wUnk_C757], a
     ld a, $62
     call Call_000_0875
@@ -1087,7 +1087,7 @@ jr_003_47E9:
     ld a, $00
     call Call_000_0875
     xor a
-    ld [$D7DC], a
+    ld [wUnk_D7DC], a
     ld hl, wUnk_C757
     res 0, [hl]
     ld a, $53
@@ -1381,7 +1381,7 @@ jr_003_49B5:
     ld hl, wUnk_CF20
     ld bc, $0100
     xor a
-    call $DEC9
+    call wUnk_DEC9
     call Call_003_4CFF
     call Call_003_4A55
     call Call_000_05E1
@@ -1419,7 +1419,7 @@ jr_003_4A00:
     ld hl, wUnk_CF20
     ld bc, $0100
     xor a
-    call $DEC9
+    call wUnk_DEC9
     call Call_003_4CFF
     call Call_003_4BA3
     xor a
@@ -1469,7 +1469,7 @@ jr_003_4A65:
     call Call_000_2FCD
     ld a, [wUnk_C780]
     and $0F
-    call $DDD6
+    call wUnk_DDD6
     ld a, [wUnk_C507]
     cp $14
     jr c, jr_003_4A81
@@ -1782,27 +1782,27 @@ jr_003_4BB5:
     xor a
     ld c, $E0
     ld hl, wUnk_C820
-    call $DED2
+    call wUnk_DED2
     xor a
     ld c, $E0
     ld hl, wUnk_C920
-    call $DED2
+    call wUnk_DED2
     xor a
     ld c, $E0
     ld hl, wUnk_CA20
-    call $DED2
+    call wUnk_DED2
     xor a
     ld c, $E0
     ld hl, wUnk_CB20
-    call $DED2
+    call wUnk_DED2
     xor a
     ld c, $E0
     ld hl, wUnk_CC20
-    call $DED2
+    call wUnk_DED2
     xor a
     ld c, $E0
     ld hl, wUnk_CD20
-    call $DED2
+    call wUnk_DED2
     ld [wUnk_C795], a
     ld hl, wUnk_C7A0
     ld b, $20
@@ -2081,7 +2081,7 @@ jr_003_4D80:
     and $0F
 
 jr_003_4D8B:
-    call $DDD6
+    call wUnk_DDD6
     pop de
 
 Call_003_4D8F:
@@ -2538,7 +2538,7 @@ jr_003_5082:
 
     pop bc
     ld d, c
-    call $D951
+    call wUnk_D951
     ld d, c
     push hl
     ld d, c

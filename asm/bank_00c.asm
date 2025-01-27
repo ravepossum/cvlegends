@@ -252,10 +252,8 @@ Jump_00C_413F:
     ld hl, $9987
     di
 
-jr_00C_4143:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00C_4143
+.waitVRAM1
+    wait_for_blank .waitVRAM1
 
     ei
     ld a, [$C7D2]
@@ -266,10 +264,8 @@ jr_00C_4143:
     ld [hl], a
     di
 
-jr_00C_4156:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00C_4156
+.waitVRAM2
+    wait_for_blank .waitVRAM2
 
     ei
     inc hl
@@ -1744,10 +1740,8 @@ Call_00C_478B:
 jr_00C_478B:
     di
 
-jr_00C_478C:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00C_478C
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [hl+]
     ld [de], a

@@ -300,10 +300,8 @@ jr_000_02E3:
     and $01
     ret z
 
-jr_000_0327:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_0327
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld hl, $FF40
     res 0, [hl]
@@ -313,10 +311,8 @@ jr_000_0334:
     dec b
     jr nz, jr_000_0334
 
-jr_000_0337:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_0337
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld hl, $FF40
     set 0, [hl]
@@ -3139,10 +3135,8 @@ jr_000_16B3:
 jr_000_16B8:
     di
 
-jr_000_16B9:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_16B9
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [hl+]
     ld [de], a
@@ -5881,10 +5875,8 @@ jr_000_2543:
 jr_000_2545:
     di
 
-jr_000_2546:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2546
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [hl]
     ld [de], a
@@ -6319,10 +6311,8 @@ Call_000_2732:
 Jump_000_2732:
     di
 
-jr_000_2733:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2733
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, $26
     ld [hl], a
@@ -6979,10 +6969,8 @@ jr_000_2CDB:
     push af
     di
 
-jr_000_2CDD:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2CDD
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld [hl], c
     inc hl
@@ -7040,10 +7028,8 @@ jr_000_2D1E:
     push af
     di
 
-jr_000_2D20:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2D20
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld [hl], c
     inc hl
@@ -7158,10 +7144,8 @@ jr_000_2DB0:
     ld hl, $C750
     di
 
-jr_000_2DB4:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2DB4
+.waitVRAM1
+    wait_for_blank .waitVRAM1
 
     ld a, [hl]
     and $0F
@@ -7169,10 +7153,8 @@ jr_000_2DB4:
     ld [de], a
     dec de
 
-jr_000_2DC1:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2DC1
+.waitVRAM2
+    wait_for_blank .waitVRAM2
 
     ld a, [hl+]
     swap a
@@ -7181,10 +7163,8 @@ jr_000_2DC1:
     ld [de], a
     dec de
 
-jr_000_2DD0:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2DD0
+.waitVRAM3
+    wait_for_blank .waitVRAM3
 
     ld a, [hl]
     add $10
@@ -7234,10 +7214,8 @@ jr_000_2DF9:
 jr_000_2E06:
     di
 
-jr_000_2E07:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2E07
+.waitVRAM1
+    wait_for_blank .waitVRAM1
 
     ld a, [$C753]
     swap a
@@ -7245,10 +7223,8 @@ jr_000_2E07:
     add $10
     ld [hl+], a
 
-jr_000_2E17:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2E17
+.waitVRAM2
+    wait_for_blank .waitVRAM2
 
     ld a, [$C753]
     and $0F
@@ -7283,10 +7259,8 @@ jr_000_2E35:
 jr_000_2E42:
     di
 
-jr_000_2E43:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_2E43
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [$C754]
     and $0F

@@ -214,10 +214,8 @@ jr_000_008C:
     ret
 
 
-jr_000_0091:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_000_0091
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ret
 

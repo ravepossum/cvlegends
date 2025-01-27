@@ -64,10 +64,8 @@ Call_001_4065:
     di
     push af
 
-jr_001_4067:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_001_4067
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     pop af
     ld [de], a
@@ -3854,10 +3852,8 @@ jr_001_608E:
 
     di
 
-jr_001_6095:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_001_6095
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [bc]
     inc bc
@@ -3926,10 +3922,8 @@ jr_001_60E5:
 
     di
 
-jr_001_60EC:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_001_60EC
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [bc]
     inc bc

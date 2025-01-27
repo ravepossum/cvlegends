@@ -316,10 +316,8 @@ Call_00B_420C:
 jr_00B_4216:
     di
 
-jr_00B_4217:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_4217
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, c
     ld [hl+], a
@@ -1372,10 +1370,8 @@ jr_00B_4B7F:
 jr_00B_4B8D:
     di
 
-jr_00B_4B8E:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_4B8E
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, $25
     ld [hl+], a
@@ -1914,10 +1910,8 @@ jr_00B_5576:
 jr_00B_5578:
     di
 
-jr_00B_5579:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_5579
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     xor a
     ld [hl+], a
@@ -2074,20 +2068,16 @@ jr_00B_560F:
 jr_00B_5662:
     di
 
-jr_00B_5663:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_5663
+.waitVRAM1
+    wait_for_blank .waitVRAM1
 
     ld a, $68
     ld [hl+], a
     ld [de], a
     inc de
 
-jr_00B_566E:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_566E
+.waitVRAM2
+    wait_for_blank .waitVRAM2
 
     ld a, $69
     ld [hl], a
@@ -2259,7 +2249,7 @@ jr_00B_575C:
 
 
     nop
-    jr z, jr_00B_57C1
+    jr z, WaitVRAM
 
     ld l, b
     push de
@@ -2313,10 +2303,8 @@ Jump_00B_57A8:
 jr_00B_57C0:
     di
 
-jr_00B_57C1:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_57C1
+WaitVRAM:
+    wait_for_blank WaitVRAM
 
     ld a, $27
     ld [hl+], a
@@ -2335,20 +2323,16 @@ jr_00B_57C1:
 jr_00B_57D8:
     di
 
-jr_00B_57D9:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_57D9
+.waitVRAM1
+    wait_for_blank .waitVRAM1
 
     xor a
     ld [hl+], a
     ld [de], a
     inc de
 
-jr_00B_57E3:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_57E3
+.waitVRAM2
+    wait_for_blank .waitVRAM2
 
     xor a
     ld [hl], a
@@ -2758,10 +2742,8 @@ Call_00B_5A41:
     push de
     di
 
-jr_00B_5A43:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_5A43
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld [hl], $00
     ld a, h
@@ -2786,20 +2768,16 @@ Call_00B_5A55:
 jr_00B_5A63:
     di
 
-jr_00B_5A64:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_5A64
+.waitVRAM1
+    wait_for_blank .waitVRAM1
 
     ld a, $28
     ld [hl+], a
     ld [de], a
     inc de
 
-jr_00B_5A6F:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_5A6F
+.waitVRAM2
+    wait_for_blank .waitVRAM2
 
     ld a, $29
     ld [hl+], a
@@ -3123,10 +3101,8 @@ jr_00B_5BA2:
 jr_00B_5C3B:
     di
 
-jr_00B_5C3C:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_00B_5C3C
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     xor a
     ld [hl+], a

@@ -1226,10 +1226,8 @@ jr_003_48CB:
 jr_003_48CD:
     di
 
-jr_003_48CE:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_003_48CE
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     xor a
     ld [hl+], a

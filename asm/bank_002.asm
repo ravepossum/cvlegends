@@ -3493,10 +3493,8 @@ Call_002_55D9:
 jr_002_55DB:
     di
 
-jr_002_55DC:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_002_55DC
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, $25
     ld [hl+], a
@@ -3595,10 +3593,8 @@ jr_002_566C:
 jr_002_566E:
     di
 
-jr_002_566F:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_002_566F
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [hl+]
     ld [de], a
@@ -3680,10 +3676,8 @@ jr_002_56D5:
 jr_002_56D7:
     di
 
-jr_002_56D8:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_002_56D8
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld a, [hl]
     ld [de], a
@@ -4217,10 +4211,8 @@ Call_002_5A24:
     push de
     di
 
-jr_002_5A26:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_002_5A26
+.waitVRAM
+    wait_for_blank .waitVRAM
 
     ld [hl], $23
     ld a, h

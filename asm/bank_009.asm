@@ -78,20 +78,16 @@ jr_009_4084:
 jr_009_40A9:
     di
 
-jr_009_40AA:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_009_40AA
+.waitVRAM1
+    wait_for_blank .waitVRAM1
 
     ld a, $4E
     ld [hl+], a
     ld [de], a
     inc de
 
-jr_009_40B5:
-    ldh a, [rSTAT]
-    bit 1, a
-    jr nz, jr_009_40B5
+.waitVRAM2
+    wait_for_blank .waitVRAM2
 
     ld a, $4F
     ld [hl], a
